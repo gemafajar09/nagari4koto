@@ -4,22 +4,26 @@
     $aksi = $_GET['aksi'];
 
     switch ($aksi) {
-      case "tambahgaleri":
+      case "tambahalbum":
 
         if (isset($_POST['save1'])) {
 
-          $lokasi_file = $_FILES['fupload']['tmp_name'];
-          $nama_file = $_FILES['fupload']['name'];
+          $lokasi_file  = $_FILES['fupload']['tmp_name'];
+          $nama_file    = $_FILES['fupload']['name'];
           if (!empty($lokasi_file)) {
             move_uploaded_file($lokasi_file, "../../asset/images/" . $nama_file);
           }
 
 
-          $save = mysqli_query($kon, "INSERT INTO tb_galeri(idalbum,foto) VALUES ('$_POST[idalbum]','$nama_file')");
+          $save = mysqli_query($kon, "INSERT INTO tb_album (judulalbum,
+                                                              coverlbum) 
+                                                              VALUES
+                                                              ('$_POST[judulalbum]',
+                                                              '$nama_file')");
           if ($save) {
             echo "<script>
             alert('Tambah Data Berhasil');
-            window.location='?module=galeribawaslu';
+            window.location='?module=galeri/albumbawaslu';
             </script>";
             exit;
           } else {
@@ -30,11 +34,11 @@
   ?>
         <section class="content-header">
           <h1>
-            Galeri
+            Album
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li class="active">Tambah Galeri</li>
+            <li class="active">Tambah Album</li>
           </ol>
         </section>
         <!-- Content Header (Page header) -->
@@ -51,29 +55,18 @@
                     <div class="col-sm-12">
 
                       <div class="form-group">
-                        <label for="des" class="col-sm-2 control-label">Album</label>
+                        <label for="des" class="col-sm-2 control-label">Judul Album</label>
                         <div class="col-sm-8">
-                          <select name="idalbum" class="form-control">
-                            <option value="">--Pilih--</option>
-                            <?php
-                            include 'koneksi.php';
-                            $kp = mysqli_query($kon, "SELECT * FROM tb_album");
-                            while ($data2 = mysqli_fetch_array($kp)) {
-                              echo "<option value='$data2[idalbum]'>$data2[judulalbum]</option>";
-                            }
-                            ?>
-                          </select>
+                          <input name="judulalbum" type="text" class="form-control">
                         </div>
                       </div>
 
                       <div class="form-group">
-                        <label for="des" class="col-sm-2 control-label">Foto</label>
+                        <label for="des" class="col-sm-2 control-label">Cover Album</label>
                         <div class="col-sm-8">
                           <input name="fupload" id="fupload" type="file" class="form-control">
                         </div>
                       </div>
-
-
 
                       <div class="form-group">
                         <div class="col-sm-4 col-md-offset-2">
@@ -90,26 +83,30 @@
 
       <?php
         break;
-      case "editgaleri":
-        if (isset($_GET['idgaleri'])) {
-          $sql = mysqli_query($kon, "SELECT * FROM tb_galeri where idgaleri='$_GET[idgaleri]'");
+      case "editalbum":
+        if (isset($_GET['idalbum'])) {
+          $sql = mysqli_query($kon, "SELECT * FROM tb_album where idalbum='$_GET[idalbum]'");
           $data = mysqli_fetch_assoc($sql);
         }
         if (isset($_POST['save'])) {
 
           $lokasi_file = $_FILES['fupload']['tmp_name'];
-          $nama_file = $_FILES['fupload']['name'];
+          $nama_file   = $_FILES['fupload']['name'];
           if (!empty($lokasi_file)) {
             move_uploaded_file($lokasi_file, "../../asset/images/" . $nama_file);
+
+            $lihat = mysqli_fetch_assoc(mysqli_query($kon, "SELECT * FROM tb_album where idalbum='$_GET[idalbum]'"));
+
+            unlink("../../asset/images/" . $lihat['coveralbum']);
           } else {
             $nama_file = $_POST["fuploadlama"];
           }
 
-          $save = mysqli_query($kon, "UPDATE tb_galeri set idalbum='$_POST[idalbum]',foto='$nama_file' where idgaleri='$_GET[idgaleri]'");
+          $save = mysqli_query($kon, "UPDATE tb_album set judulalbum='$_POST[judulalbum]',coverlbum='$nama_file' where idalbum='$_GET[idalbum]'");
           if ($save) {
             echo "<script>
             alert('Edit Data Berhasil');
-            window.location='?module=galeribawaslu';
+            window.location='?module=galeri/albumbawaslu';
               </script>";
           } else {
             echo "<script>alert('Gagal');
@@ -140,36 +137,24 @@
                   <div class="box-body">
                     <div class="col-sm-12">
                       <div class="form-group">
-                        <label for="des" class="col-sm-2 control-label">Album</label>
+                        <label for="des" class="col-sm-2 control-label">Judul Album</label>
                         <div class="col-sm-8">
-                          <select name="idalbum" class="form-control">
-                            <option value="">--Pilih--</option>
-                            <?php
-                            $kp = mysqli_query($kon, "SELECT * FROM tb_album");
-                            while ($ee = mysqli_fetch_array($kp)) {
-                              if ($ee["idalbum"] == $data["idalbum"]) {
-                                $cek = "selected";
-                              } else {
-                                $cek = "";
-                              }
-                              echo "<option value='$ee[idalbum]' $cek>$ee[judulalbum]</option>";
-                            }
-                            ?>
-                          </select>
+                          <input name="idalbum" type="hidden" id="des" class="form-control" value="<?= $data['idalbum'] ?>">
+                          <input name="judulalbum" id="des" class="form-control" value="<?= $data['judulalbum'] ?>">
                         </div>
                       </div>
 
                       <div class="form-group">
-                        <label for="des" class="col-sm-2 control-label">Foto</label>
+                        <label for="des" class="col-sm-2 control-label">Cover Album</label>
                         <div class="col-sm-8">
                           <input name="fupload" id="fupload" type="file" class="form-control">
-                          <input name="fuploadlama" id="fupload" type="hidden" class="form-control" value="<?= $data['foto'] ?>">
+                          <input name="fuploadlama" id="fupload" type="hidden" class="form-control" value="<?= $data['coverlbum'] ?>">
                         </div>
                       </div>
                       <div class="form-group">
                         <div class="col-sm-4 col-md-offset-2">
                           <button type="submit" name="save" class="btn btn-primary btn-flat">Simpan</button>
-                          <a href="?module=galeribawaslu" class="btn btn-primary btn-flat">Kembali</a>
+                          <a href="?module=galeri/albumbawaslu" class="btn btn-primary btn-flat">Kembali</a>
                         </div>
                       </div>
                     </div>
@@ -180,21 +165,23 @@
         </section>
       <?php
         break;
-      case "hapusgaleri":
+      case "hapusalbum":
 
-        if (isset($_GET['idgaleri'])) {
-          $lihat = mysqli_fetch_assoc(mysqli_query($kon, "SELECT * FROM tb_galeri where idgaleri='$_GET[idgaleri]'"));
+        if (isset($_GET['idalbum'])) {
+          $lihat = mysqli_fetch_assoc(mysqli_query($kon, "SELECT * FROM tb_album where idalbum='$_GET[idalbum]'"));
 
-          $del = mysqli_query($kon, "DELETE FROM tb_galeri where idgaleri='$_GET[idgaleri]'");
+          unlink("../../img/album/" . $lihat['coveralbum']);
+
+          $del = mysqli_query($kon, "DELETE FROM tb_album where idalbum='$_GET[idalbum]'");
           if ($del) {
             echo "<script>
                  alert('Data Berhasil Dihapus');
-    					   window.location='index.php?module=galeribawaslu';
+    					   window.location='index.php?module=galeri/albumbawaslu';
     				  </script>";
           } else {
             echo "<script>
                 alert('Data Gagal Dihapus');
-                window.location='index.php?module=galeribawaslu';
+                window.location='index.php?module=galeri/albumbawaslu';
               </script>";
           }
         }
