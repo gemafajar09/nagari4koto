@@ -1,20 +1,17 @@
-
 <div class="content-wrapper">
 <?php
   if (isset($_GET['aksi'])){
     $aksi = $_GET['aksi'];
 
   switch ($aksi){
-    case "tambahig" :
+    case "tambahemail" :
 	
     if(isset($_POST['save1'])){
-      $ig = anti_injection($_POST['ig']);
-      $link = anti_injection($_POST['link']);
-	    $save= mysqli_query($kon, "INSERT INTO ig (idig,ig,link) VALUES ('','$ig','$link')");
+	$save= mysqli_query($kon, "INSERT INTO email (idemail,email) VALUES ('','$_POST[email]')");
 	 if($save) {
         echo "<script>
             alert('Tambah Data Berhasil');
-            window.location='?module=igbawaslu';
+            window.location='?module=kontak/emailbawaslu';
             </script>";
             exit;
       }else{
@@ -25,11 +22,11 @@
 ?>
 <section class="content-header">
       <h1>
-        Instagram
+        Email
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Tambah Instagram</li>
+        <li class="active">Tambah Email</li>
       </ol>
 </section>
 <!-- Content Header (Page header) -->
@@ -44,21 +41,12 @@
             <form method="POST" class="form-horizontal" action="" enctype="multipart/form-data">
               <div class="box-body">
 			    <div class="col-sm-12">
-					
-			<div class="form-group">
-            <label for="des" class="col-sm-2 control-label">Nama Instagram</label>
+          <div class="form-group">
+            <label for="des" class="col-sm-2 control-label">Email Bawaslu</label>
             <div class="col-sm-8">
-            <input name="ig" type="text"  class="form-control">
+            <input name="email" type="email"  class="form-control">
             </div>
-			</div>
-			
-			<div class="form-group">
-            <label for="des" class="col-sm-2 control-label">Link</label>
-            <div class="col-sm-8">
-            <input name="link" type="text"  class="form-control">
-            </div>
-			</div>
-				
+				</div>
 				    <div class="form-group">
 					  <div class="col-sm-4 col-md-offset-2">
 						<button type="submit" name="save1" class="btn btn-primary btn-flat">Simpan</button>
@@ -74,19 +62,18 @@
 
 <?php
     break;
-    case "editig":
-    if(isset($_GET['idig'])){
-      $sql = mysqli_query($kon, "SELECT * FROM ig where idig='$_GET[idig]'");
+    case "editemail":
+    if(isset($_GET['idemail'])){
+      $sql = mysqli_query($kon, "SELECT * FROM email where idemail='$_GET[idemail]'");
       $data=mysqli_fetch_assoc($sql);
     }
     if(isset($_POST['save'])){
-      $ig = anti_injection($_POST['ig']);
-      $link = anti_injection($_POST['link']);
-      $save=mysqli_query($kon, "UPDATE ig set ig='$ig', link='$link' where idig='$_GET[idig]'");
+
+      $save=mysqli_query($kon, "UPDATE email set email='$_POST[email]' where idemail='$_GET[idemail]'");
       if($save) {
         echo "<script>
             alert('Edit Data Berhasil');
-            window.location='?module=igbawaslu';
+            window.location='?module=kontak/emailbawaslu';
               </script>";
         }else{
           echo "<script>alert('Gagal');
@@ -96,11 +83,11 @@
 ?>
 <section class="content-header">
       <h1>
-       Instagram
+       Email
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Edit Instagram</li>
+        <li class="active">Edit Email</li>
       </ol>
 </section>
 
@@ -117,24 +104,17 @@
               <div class="box-body">
 			    <div class="col-sm-12">
 					<div class="form-group">
-						<label for="des" class="col-sm-2 control-label">Nama Instagram</label>
+						<label for="des" class="col-sm-2 control-label">Email</label>
 					  <div class="col-sm-8">
-						<input name="idig" type="hidden" id="des" class="form-control" value="<?= $data['idig']?>">
-						<input name="ig" id="des" class="form-control" value="<?= $data['ig']?>">
+						<input name="idemail" type="hidden" id="des" class="form-control" value="<?= $data['idemail']?>">
+						<input name="email" type="email" id="des" class="form-control" value="<?= $data['email']?>">
 					  </div>
-					</div>	
-					
-					<div class="form-group">
-						<label for="des" class="col-sm-2 control-label">Link</label>
-					  <div class="col-sm-8">
-						
-						<input name="link" id="des" class="form-control" value="<?= $data['link']?>">
-					  </div>
-					</div>				
+					  
+					</div>					
                 <div class="form-group">
                   <div class="col-sm-4 col-md-offset-2">
                     <button type="submit" name="save" class="btn btn-primary btn-flat">Simpan</button>
-					<a href="?module=igbawaslu" class="btn btn-primary btn-flat">Kembali</a>
+					<a href="?module=kontak/emailbawaslu" class="btn btn-primary btn-flat">Kembali</a>
                   </div>
                 </div>
               </div>
@@ -145,21 +125,21 @@
 </section>
 <?php
     break;
-    case "hapusig" :
+    case "hapusemail" :
 
-    if(isset($_GET['idig'])){
-      $lihat = mysqli_fetch_assoc(mysqli_query($kon, "SELECT * FROM ig where idig='$_GET[idig]'"));
+    if(isset($_GET['idemail'])){
+      $lihat = mysqli_fetch_assoc(mysqli_query($kon, "SELECT * FROM email where idemail='$_GET[idemail]'"));
 
-      $del = mysqli_query($kon, "DELETE FROM ig where idig='$_GET[idig]'");
+      $del = mysqli_query($kon, "DELETE FROM email where idemail='$_GET[idemail]'");
       if($del){
     	  echo "<script>
                  alert('Data Berhasil Dihapus');
-    					   window.location='index.php?module=igbawaslu';
+    					   window.location='index.php?module=kontak/emailbawaslu';
     				  </script>";
       }else{
         echo "<script>
                 alert('Data Gagal Dihapus');
-                window.location='index.php?module=igbawaslu';
+                window.location='index.php?module=kontak/emailbawaslu';
               </script>";
       }
     }
