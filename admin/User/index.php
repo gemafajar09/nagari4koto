@@ -135,43 +135,43 @@ if (!$_SESSION['id']) {
                 </li>
 
                 <li>
-                  <a href="?module=notelp">
+                  <a href="?module=kontak/notelp">
                     <i class="fa fa-phone"></i> <span>No Telp</span>
                   </a>
                 </li>
 
                 <li>
-                  <a href="?module=emailbawaslu">
+                  <a href="?module=kontak/emailbawaslu">
                     <i class="fa fa-envelope-o"></i> <span>Email</span>
                   </a>
                 </li>
 
                 <li>
-                  <a href="?module=fbbawaslu">
+                  <a href="?module=kontak/fbbawaslu">
                     <i class="fa fa-facebook"></i> <span>Facebook</span>
                   </a>
                 </li>
 
                 <li>
-                  <a href="?module=igbawaslu">
+                  <a href="?module=kontak/igbawaslu">
                     <i class="fa fa-instagram"></i> <span>Instagram</span>
                   </a>
                 </li>
 
                 <li>
-                  <a href="?module=youtube">
+                  <a href="?module=kontak/youtube">
                     <i class="fa fa-youtube"></i> <span>Youtube</span>
                   </a>
                 </li>
 
                 <li>
-                  <a href="?module=twitter">
+                  <a href="?module=kontak/twitter">
                     <i class="fa fa-twitter"></i> <span>Twitter</span>
                   </a>
                 </li>
 
                 <li>
-                  <a href="?module=kota">
+                  <a href="?module=kontak/kota">
                     <i class="fa fa-building"></i> <span>Kota</span>
                   </a>
                 </li>
@@ -187,29 +187,45 @@ if (!$_SESSION['id']) {
               </a>
               <ul class="treeview-menu">
                 <li>
-                  <a href="?module=albumbawaslu">
+                  <a href="?module=galeri/albumbawaslu">
                     <i class="fa fa-image"></i> <span>Album</span>
                   </a>
                 </li>
 
                 <li>
-                  <a href="?module=galeribawaslu">
+                  <a href="?module=galeri/galeribawaslu">
                     <i class="fa fa-image"></i> <span>Foto</span>
                   </a>
                 </li>
               </ul>
             </li>
 
-            <li>
-              <a href="?module=profilbawaslu">
-                <i class="fa fa-info"></i> <span>Profil</span>
-              </a>
-            </li>
 
-            <li>
-              <a href="?module=org">
-                <i class="fa fa-info"></i> <span>Struktur Organisasi</span>
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-list"></i>
+                <span>Profil Bawaslu</span>
+                <i class="fa fa-angle-left pull-right"></i>
               </a>
+              <ul class="treeview-menu">
+                <li>
+                  <a href="?module=profil/profilbawaslu">
+                    <i class="fa fa-info"></i> <span>Profil</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="?module=profil/org">
+                    <i class="fa fa-info"></i> <span>Struktur Organisasi</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="?module=profil/komisioner">
+                    <i class="fa fa-user"></i> <span>Komisioner</span>
+                  </a>
+                </li>
+              </ul>
             </li>
 
             <li>
@@ -353,12 +369,6 @@ if (!$_SESSION['id']) {
             <!-- <li>
               <a href="?module=perbawalusterbaru">
                 <i class="fa fa-book"></i> <span>Perbawaslu Terbaru </span>
-              </a>
-            </li> -->
-
-            <!-- <li>
-              <a href="?module=komisioner">
-                <i class="fa fa-user"></i> <span>Komisioner</span>
               </a>
             </li> -->
 

@@ -13,7 +13,7 @@
       <div class="col-md-12">
         <div class="box box-info">
           <div class="box-header with-border">
-            <a href="?module=album&aksi=tambahalbum" class="btn btn-flat btn-primary">Tambah Album Bawaslu</a>
+            <a href="?module=galeri/album&aksi=tambahalbum" class="btn btn-flat btn-primary">Tambah Album Bawaslu</a>
           </div>
           <div class="box-body">
             <div class="table table-responsive">
@@ -39,8 +39,8 @@
                       <td><img style="width:50px;height:50px;" src="../../asset/images/<?= $r["coverlbum"]; ?>">
                       </td>
                       <td>
-                        <a href="?module=album&aksi=editalbum&idalbum=<?= $r['idalbum']; ?>" class="btn btn-flat btn-primary" style="border-radius:2px;">Edit Album</a>
-                        <a href="?module=album&aksi=hapusalbum&idalbum=<?= $r['idalbum']; ?>" class="btn btn-info">Hapus Album</a>
+                        <a href="?module=galeri/album&aksi=editalbum&idalbum=<?= $r['idalbum']; ?>" class="btn btn-flat btn-primary" style="border-radius:2px;">Edit Album</a>
+                        <a href="?module=galeri/album&aksi=hapusalbum&idalbum=<?= $r['idalbum']; ?>" class="btn btn-info">Hapus Album</a>
                       </td>
                     </tr>
                   <?php $no++;
