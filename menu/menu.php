@@ -25,29 +25,34 @@
             </div>
         </div>
         <div class="box">
-                <box class="body">
-                    
-                    <div id="idx-calendar">
-                        <div id="calendar-control">
-                            <div id="monthNow">Januari 2014</div>
-                            <div id="nextMonth"></div>
-                            <div id="prevMonth"></div>
-                        </div>
-                        <div id="dayNames">
-                            <ul>
-                            </ul>
-                        </div>
-                        <div id="daysNum">
-                            </div>
-                        </div>
-                        <hr>
-                        
-                        <link href="kalender.css" type="text/css" rel="stylesheet">
-                        <?php 
-                        include "visitor/jam.php";
-                        include "visitor/kalender.php";
-                    ?>
-                </box>
+            <box class="body">
+                
+                <div id="idx-calendar">
+                    <div id="calendar-control">
+                        <div id="monthNow">Januari 2014</div>
+                        <div id="nextMonth"></div>
+                        <div id="prevMonth"></div>
+                    </div>
+                    <div id="dayNames">
+                        <ul></ul>
+                    </div>
+                    <div id="daysNum"></div>
+                </div>
+                    <hr>
+                    <link href="kalender.css" type="text/css" rel="stylesheet">
+                <?php 
+                    include "visitor/jam.php";
+                    include "visitor/kalender.php";
+                ?>
+            </box>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <i>Kontak</i>
             </div>
+            <div class="card-body">
+                
+            </div>
+        </div>
     </div>
 </div>
