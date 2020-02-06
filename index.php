@@ -25,6 +25,7 @@ include "menu/tgl_indo.php";
     <link rel="stylesheet" href="asset/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="asset/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="visitor/kalender.css">
+    <link rel="stylesheet" href="asset/datatables-bs4/css/dataTables.bootstrap4.css">
     <title>Nagari 4 Koto Hilie</title>
 </head>
 <style>
@@ -60,40 +61,62 @@ include "menu/tgl_indo.php";
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Profil
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="font-size:11px">
           <a class="dropdown-item" href="?page=menu/visi">Visi & Misi</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Sejarah</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Tugas & Wewenang</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Struktur Organisasi</a>
+          <a class="dropdown-item" href="?page=menu/sejarah">Sejarah</a>
+          <!-- <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="?page=menu/tugas">Tugas Dan Wewenang</a> -->
         </div>
       </li>
+<!-- 
       <li class="nav-item">
         <a class="nav-link" href="?page=menu/agenda">Agenda</a>
-      </li>
+      </li> -->
       
       <li class="nav-item">
         <a class="nav-link" href="#">Galery</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Kontak</a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="info" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">LemMas</a>
+        <div class="dropdown-menu" aria-labelledby="info" style="font-size:11px">
+          <a class="dropdown-item" href="?page=menu/visi">LPM</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Karang Taruna</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Pkk</a>
+        </div>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">PPID</a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="info" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Informasi</a>
-        <div class="dropdown-menu" aria-labelledby="info">
-          <a class="dropdown-item" href="?page=menu/visi">Visi & Misi</a>
+        <a class="nav-link dropdown-toggle" href="#" id="data" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Data Desa</a>
+        <div class="dropdown-menu" aria-labelledby="data" style="font-size:11px">
+          <a class="dropdown-item" href="?page=menu/data_wilayah">Data Wilayah Administratif</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Sejarah</a>
+          <a class="dropdown-item" href="?page=menu/data_pendidikan">Data Pendidikan Dalam KK</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Tugas & Wewenang</a>
+          <a class="dropdown-item" href="?page=menu/data_pendidikan_ditempuh">Data Pendidikan Ditempuh</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Struktur Organisasi</a>
+          <a class="dropdown-item" href="?page=menu/data_pekerjaan">Data Pekerjaan</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Data Jenis Kelamin</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Data Golongan Darah</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Data Kelompok Umur</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Data Perkawinan</a>
         </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="?page=menu/agenda">Surat Online</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="?page=menu/agenda">Transparasi Keuangan</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
@@ -139,7 +162,7 @@ include "menu/tgl_indo.php";
         <div class="col-md-8">
         <?php
         if(!empty($_GET["page"])){
-            include_once($_GET["page"].".php");
+            include($_GET["page"].".php");
         }else{
             include "home.php";
         }
@@ -163,37 +186,9 @@ include "menu/tgl_indo.php";
 <!-- script -->
 <script src="asset/js/jquery.js"></script>
 <script src="asset/bootstrap/js/bootstrap.min.js"></script>
-<script>
-setInterval(kunjungan, 5);
-function kunjungan() {
-  var tanggal = document.getElementById('tanggal').value;
-   $.ajax({
-      type: 'POST',
-      url: 'visitor/tampil_visitor.php',
-      data: 'tanggal='+ tanggal,
-      success: function(data){
-       $('#kunjungan').html(data);
-       console.log(tanggal)
-      // alert(tanggal)
-      },
-      error : function(){
-        alert('Kesalahan Dalam Menambil data')
-      }
-   }) 
-}
+<script src="asset/datatables/jquery.dataTables.js"></script>
+<script src="asset/datatables-bs4/js/dataTables.bootstrap4.js"></script>
 
-
-$(document).ready(function(){
-loading()
-function loading() {
-var time = setTimeout(show, 1000);
-}
-function show() {
-document.getElementById("loader").style.display = "none";
-
-}
-
-})
-</script>
+<?php include "script.php" ?>
 </body>
 </html>

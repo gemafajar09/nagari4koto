@@ -40,10 +40,10 @@ if (!$_SESSION['id']) {
   <body class="hold-transition skin-blue sidebar-mini">
 
     <div class="wrapper">
-      <div class="logo">
+      <!-- <div class="logo">
         <img src="../../img/logo/<?= $logohitam['img_logo'] ?>" style="margin-left: 30px; margin-top: 5px; width: 150px;">
         <span class="nm-sek"></span>
-      </div>
+      </div> -->
       <header class="main-header">
         <!-- Logo -->
         <div href="#" class="logo">
@@ -130,7 +130,7 @@ if (!$_SESSION['id']) {
 
                 <li>
                   <a href="?module=alamatbawaslu">
-                    <i class="fa fa-map-marker"></i> <span>Alamat Bawaslu</span>
+                    <i class="fa fa-map-marker"></i> <span>Alamat</span>
                   </a>
                 </li>
 
@@ -218,11 +218,11 @@ if (!$_SESSION['id']) {
               </a>
             </li>
 
-            <li>
+            <!-- <li>
               <a href="?module=agenda">
                 <i class="fa fa-files-o"></i> <span>Agenda</span>
               </a>
-            </li>
+            </li> -->
 
 
             <li>
@@ -262,23 +262,105 @@ if (!$_SESSION['id']) {
               </a>
             </li>
 
-            <li>
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-list"></i>
+                <span>Lembaga Masyarakat</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+
+                <li>
+                  <a href="?module=alamatbawaslu">
+                    <i class="fa fa-user"></i> <span>LPM</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="?module=notelp">
+                    <i class="fa fa-user"></i> <span>Karang Taruna</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="?module=emailbawaslu">
+                    <i class="fa fa-user"></i> <span>PKK</span>
+                  </a>
+                </li>
+
+              </ul>
+            </li>
+
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-list"></i>
+                <span>Data Desa</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+
+                <li>
+                  <a href="?module=alamatbawaslu">
+                    <i class="fa fa-file"></i> <span>Data Wilayah Administratif</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="?module=notelp">
+                    <i class="fa fa-file"></i> <span>Data Pendidikan</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="?module=emailbawaslu">
+                    <i class="fa fa-file"></i> <span>Data Pekerjaan</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="?module=emailbawaslu">
+                    <i class="fa fa-file"></i> <span>Data Jenis Kelamin</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="?module=emailbawaslu">
+                    <i class="fa fa-file"></i> <span>Data Golongan Darah</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="?module=emailbawaslu">
+                    <i class="fa fa-file"></i> <span>Data Kelompok Umur</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="?module=emailbawaslu">
+                    <i class="fa fa-file"></i> <span>Data Perkawinan</span>
+                  </a>
+                </li>
+
+              </ul>
+            </li>
+
+            <!-- <li>
               <a href="?module=bukusakubawaslu">
                 <i class="fa fa-book"></i> <span>Buku Saku Bawaslu </span>
               </a>
-            </li>
+            </li> -->
 
-            <li>
+            <!-- <li>
               <a href="?module=perbawalusterbaru">
                 <i class="fa fa-book"></i> <span>Perbawaslu Terbaru </span>
               </a>
-            </li>
+            </li> -->
 
-            <li>
+            <!-- <li>
               <a href="?module=komisioner">
                 <i class="fa fa-user"></i> <span>Komisioner</span>
               </a>
-            </li>
+            </li> -->
 
             <li>
               <a href="?module=sliderbawaslu">
