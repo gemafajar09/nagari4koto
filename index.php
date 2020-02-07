@@ -26,6 +26,7 @@ include "menu/tgl_indo.php";
     <link rel="stylesheet" href="asset/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="visitor/kalender.css">
     <link rel="stylesheet" href="asset/datatables-bs4/css/dataTables.bootstrap4.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Nagari 4 Koto Hilie</title>
 </head>
 <style>

@@ -5,7 +5,7 @@
             <canvas id="canvas" width="200" height="200" style="background-color:transparent"></canvas>
         </center> -->
         <div class="card">
-            <div class="card-header" style="background-color:gray;">
+            <div class="card-header">
                 <i>Jumlah Kunjungan</i>
             </div>
             <div class="card-body">
@@ -14,7 +14,7 @@
         </div>
 
         <div class="card">
-            <div class="card-header" style="background-color:gray;">
+            <div class="card-header">
                 <i>Peta Desa</i>
             </div>
             <div class="card-body">
@@ -48,10 +48,37 @@
         </div>
         <div class="card">
             <div class="card-header">
+                <i>Tautan</i>
+            </div>
+            <div class="card-body">
+                <?php
+                    $data = $kon->query("SELECT * FROM tb_tautan");
+                    foreach($data as $a)
+                    { ?>
+                        <a href="<?= $a['link'] ?>" class="btn btn-success btn-block"><?= $a['judul'] ?></a>
+                <?php } ?>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
                 <i>Kontak</i>
             </div>
             <div class="card-body">
-                
+<div class="row">
+    <div class="col-md-3">
+        <a href="" style="padding: 20px;font-size: 30px;width: 50px;text-align: center;text-decoration: none;margin: 5px 2px;" class="fa fa-twitter"></a>
+    </div>
+    <div class="col-md-3">
+        <a href="" style="padding: 20px;font-size: 30px;width: 50px;text-align: center;text-decoration: none;margin: 5px 2px;" class="fa fa-facebook"></a>
+    </div>
+    <div class="col-md-3">
+        <a href="" style="padding: 20px;font-size: 30px;width: 50px;text-align: center;text-decoration: none;margin: 5px 2px;" class="fa fa-instagram"></a>                
+    </div>
+    <div class="col-md-3">
+        <a href="" style="padding: 20px;font-size: 30px;width: 50px;text-align: center;text-decoration: none;margin: 5px 2px;" class="fa fa-google"></a>                
+    </div>
+</div>
             </div>
         </div>
     </div>
