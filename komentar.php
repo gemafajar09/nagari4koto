@@ -3,7 +3,7 @@
         <center>Tinggalkan Komentar</center>
     </div>
     <div class="card-body">
-        <form action="">
+        <form action="" method="POST" enctype="multipart/form-data">
             <table class="">
                 <tr>
                     <td>
@@ -25,7 +25,7 @@
                     </td>
                 </tr>
             </table>
-            <button class="btn btn-primary btn-block">Kirim</button>
+            <button name="save" type="submit" class="btn btn-primary btn-block">Kirim</button>
         </form>
     </div>
 </div> 
