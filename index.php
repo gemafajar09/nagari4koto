@@ -76,15 +76,15 @@ include "menu/tgl_indo.php";
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="info" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">LemMas</a>
         <div class="dropdown-menu" aria-labelledby="info" style="font-size:11px">
-          <a class="dropdown-item" href="?page=menu/visi">LPM</a>
+          <a class="dropdown-item" href="?page=menu/lpm">LPM</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Karang Taruna</a>
+          <a class="dropdown-item" href="?page=menu/karangtaruna">Karang Taruna</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Pkk</a>
+          <a class="dropdown-item" href="?page=menu/pkk">Pkk</a>
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">PPID</a>
+        <a class="nav-link" href="?page=menu/ppid">PPID</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="data" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Data Desa</a>
@@ -112,7 +112,7 @@ include "menu/tgl_indo.php";
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="?page=menu/agenda">Transparasi Keuangan</a>
+        <a class="nav-link" href="?page=menu/keuanga">Transparasi Keuangan</a>
       </li>
 
       <li class="nav-item dropdown">

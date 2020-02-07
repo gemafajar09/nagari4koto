@@ -1,3 +1,6 @@
+<?php
+error_reporting(E_ALL);
+?>
 <div class="content-wrapper">
 
   <?php
@@ -8,28 +11,27 @@
       case "tambahberita":
 
         if (isset($_POST['save'])) {
+
           $tglskrg = date('Y-m-d H:i:s');
-          $judul = anti_injection($_POST['judul']);
-          $judulseo = seo_title($_POST['judul']);
-          $postby = anti_injection($_POST['postby']);
+          $judul = $_POST['judul'];
+          $judulseo = $_POST['judul'];
+          $postby = $_POST['postby'];
           $nmberkas  = $_FILES["gambar"]["name"];
           $lokberkas = $_FILES["gambar"]["tmp_name"];
           $nmfoto = date("YmdHis") . $nmberkas;
           $valid    = array('jpg', 'png', 'gif', 'jpeg', 'JPG');
-          list($txt, $ext) = explode(".", $nmfoto);
+          @list($txt, $ext) = explode(".", $nmfoto);
           if (in_array($ext, $valid)) {
             if (!empty($lokberkas)) {
               move_uploaded_file($lokberkas, "../../asset/images/$nmfoto");
             }
 
-            echo "INSERT INTO tb_berita (judul, isiberita, posting_by, tgl_posting, judul_seo, gambar) VALUES ('$judul', '$_POST[deskripsi]', '$postby', '$tglskrg', '$judulseo', '$nmfoto')";
-            exit;
             $save = mysqli_query($kon, "INSERT INTO tb_berita (judul, isiberita, posting_by, tgl_posting, judul_seo, gambar) VALUES ('$judul', '$_POST[deskripsi]', '$postby', '$tglskrg', '$judulseo', '$nmfoto')");
 
             if ($save) {
               echo "<script>
             alert('Tambah Data Berhasil');
-            window.location='../index.php?module=berita/berita';
+            window.location='index.php?module=berita/berita';
             </script>";
               exit;
             } else {
@@ -113,9 +115,9 @@
           $data = mysqli_fetch_assoc($sql);
         }
         if (isset($_POST['save'])) {
-          $judulseo = seo_title($_POST['judul']);
-          $judul = anti_injection($_POST['judul']);
-          $postby = anti_injection($_POST['postby']);
+          $judulseo = $_POST['judul'];
+          $judul = $_POST['judul'];
+          $postby = $_POST['postby'];
           $nmberkas  = $_FILES['foto']["name"];
           $lokberkas = $_FILES["foto"]["tmp_name"];
           $nmfoto = date("YmdHis") . $nmberkas;
@@ -125,7 +127,7 @@
             if ($save) {
               echo "<script>
               alert('Edit Data Berhasil');
-              window.location='../index.php?module=berita/berita';
+              window.location='index.php?module=berita/berita';
                 </script>";
             } else {
               echo "<script>alert('Gagal');
@@ -144,7 +146,7 @@
               if ($save) {
                 echo "<script>
             alert('Edit Data Berhasil');
-            window.location='../index.php?module=berita/berita';
+            window.location='index.php?module=berita/berita';
               </script>";
               } else {
                 echo "<script>alert('Gagal');
@@ -250,7 +252,7 @@
         }
       ?>
     <?php
-        break;
+        // break;
     }
   } else {
     ?>
