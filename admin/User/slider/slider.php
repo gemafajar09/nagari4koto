@@ -66,6 +66,7 @@ include '../koneksi.php';
                       <div class="form-group">
                         <div class="col-sm-4 col-md-offset-2">
                           <button type="submit" name="save1" class="btn btn-primary btn-flat">Simpan</button>
+                          <a href="?module=slider/sliderbawaslu" class="btn btn-primary btn-flat">Kembali</a>
                         </div>
                       </div>
                     </div>
@@ -141,7 +142,7 @@ include '../koneksi.php';
                       <div class="form-group">
                         <div class="col-sm-4 col-md-offset-2">
                           <button type="submit" name="save" class="btn btn-primary btn-flat">Simpan</button>
-                          <a href="?module=sliderbawaslu" class="btn btn-primary btn-flat">Kembali</a>
+                          <a href="?module=slider/sliderbawaslu" class="btn btn-primary btn-flat">Kembali</a>
                         </div>
                       </div>
                     </div>

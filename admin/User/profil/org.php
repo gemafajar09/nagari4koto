@@ -13,7 +13,7 @@
             <div class="col-md-12">
                 <div class="box box-info">
                     <div class="box-header with-border">
-                        <a href="?module=org_data&aksi=tambahorganisasi" class="btn btn-flat btn-primary">Tambah Struktur Organisasi</a>
+                        <a href="?module=profil/org_data&aksi=tambahorganisasi" class="btn btn-flat btn-primary">Tambah Struktur Organisasi</a>
                     </div>
                     <div class="box-body">
                         <div class="table table-responsive">
@@ -35,8 +35,8 @@
                                             <td><?= $no; ?></td>
                                             <td><img style="width:75px;height:75px;" src="../../asset/images/<?= $r['gambar'] ?>"></td>
                                             <td>
-                                                <a href="?module=org_data&aksi=editorganisasi&id_organisasi=<?= $r['id_organisasi']; ?>" class="btn btn-flat btn-primary" style="border-radius:2px;">Edit Struktur Organisasi</a>
-                                                <a href="?module=org_data&aksi=hapusorganisasi&id_organisasi=<?= $r['id_organisasi']; ?>" class="btn btn-info">Hapus Struktur Organisasi</a>
+                                                <a href="?module=profil/org_data&aksi=editorganisasi&id_organisasi=<?= $r['id_organisasi']; ?>" class="btn btn-flat btn-primary" style="border-radius:2px;">Edit Struktur Organisasi</a>
+                                                <a href="?module=profil/org_data&aksi=hapusorganisasi&id_organisasi=<?= $r['id_organisasi']; ?>" class="btn btn-info">Hapus Struktur Organisasi</a>
                                             </td>
                                         </tr>
                                     <?php $no++;

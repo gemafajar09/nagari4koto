@@ -13,7 +13,7 @@
       <div class="col-md-12">
         <div class="box box-info">
           <div class="box-header with-border">
-            <a href="?module=komisionerdata&aksi=tambahkom" class="btn btn-flat btn-primary">Tambah Komisioner</a>
+            <a href="?module=profil/komisionerdata&aksi=tambahkom" class="btn btn-flat btn-primary">Tambah Komisioner</a>
           </div>
           <div class="box-body">
             <div class="table table-responsive">
@@ -39,8 +39,8 @@
                       <td><?= $r['dll']; ?></td>
 
                       <td>
-                        <a href="?module=komisionerdata&aksi=editkom&idkomisioner=<?= $r['idkomisioner']; ?>" class="btn btn-flat btn-primary" style="border-radius:2px;">Edit Komisioner</a>
-                        <a href="?module=komisionerdata&aksi=hapuskom&idkomisioner=<?= $r['idkomisioner']; ?>" class="btn btn-info">Hapus Komisioner</a>
+                        <a href="?module=profil/komisionerdata&aksi=editkom&idkomisioner=<?= $r['idkomisioner']; ?>" class="btn btn-flat btn-primary" style="border-radius:2px;">Edit Komisioner</a>
+                        <a href="?module=profil/komisionerdata&aksi=hapuskom&idkomisioner=<?= $r['idkomisioner']; ?>" class="btn btn-info">Hapus Komisioner</a>
                       </td>
                     </tr>
                   <?php $no++;

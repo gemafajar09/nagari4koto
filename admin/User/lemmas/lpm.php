@@ -5,51 +5,36 @@
     $aksi = $_GET['aksi'];
 
     switch ($aksi) {
-      case "tambahberita":
+      case "tambahlpm":
 
         if (isset($_POST['save'])) {
-          $tglskrg = date('Y-m-d H:i:s');
-          $judul = anti_injection($_POST['judul']);
-          $judulseo = seo_title($_POST['judul']);
-          $postby = anti_injection($_POST['postby']);
-          $nmberkas  = $_FILES["gambar"]["name"];
-          $lokberkas = $_FILES["gambar"]["tmp_name"];
-          $nmfoto = date("YmdHis") . $nmberkas;
-          $valid    = array('jpg', 'png', 'gif', 'jpeg', 'JPG');
-          list($txt, $ext) = explode(".", $nmfoto);
-          if (in_array($ext, $valid)) {
-            if (!empty($lokberkas)) {
-              move_uploaded_file($lokberkas, "../../asset/images/$nmfoto");
-            }
+          $judul = $_POST['judul'];
+          $isi   = $_POST['isi'];
 
-            echo "INSERT INTO tb_berita (judul, isiberita, posting_by, tgl_posting, judul_seo, gambar) VALUES ('$judul', '$_POST[deskripsi]', '$postby', '$tglskrg', '$judulseo', '$nmfoto')";
-            exit;
-            $save = mysqli_query($kon, "INSERT INTO tb_berita (judul, isiberita, posting_by, tgl_posting, judul_seo, gambar) VALUES ('$judul', '$_POST[deskripsi]', '$postby', '$tglskrg', '$judulseo', '$nmfoto')");
+          if (in_array($ext, $valid)) {
+
+            $save = mysqli_query($kon, "INSERT INTO tb_lpm (judul_lpm, isi_lpm) VALUES ('$judul', '$_POST[isi]')");
 
             if ($save) {
               echo "<script>
             alert('Tambah Data Berhasil');
-            window.location='../index.php?module=berita/berita';
+            window.location='../index.php?module=lemmas/lpm';
             </script>";
               exit;
             } else {
               echo "<script>alert('Gagal');
             </script>";
             }
-          } else {
-            echo "<script>
-              alert('Format Foto Tidak Mendukung, Upload Foto Dengan Format png/jpg/gif/jpeg');
-            </script>";
           }
         }
   ?>
         <section class="content-header">
           <h1>
-            Berita
+            LPM
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li class="active">Tambah Berita</li>
+            <li class="active">Tambah Konten</li>
           </ol>
         </section>
         <!-- Content Header (Page header) -->
@@ -72,9 +57,9 @@
                       </div>
 
                       <div class="form-group">
-                        <label for="editor" class="col-sm-2 control-label">Isi Berita</label>
+                        <label for="editor" class="col-sm-2 control-label">Isi Konten</label>
                         <div class="col-sm-8">
-                          <textarea type="text" name="deskripsi" id="editor" class="form-control" rows="15" cols="80"></textarea>
+                          <textarea type="text" name="isi" id="editor" class="form-control" rows="15" cols="80"></textarea>
 
                         </div>
                       </div>

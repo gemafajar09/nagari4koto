@@ -40,10 +40,10 @@ if (!$_SESSION['id']) {
   <body class="hold-transition skin-blue sidebar-mini">
 
     <div class="wrapper">
-      <!-- <div class="logo">
+      <div class="logo">
         <img src="../../img/logo/<?= $logohitam['img_logo'] ?>" style="margin-left: 30px; margin-top: 5px; width: 150px;">
         <span class="nm-sek"></span>
-      </div> -->
+      </div>
       <header class="main-header">
         <!-- Logo -->
         <div href="#" class="logo">
@@ -129,8 +129,8 @@ if (!$_SESSION['id']) {
               <ul class="treeview-menu">
 
                 <li>
-                  <a href="?module=alamatbawaslu">
-                    <i class="fa fa-map-marker"></i> <span>Alamat</span>
+                  <a href="?module=kontak/alamatbawaslu">
+                    <i class="fa fa-map-marker"></i> <span>Alamat Bawaslu</span>
                   </a>
                 </li>
 
@@ -221,7 +221,7 @@ if (!$_SESSION['id']) {
                 </li>
               </ul>
             </li>
-
+            
             <li>
               <a href="?module=berita/berita">
                 <i class="fa fa-files-o"></i> <span>Berita</span>
@@ -252,24 +252,31 @@ if (!$_SESSION['id']) {
               <a href="?module=video">
                 <i class="fa fa-toggle-right"></i> <span>Video</span>
               </a>
-            </li>
+              <ul class="treeview-menu">
+                <li>
+                  <a href="?module=informasi/agenda">
+                    <i class="fa fa-files-o"></i> <span>Agenda</span>
+                  </a>
+                </li>
 
-            <li>
-              <a href="?module=pengumuman">
-                <i class="fa fa-thumb-tack"></i> <span>Informasi</span>
-              </a>
-            </li>
+                <!-- <li>
+                  <a href="?module=informasi/event">
+                    <i class="fa fa-info"></i> <span>Jadwal Event</span>
+                  </a>
+                </li> -->
 
-            <li>
-              <a href="?module=informasipublik">
-                <i class="fa fa-thumb-tack"></i> <span>Informasi Publik</span>
-              </a>
-            </li>
+                <li>
+                  <a href="?module=informasi/pengumuman">
+                    <i class="fa fa-thumb-tack"></i> <span>Informasi Bawaslu</span>
+                  </a>
+                </li>
 
-            <li>
-              <a href="?module=tautan">
-                <i class="fa fa-tag"></i> <span>Tautan</span>
-              </a>
+                <li>
+                  <a href="?module=informasi/informasipublik">
+                    <i class="fa fa-thumb-tack"></i> <span>Informasi Publik</span>
+                  </a>
+                </li>
+              </ul>
             </li>
 
             <li class="treeview">
@@ -281,19 +288,19 @@ if (!$_SESSION['id']) {
               <ul class="treeview-menu">
 
                 <li>
-                  <a href="?module=alamatbawaslu">
+                  <a href="?module=lemmas/lpmbawaslu">
                     <i class="fa fa-user"></i> <span>LPM</span>
                   </a>
                 </li>
 
                 <li>
-                  <a href="?module=notelp">
+                  <a href="?module=lemmas/notelp">
                     <i class="fa fa-user"></i> <span>Karang Taruna</span>
                   </a>
                 </li>
 
                 <li>
-                  <a href="?module=emailbawaslu">
+                  <a href="?module=lemmas/emailbawaslu">
                     <i class="fa fa-user"></i> <span>PKK</span>
                   </a>
                 </li>
@@ -354,13 +361,43 @@ if (!$_SESSION['id']) {
               </ul>
             </li>
 
+            <li>
+              <a href="?module=berita/berita">
+                <i class="fa fa-files-o"></i> <span>Berita</span>
+              </a>
+            </li>
+
+
+            <li>
+              <a href="?module=ppid/ppidbawaslu">
+                <i class="fa fa-thumb-tack"></i> <span>PPID</span>
+              </a>
+            </li>
+
+
+
+
+            <li>
+              <a href="?module=video">
+                <i class="fa fa-toggle-right"></i> <span>Video</span>
+              </a>
+            </li>
+
+
+
+            <li>
+              <a href="?module=tautan/tautan">
+                <i class="fa fa-tag"></i> <span>Tautan</span>
+              </a>
+            </li>
+
             <!-- <li>
               <a href="?module=bukusakubawaslu">
                 <i class="fa fa-book"></i> <span>Buku Saku Bawaslu </span>
               </a>
-            </li> -->
+            </li>
 
-            <!-- <li>
+            <li>
               <a href="?module=perbawalusterbaru">
                 <i class="fa fa-book"></i> <span>Perbawaslu Terbaru </span>
               </a>

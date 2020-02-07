@@ -20,7 +20,7 @@
           if ($save) {
             echo "<script>
             alert('Tambah Data Berhasil');
-            window.location='?module=komisioner';
+            window.location='?module=profil/komisioner';
             </script>";
             exit;
           } else {
@@ -104,7 +104,7 @@
           if ($save) {
             echo "<script>
             alert('Edit Data Berhasil');
-            window.location='?module=komisioner';
+            window.location='?module=profil/komisioner';
               </script>";
           } else {
             echo "<script>alert('Gagal');
@@ -154,7 +154,7 @@
                       <div class="form-group">
                         <div class="col-sm-4 col-md-offset-2">
                           <button type="submit" name="save" class="btn btn-primary btn-flat">Simpan</button>
-                          <a href="?module=komisioner" class="btn btn-primary btn-flat">Kembali</a>
+                          <a href="?module=profil/komisioner" class="btn btn-primary btn-flat">Kembali</a>
                         </div>
                       </div>
                     </div>
@@ -174,12 +174,12 @@
           if ($del) {
             echo "<script>
                   alert('Data Berhasil Dihapus');
-                  window.location='index.php?module=komisioner';
+                  window.location='index.php?module=profil/komisioner';
                 </script>";
           } else {
             echo "<script>
                 alert('Data Gagal Dihapus');
-                window.location='index.php?module=komisioner';
+                window.location='index.php?module=profil/komisioner';
               </script>";
           }
         }

@@ -18,7 +18,7 @@
           if ($save) {
             echo "<script>
             alert('Tambah Data Berhasil');
-            window.location='?module=tautan';
+            window.location='?module=tautan/tautan';
             </script>";
             exit;
           } else {
@@ -73,6 +73,7 @@
                       <div class="form-group">
                         <div class="col-sm-4 col-md-offset-2">
                           <button type="submit" name="save1" class="btn btn-primary btn-flat">Simpan</button>
+                          <a href="?module=tautan/tautan" class="btn btn-primary btn-flat">Kembali</a>
                         </div>
                       </div>
                     </div>
@@ -104,7 +105,7 @@
           if ($save) {
             echo "<script>
             alert('Edit Data Berhasil');
-            window.location='?module=tautan';
+            window.location='?module=tautan/tautan';
               </script>";
           } else {
             echo "<script>alert('Gagal');
@@ -161,7 +162,7 @@
                       <div class="form-group">
                         <div class="col-sm-4 col-md-offset-2">
                           <button type="submit" name="save" class="btn btn-primary btn-flat">Simpan</button>
-                          <a href="?module=tautan" class="btn btn-primary btn-flat">Kembali</a>
+                          <a href="?module=tautan/tautan" class="btn btn-primary btn-flat">Kembali</a>
                         </div>
                       </div>
                     </div>
@@ -181,12 +182,12 @@
           if ($del) {
             echo "<script>
                   alert('Data Berhasil Dihapus');
-                  window.location='index.php?module=tautan';
+                  window.location='index.php?module=tautan/tautan';
                   </script>";
           } else {
             echo "<script>
                 alert('Data Gagal Dihapus');
-                window.location='index.php?module=tautan';
+                window.location='index.php?module=tautan/tautan';
               </script>";
           }
         }

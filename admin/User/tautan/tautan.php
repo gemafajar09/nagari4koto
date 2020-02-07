@@ -13,7 +13,7 @@
       <div class="col-md-12">
         <div class="box box-info">
           <div class="box-header with-border">
-            <a href="?module=tautandata&aksi=tambahtautan" class="btn btn-flat btn-primary">Tambah Tautan</a>
+            <a href="?module=tautan/tautandata&aksi=tambahtautan" class="btn btn-flat btn-primary">Tambah Tautan</a>
           </div>
           <div class="box-body">
             <div class="table table-responsive">
@@ -40,8 +40,8 @@
                       <td><?= $r["link"]; ?></td>
                       <td><img style="width:75px;height:75px;" src="../../asset/images<?= $r['gambar'] ?>"></td>
                       <td>
-                        <a href="?module=tautandata&aksi=edittautan&idtautan=<?= $r['idtautan']; ?>" class="btn btn-flat btn-primary" style="border-radius:2px;">Edit Tautan</a>
-                        <a href="?module=tautandata&aksi=hapustautan&idtautan=<?= $r['idtautan']; ?>" class="btn btn-info">Hapus Tautan</a>
+                        <a href="?module=tautan/tautandata&aksi=edittautan&idtautan=<?= $r['idtautan']; ?>" class="btn btn-flat btn-primary" style="border-radius:2px;">Edit Tautan</a>
+                        <a href="?module=tautan/tautandata&aksi=hapustautan&idtautan=<?= $r['idtautan']; ?>" class="btn btn-info">Hapus Tautan</a>
                       </td>
                     </tr>
                   <?php $no++;
