@@ -22,12 +22,14 @@
               move_uploaded_file($lokberkas, "../../asset/images/$nmfoto");
             }
 
+            echo "INSERT INTO tb_berita (judul, isiberita, posting_by, tgl_posting, judul_seo, gambar) VALUES ('$judul', '$_POST[deskripsi]', '$postby', '$tglskrg', '$judulseo', '$nmfoto')";
+            exit;
             $save = mysqli_query($kon, "INSERT INTO tb_berita (judul, isiberita, posting_by, tgl_posting, judul_seo, gambar) VALUES ('$judul', '$_POST[deskripsi]', '$postby', '$tglskrg', '$judulseo', '$nmfoto')");
 
             if ($save) {
               echo "<script>
             alert('Tambah Data Berhasil');
-            window.location='index.php?module=berita';
+            window.location='../index.php?module=berita/berita';
             </script>";
               exit;
             } else {
@@ -94,6 +96,7 @@
                       <div class="form-group">
                         <div class="col-sm-4 col-md-offset-2">
                           <button type="submit" name="save" class="btn btn-primary btn-flat">Simpan</button>
+                          <a href="?module=berita/berita" class="btn btn-primary btn-flat">Kembali</a>
                         </div>
                       </div>
                     </div>
@@ -122,7 +125,7 @@
             if ($save) {
               echo "<script>
               alert('Edit Data Berhasil');
-              window.location='?module=berita';
+              window.location='../index.php?module=berita/berita';
                 </script>";
             } else {
               echo "<script>alert('Gagal');
@@ -135,13 +138,13 @@
               move_uploaded_file($lokberkas, "../../asset/images/ .$nmfoto");
               $lihat = mysqli_fetch_assoc(mysqli_query($kon, "SELECT * FROM tbl_berita where idberita='$_GET[id]'"));
 
-              unlink("../../img/blog/" . $lihat['gambar']);
+              unlink("../../asset/images/" . $lihat['gambar']);
 
               $save = mysqli_query($kon, "UPDATE tb_berita set judul='$judul', isiberita='$_POST[deskripsi]', gambar='$nmfoto', posting_by='$postby', judul_seo='$judulseo' where idberita='$_GET[id]'");
               if ($save) {
                 echo "<script>
             alert('Edit Data Berhasil');
-            window.location='?module=berita';
+            window.location='../index.php?module=berita/berita';
               </script>";
               } else {
                 echo "<script>alert('Gagal');
@@ -215,7 +218,7 @@
                     <div class="form-group">
                       <div class="col-sm-4 col-md-offset-2">
                         <button type="submit" name="save" class="btn btn-primary btn-flat">Simpan</button>
-                        <a href="?module=berita" class="btn btn-primary btn-flat">Kembali</a>
+                        <a href="?module=berita/berita" class="btn btn-primary btn-flat">Kembali</a>
                       </div>
                     </div>
                   </div>
@@ -236,12 +239,12 @@
           if ($del) {
             echo "<script>
                 alert('Data Berhasil Dihapus');
-                window.location='index.php?module=berita';
+                window.location='index.php?module=berita/berita';
                   </script>";
           } else {
             echo "<script>
                 alert('Data Gagal Dihapus');
-                window.location='index.php?module=berita';
+                window.location='index.php?module=berita/berita';
               </script>";
           }
         }
@@ -266,7 +269,7 @@
         <div class="col-md-12">
           <div class="box box-info">
             <div class="box-header with-border">
-              <a href="?module=berita&aksi=tambahberita" class="btn btn-flat btn-primary">Tambah Berita</a>
+              <a href="?module=berita/berita&aksi=tambahberita" class="btn btn-flat btn-primary">Tambah Berita</a>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -298,8 +301,8 @@
                         <td><?= $des; ?></td>
                         <td><?= $r["posting_by"]; ?></td>
                         <td><?= $r["tgl_posting"]; ?></td>
-                        <td><a href="?module=berita&aksi=editberita&id=<?= $r['idberita']; ?>" class="btn btn-success btn-flat">Edit</a>
-                          <a href="?module=berita&aksi=hapusberita&id=<?= $r['idberita']; ?>" class="btn btn-danger btn-flat" onclick="return confirm('Yakin Akan Menghapus Data Ini ... ?')">Hapus</a>
+                        <td><a href="?module=berita/berita&aksi=editberita&id=<?= $r['idberita']; ?>" class="btn btn-success btn-flat">Edit</a>
+                          <a href="?module=berita/berita&aksi=hapusberita&id=<?= $r['idberita']; ?>" class="btn btn-danger btn-flat" onclick="return confirm('Yakin Akan Menghapus Data Ini ... ?')">Hapus</a>
                         </td>
                       </tr>
                     <?php $no++;

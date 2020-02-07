@@ -228,15 +228,42 @@ if (!$_SESSION['id']) {
               </ul>
             </li>
 
-            <li>
-              <a href="?module=berita">
-                <i class="fa fa-files-o"></i> <span>Berita</span>
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-list"></i>
+                <span>Informasi</span>
+                <i class="fa fa-angle-left pull-right"></i>
               </a>
+              <ul class="treeview-menu">
+                <li>
+                  <a href="?module=informasi/agenda">
+                    <i class="fa fa-files-o"></i> <span>Agenda</span>
+                  </a>
+                </li>
+
+                <!-- <li>
+                  <a href="?module=informasi/event">
+                    <i class="fa fa-info"></i> <span>Jadwal Event</span>
+                  </a>
+                </li> -->
+
+                <li>
+                  <a href="?module=informasi/pengumuman">
+                    <i class="fa fa-thumb-tack"></i> <span>Informasi Bawaslu</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="?module=informasi/informasipublik">
+                    <i class="fa fa-thumb-tack"></i> <span>Informasi Publik</span>
+                  </a>
+                </li>
+              </ul>
             </li>
 
             <li>
-              <a href="?module=agenda">
-                <i class="fa fa-files-o"></i> <span>Agenda</span>
+              <a href="?module=berita/berita">
+                <i class="fa fa-files-o"></i> <span>Berita</span>
               </a>
             </li>
 
@@ -248,11 +275,7 @@ if (!$_SESSION['id']) {
             </li>
 
 
-            <li>
-              <a href="?module=event">
-                <i class="fa fa-info"></i> <span>Jadwal Event</span>
-              </a>
-            </li>
+
 
             <li>
               <a href="?module=video">
@@ -260,17 +283,7 @@ if (!$_SESSION['id']) {
               </a>
             </li>
 
-            <li>
-              <a href="?module=pengumuman">
-                <i class="fa fa-thumb-tack"></i> <span>Informasi</span>
-              </a>
-            </li>
 
-            <li>
-              <a href="?module=informasipublik">
-                <i class="fa fa-thumb-tack"></i> <span>Informasi Publik</span>
-              </a>
-            </li>
 
             <li>
               <a href="?module=tautan">
