@@ -6,5 +6,5 @@ $user = "root";
 $password = "";
 $database = "nagari4koto";
 
-$kon = mysqli_connect($server, $user, $password, $database) or die (mysqli_connect_error());
+$kon = new mysqli($server, $user, $password, $database) or die (mysqli_connect_error());
 ?>

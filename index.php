@@ -69,13 +69,9 @@ include "menu/tgl_indo.php";
           <a class="dropdown-item" href="?page=menu/tugas">Tugas Dan Wewenang</a> -->
         </div>
       </li>
-<!-- 
-      <li class="nav-item">
-        <a class="nav-link" href="?page=menu/agenda">Agenda</a>
-      </li> -->
       
       <li class="nav-item">
-        <a class="nav-link" href="#">Galery</a>
+        <a class="nav-link" href="?page=menu/galeri">Galery</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="info" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">LemMas</a>
@@ -101,11 +97,11 @@ include "menu/tgl_indo.php";
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="?page=menu/data_pekerjaan">Data Pekerjaan</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Data Jenis Kelamin</a>
+          <a class="dropdown-item" href="?page=menu/data_jenis_kelamin">Data Jenis Kelamin</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Data Golongan Darah</a>
+          <a class="dropdown-item" href="?page=menu/data_golongan_darah">Data Golongan Darah</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Data Kelompok Umur</a>
+          <a class="dropdown-item" href="?page=menu/data_umur">Data Kelompok Umur</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Data Perkawinan</a>
         </div>
@@ -118,6 +114,16 @@ include "menu/tgl_indo.php";
       <li class="nav-item">
         <a class="nav-link" href="?page=menu/agenda">Transparasi Keuangan</a>
       </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="data" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ganti Bahasa</a>
+        <div class="dropdown-menu" aria-labelledby="data" style="font-size:11px">
+        <center>
+          <div id="google_translate_element"></div>
+        </center>
+        </div>
+      </li>
+
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -128,8 +134,8 @@ include "menu/tgl_indo.php";
 <!-- Slider -->
 <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
-    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+    <!-- <li data-target="#carouselExampleCaptions" data-slide-to="0"></li> -->
+    <!-- <li data-target="#carouselExampleCaptions" data-slide-to="1"></li> -->
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -139,13 +145,18 @@ include "menu/tgl_indo.php";
         <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
       </div>
     </div>
+    <?php 
+    $data = $kon->query("SELECT * FROM tb_slider");
+    foreach($data as $i => $a){
+    ?>
     <div class="carousel-item">
-      <img src="asset/images/slide2.jpg" height="400px" class="d-block w-100">
+      <img src="asset/images/<?= $a['gambar'] ?>" height="400px" class="d-block w-100">
       <div class="carousel-caption d-none d-md-block">
         <h5>Second slide label</h5>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       </div>
     </div>
+    <?php } ?>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -188,7 +199,13 @@ include "menu/tgl_indo.php";
 <script src="asset/bootstrap/js/bootstrap.min.js"></script>
 <script src="asset/datatables/jquery.dataTables.js"></script>
 <script src="asset/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 <?php include "script.php" ?>
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'id'}, 'google_translate_element');
+}
+</script>
 </body>
 </html>

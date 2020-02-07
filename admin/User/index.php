@@ -204,7 +204,7 @@ if (!$_SESSION['id']) {
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-list"></i>
-                <span>Profil Bawaslu</span>
+                <span>Profil</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
@@ -219,17 +219,11 @@ if (!$_SESSION['id']) {
                     <i class="fa fa-info"></i> <span>Struktur Organisasi</span>
                   </a>
                 </li>
-
-                <li>
-                  <a href="?module=profil/komisioner">
-                    <i class="fa fa-user"></i> <span>Komisioner</span>
-                  </a>
-                </li>
               </ul>
             </li>
 
             <li>
-              <a href="?module=berita">
+              <a href="?module=berita/berita">
                 <i class="fa fa-files-o"></i> <span>Berita</span>
               </a>
             </li>
@@ -242,7 +236,7 @@ if (!$_SESSION['id']) {
 
 
             <li>
-              <a href="?module=ppidbawaslu">
+              <a href="?module=ppid/ppidbawaslu">
                 <i class="fa fa-thumb-tack"></i> <span>PPID</span>
               </a>
             </li>
@@ -373,7 +367,7 @@ if (!$_SESSION['id']) {
             </li> -->
 
             <li>
-              <a href="?module=sliderbawaslu">
+              <a href="?module=slider/sliderbawaslu">
                 <i class="fa fa-image"></i> <span>Slider </span>
               </a>
             </li>
