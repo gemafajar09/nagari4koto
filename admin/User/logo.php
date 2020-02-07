@@ -21,7 +21,7 @@
           if (!empty($lokberkas)) {
             list($txt, $ext) = explode(".", $nmfoto);
             if (in_array($ext, $valid)) {
-              move_uploaded_file($lokberkas, "../../asset/images/ " . $nmfoto);
+              move_uploaded_file($lokberkas, "../../asset/images/" . $nmfoto);
               $lihat = mysqli_fetch_assoc(mysqli_query($kon, "SELECT * FROM logo where id_logo='$_GET[id]'"));
 
               unlink("../../asset/images/" . $lihat['img_logo']);
@@ -29,8 +29,8 @@
 
               $save = mysqli_query($kon, "UPDATE logo set kategori='$_POST[kategori]', img_logo='$nmfoto' where id_logo='$_GET[id]'");
 
-              echo $lokberkas;
-              exit;
+              // echo $lokberkas;
+              // exit;
               if ($save) {
                 echo "<script>
             alert('Edit Data Berhasil');

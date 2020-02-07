@@ -21,7 +21,7 @@ include '../koneksi.php';
                     if ($save) {
                         echo "<script>
             alert('Tambah Data Berhasil');
-            window.location='?module=org';
+            window.location='?module=profil/org';
             </script>";
                         exit;
                     } else {
@@ -94,7 +94,7 @@ include '../koneksi.php';
                     if ($save) {
                         echo "<script>
             alert('Edit Data Berhasil');
-            window.location='?module=org';
+            window.location='?module=profil/org';
             </script>";
                     } else {
                         echo "<script>alert('Gagal');
@@ -138,7 +138,7 @@ include '../koneksi.php';
                                             <div class="form-group">
                                                 <div class="col-sm-4 col-md-offset-2">
                                                     <button type="submit" name="save" class="btn btn-primary btn-flat">Simpan</button>
-                                                    <a href="?module=organisasi" class="btn btn-primary btn-flat">Kembali</a>
+                                                    <a href="?module=profil/organisasi" class="btn btn-primary btn-flat">Kembali</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -159,13 +159,13 @@ include '../koneksi.php';
                         echo
                             "<script>
                                 alert('Data Berhasil Dihapus');
-                                window.location='index.php?module=org';
+                                window.location='index.php?module=profil/org';
                             </script>";
                     } else {
                         echo
                             "<script>
                                 alert('Data Gagal Dihapus');
-                                window.location='index.php?module=org';
+                                window.location='index.php?module=profil/org';
                             </script>";
                     }
                 }
