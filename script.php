@@ -1,5 +1,5 @@
 <script>
-setInterval(kunjungan, 5);
+setInterval(kunjungan, 5000);
 function kunjungan() {
   var tanggal = document.getElementById('tanggal').value;
    $.ajax({

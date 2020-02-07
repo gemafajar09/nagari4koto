@@ -95,7 +95,7 @@ Highcharts.chart('jekel', {
         type: 'variablepie'
     },
     title: {
-        text: 'Data Jenis Kelamin'
+        text: 'Data Golongan Darah'
     },
     tooltip: {
         headerFormat: '',
@@ -124,11 +124,19 @@ Highcharts.chart('jekel', {
         colorByPoint: true,
         name: 'countries',
         data: [{
-            name: 'Laki-laki',
+            name: 'A',
             y: 250,
             z: 92.9
         }, {
-            name: 'Perempuan',
+            name: 'B',
+            y: 100,
+            z: 118.7
+        }, {
+            name: 'O',
+            y: 100,
+            z: 118.7
+        }, {
+            name: 'AB',
             y: 100,
             z: 118.7
         }]

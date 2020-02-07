@@ -95,7 +95,7 @@ Highcharts.chart('jekel', {
         type: 'variablepie'
     },
     title: {
-        text: 'Data Jenis Kelamin'
+        text: 'Data Golongan Umur'
     },
     tooltip: {
         headerFormat: '',

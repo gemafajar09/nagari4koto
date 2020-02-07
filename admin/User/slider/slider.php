@@ -89,7 +89,7 @@ include '../koneksi.php';
           $lokasi_file = $_FILES['fupload']['tmp_name'];
           $nama_file = $_FILES['fupload']['name'];
           if (!empty($lokasi_file)) {
-            move_uploaded_file($lokasi_file, "../../img/slider/" . $nama_file);
+            move_uploaded_file($lokasi_file, "../../asset/images/" . $nama_file);
           } else {
             $nama_file = $_POST["fuploadlama"];
           }

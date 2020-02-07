@@ -204,7 +204,7 @@ if (!$_SESSION['id']) {
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-list"></i>
-                <span>Profil Bawaslu</span>
+                <span>Profil</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
@@ -219,20 +219,38 @@ if (!$_SESSION['id']) {
                     <i class="fa fa-info"></i> <span>Struktur Organisasi</span>
                   </a>
                 </li>
-
-                <li>
-                  <a href="?module=profil/komisioner">
-                    <i class="fa fa-user"></i> <span>Komisioner</span>
-                  </a>
-                </li>
               </ul>
             </li>
+            
+            <li>
+              <a href="?module=berita/berita">
+                <i class="fa fa-files-o"></i> <span>Berita</span>
+              </a>
+            </li>
 
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-list"></i>
-                <span>Informasi</span>
-                <i class="fa fa-angle-left pull-right"></i>
+            <!-- <li>
+              <a href="?module=agenda">
+                <i class="fa fa-files-o"></i> <span>Agenda</span>
+              </a>
+            </li> -->
+
+
+            <li>
+              <a href="?module=ppid/ppidbawaslu">
+                <i class="fa fa-thumb-tack"></i> <span>PPID</span>
+              </a>
+            </li>
+
+
+            <li>
+              <a href="?module=event">
+                <i class="fa fa-info"></i> <span>Jadwal Event</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="?module=video">
+                <i class="fa fa-toggle-right"></i> <span>Video</span>
               </a>
               <ul class="treeview-menu">
                 <li>
