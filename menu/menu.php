@@ -1,11 +1,11 @@
 <div class="row">
     <div class="col-md-12">
 
-        <center>
+        <!-- <center>
             <canvas id="canvas" width="200" height="200" style="background-color:transparent"></canvas>
-        </center>
+        </center> -->
         <div class="card">
-            <div class="card-header" style="background-color:aqua;">
+            <div class="card-header" style="background-color:gray;">
                 <i>Jumlah Kunjungan</i>
             </div>
             <div class="card-body">
@@ -14,7 +14,7 @@
         </div>
 
         <div class="card">
-            <div class="card-header" style="background-color:aqua;">
+            <div class="card-header" style="background-color:gray;">
                 <i>Peta Desa</i>
             </div>
             <div class="card-body">
