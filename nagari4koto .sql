@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Waktu pembuatan: 03 Feb 2020 pada 11.06
--- Versi server: 5.7.29
--- Versi PHP: 7.3.6
+-- Host: localhost
+-- Generation Time: Feb 08, 2020 at 08:59 AM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.3.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `payakumb_pyk`
+-- Database: `nagari4koto`
 --
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `alamat`
+-- Table structure for table `alamat`
 --
 
 CREATE TABLE `alamat` (
@@ -34,7 +34,7 @@ CREATE TABLE `alamat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `alamat`
+-- Dumping data for table `alamat`
 --
 
 INSERT INTO `alamat` (`idalamat`, `alamat`) VALUES
@@ -43,7 +43,195 @@ INSERT INTO `alamat` (`idalamat`, `alamat`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `email`
+-- Table structure for table `dataadmin`
+--
+
+CREATE TABLE `dataadmin` (
+  `admin_id` int(11) NOT NULL,
+  `admin_nama` varchar(50) NOT NULL,
+  `admin_kepdus` varchar(50) NOT NULL,
+  `admin_rt` varchar(50) NOT NULL,
+  `admin_kk` varchar(50) NOT NULL,
+  `admin_jiwa` varchar(50) NOT NULL,
+  `admin_jekel1` varchar(50) NOT NULL,
+  `admin_jekel2` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `dataadmin`
+--
+
+INSERT INTO `dataadmin` (`admin_id`, `admin_nama`, `admin_kepdus`, `admin_rt`, `admin_kk`, `admin_jiwa`, `admin_jekel1`, `admin_jekel2`) VALUES
+(4, 'Wonosobo', 'Luhut Situmorang', '3', '101', '777', '77', '700'),
+(5, 'Kebumen', 'Slamed', '9', '180', '590', '300', '290'),
+(6, 'Boyolali', 'Anim anim labore cum', '18', '95', '5', '33', '22');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `dataditempuh`
+--
+
+CREATE TABLE `dataditempuh` (
+  `tmp_id` int(11) NOT NULL,
+  `tmp_kel` varchar(50) NOT NULL,
+  `tmp_jml` varchar(50) NOT NULL,
+  `tmp_jml2` varchar(20) NOT NULL,
+  `tmp_lk` varchar(20) NOT NULL,
+  `tmp_lk2` varchar(20) NOT NULL,
+  `tmp_pr` varchar(20) NOT NULL,
+  `tmp_pr2` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `dataditempuh`
+--
+
+INSERT INTO `dataditempuh` (`tmp_id`, `tmp_kel`, `tmp_jml`, `tmp_jml2`, `tmp_lk`, `tmp_lk2`, `tmp_pr`, `tmp_pr2`) VALUES
+(1, 'Commodi reiciendis e', '17', '39', '16', '74', '18', '47');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `datagd`
+--
+
+CREATE TABLE `datagd` (
+  `data_id` int(11) NOT NULL,
+  `data_kel` varchar(50) NOT NULL,
+  `data_jml` varchar(20) NOT NULL,
+  `data_jml2` varchar(20) NOT NULL,
+  `data_lk` varchar(20) NOT NULL,
+  `data_lk2` varchar(20) NOT NULL,
+  `data_pr` varchar(20) NOT NULL,
+  `data_pr2` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `datagd`
+--
+
+INSERT INTO `datagd` (`data_id`, `data_kel`, `data_jml`, `data_jml2`, `data_lk`, `data_lk2`, `data_pr`, `data_pr2`) VALUES
+(1, 'Consequat Et velit ', '86', '17', '65', '74', '59', '39');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `datajk`
+--
+
+CREATE TABLE `datajk` (
+  `data_id` int(11) NOT NULL,
+  `data_kel` varchar(50) NOT NULL,
+  `data_jml` varchar(20) NOT NULL,
+  `data_jml2` varchar(20) NOT NULL,
+  `data_lk` varchar(20) NOT NULL,
+  `data_lk2` varchar(20) NOT NULL,
+  `data_pr` varchar(20) NOT NULL,
+  `data_pr2` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `datajk`
+--
+
+INSERT INTO `datajk` (`data_id`, `data_kel`, `data_jml`, `data_jml2`, `data_lk`, `data_lk2`, `data_pr`, `data_pr2`) VALUES
+(1, 'Laki - Laki', '55', '11', '73', '41', '1', '18'),
+(2, 'Perempuan', '45', '71', '25', '15', '100', '98');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `datakawin`
+--
+
+CREATE TABLE `datakawin` (
+  `data_id` int(11) NOT NULL,
+  `data_kel` varchar(50) NOT NULL,
+  `data_jml` varchar(20) NOT NULL,
+  `data_jml2` varchar(20) NOT NULL,
+  `data_lk` varchar(20) NOT NULL,
+  `data_lk2` varchar(20) NOT NULL,
+  `data_pr` varchar(20) NOT NULL,
+  `data_pr2` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `datakawin`
+--
+
+INSERT INTO `datakawin` (`data_id`, `data_kel`, `data_jml`, `data_jml2`, `data_lk`, `data_lk2`, `data_pr`, `data_pr2`) VALUES
+(1, 'Aute dolores delenit', '16', '81', '41', '27', '61', '93');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `dataku`
+--
+
+CREATE TABLE `dataku` (
+  `data_id` int(11) NOT NULL,
+  `data_kel` varchar(50) NOT NULL,
+  `data_jml` varchar(20) NOT NULL,
+  `data_jml2` varchar(20) NOT NULL,
+  `data_lk` varchar(20) NOT NULL,
+  `data_lk2` varchar(20) NOT NULL,
+  `data_pr` varchar(20) NOT NULL,
+  `data_pr2` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `dataku`
+--
+
+INSERT INTO `dataku` (`data_id`, `data_kel`, `data_jml`, `data_jml2`, `data_lk`, `data_lk2`, `data_pr`, `data_pr2`) VALUES
+(1, 'Cillum nulla quis re', '64', '76', '31', '58', '1', '59');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `datapekerjaan`
+--
+
+CREATE TABLE `datapekerjaan` (
+  `data_id` int(11) NOT NULL,
+  `data_kel` varchar(50) NOT NULL,
+  `data_jml` varchar(20) NOT NULL,
+  `data_jml2` varchar(20) NOT NULL,
+  `data_lk` varchar(20) NOT NULL,
+  `data_lk2` varchar(20) NOT NULL,
+  `data_pr` varchar(20) NOT NULL,
+  `data_pr2` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `datapendidik`
+--
+
+CREATE TABLE `datapendidik` (
+  `pendkk_id` int(11) NOT NULL,
+  `pendkk_kel` varchar(50) NOT NULL,
+  `pendkk_jml` varchar(50) NOT NULL,
+  `pendkk_jml2` varchar(50) NOT NULL,
+  `pendkk_lk` varchar(50) NOT NULL,
+  `pendkk_lk2` varchar(50) NOT NULL,
+  `pendkk_pr` varchar(50) NOT NULL,
+  `pendkk_pr2` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `datapendidik`
+--
+
+INSERT INTO `datapendidik` (`pendkk_id`, `pendkk_kel`, `pendkk_jml`, `pendkk_jml2`, `pendkk_lk`, `pendkk_lk2`, `pendkk_pr`, `pendkk_pr2`) VALUES
+(5, 'Qui nostrum dolore c', '38', '56', '97', '77', '89', '98');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `email`
 --
 
 CREATE TABLE `email` (
@@ -52,16 +240,16 @@ CREATE TABLE `email` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `email`
+-- Dumping data for table `email`
 --
 
 INSERT INTO `email` (`idemail`, `email`) VALUES
-(1, 'bawaslupaya@gmail.com');
+(1, 'bawaslupayak@gmail.com');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `event`
+-- Table structure for table `event`
 --
 
 CREATE TABLE `event` (
@@ -73,7 +261,7 @@ CREATE TABLE `event` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `event`
+-- Dumping data for table `event`
 --
 
 INSERT INTO `event` (`idwaktu`, `judul`, `tgl`, `jam`, `status`) VALUES
@@ -82,7 +270,7 @@ INSERT INTO `event` (`idwaktu`, `judul`, `tgl`, `jam`, `status`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `fb`
+-- Table structure for table `fb`
 --
 
 CREATE TABLE `fb` (
@@ -92,7 +280,7 @@ CREATE TABLE `fb` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `fb`
+-- Dumping data for table `fb`
 --
 
 INSERT INTO `fb` (`idfb`, `fb`, `link`) VALUES
@@ -101,7 +289,7 @@ INSERT INTO `fb` (`idfb`, `fb`, `link`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `ig`
+-- Table structure for table `ig`
 --
 
 CREATE TABLE `ig` (
@@ -111,7 +299,7 @@ CREATE TABLE `ig` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `ig`
+-- Dumping data for table `ig`
 --
 
 INSERT INTO `ig` (`idig`, `ig`, `link`) VALUES
@@ -120,7 +308,7 @@ INSERT INTO `ig` (`idig`, `ig`, `link`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `informasipublic`
+-- Table structure for table `informasipublic`
 --
 
 CREATE TABLE `informasipublic` (
@@ -132,7 +320,7 @@ CREATE TABLE `informasipublic` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `informasipublic`
+-- Dumping data for table `informasipublic`
 --
 
 INSERT INTO `informasipublic` (`idinformasi`, `nama`, `nohp`, `email`, `isi`) VALUES
@@ -141,7 +329,7 @@ INSERT INTO `informasipublic` (`idinformasi`, `nama`, `nohp`, `email`, `isi`) VA
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kota`
+-- Table structure for table `kota`
 --
 
 CREATE TABLE `kota` (
@@ -150,7 +338,7 @@ CREATE TABLE `kota` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kota`
+-- Dumping data for table `kota`
 --
 
 INSERT INTO `kota` (`idkota`, `namakota`) VALUES
@@ -159,7 +347,7 @@ INSERT INTO `kota` (`idkota`, `namakota`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `logo`
+-- Table structure for table `logo`
 --
 
 CREATE TABLE `logo` (
@@ -169,17 +357,17 @@ CREATE TABLE `logo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `logo`
+-- Dumping data for table `logo`
 --
 
 INSERT INTO `logo` (`id_logo`, `kategori`, `img_logo`) VALUES
-(1, 'HITAM', '20190424103356payakumbuh-hitam.png'),
-(2, 'PUTIH', '2019051723175020190424103403payakumbuh-small_ca40b1acd9cf07746ca1d9c0f0de90c6.png');
+(1, 'HITAM', '20200207094854aksara.jpeg'),
+(2, 'PUTIH', '20200203165633download.jpeg');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `notelp`
+-- Table structure for table `notelp`
 --
 
 CREATE TABLE `notelp` (
@@ -190,16 +378,16 @@ CREATE TABLE `notelp` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `notelp`
+-- Dumping data for table `notelp`
 --
 
 INSERT INTO `notelp` (`idtelp`, `telp`, `ket`, `nama`) VALUES
-(2, '082391328074', '', 'Admin');
+(3, '082391328074', '', 'Admin');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `statistik`
+-- Table structure for table `statistik`
 --
 
 CREATE TABLE `statistik` (
@@ -210,7 +398,7 @@ CREATE TABLE `statistik` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `statistik`
+-- Dumping data for table `statistik`
 --
 
 INSERT INTO `statistik` (`ip`, `tanggal`, `hits`, `online`) VALUES
@@ -3469,12 +3657,15 @@ INSERT INTO `statistik` (`ip`, `tanggal`, `hits`, `online`) VALUES
 ('66.220.149.23', '2020-02-03', 2, '1580696831'),
 ('66.220.149.8', '2020-02-03', 1, '1580696831'),
 ('35.199.146.245', '2020-02-03', 1, '1580698158'),
-('35.230.75.159', '2020-02-03', 1, '1580699211');
+('35.230.75.159', '2020-02-03', 1, '1580699211'),
+('::1', '2020-02-05', 8, '1580873958'),
+('::1', '2020-02-07', 9, '1581065035'),
+('::1', '2020-02-08', 5, '1581147329');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `struktur_organisasi`
+-- Table structure for table `struktur_organisasi`
 --
 
 CREATE TABLE `struktur_organisasi` (
@@ -3483,16 +3674,16 @@ CREATE TABLE `struktur_organisasi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `struktur_organisasi`
+-- Dumping data for table `struktur_organisasi`
 --
 
 INSERT INTO `struktur_organisasi` (`id_organisasi`, `gambar`) VALUES
-(6, '3. STRUKTUR ORGANISASI FINISH.jpg');
+(6, 'aksara.jpeg');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_admin`
+-- Table structure for table `tb_admin`
 --
 
 CREATE TABLE `tb_admin` (
@@ -3503,16 +3694,16 @@ CREATE TABLE `tb_admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tb_admin`
+-- Dumping data for table `tb_admin`
 --
 
 INSERT INTO `tb_admin` (`idadmin`, `username`, `password`, `namalengkap`) VALUES
-(1, 'admin', '26d5b562608f28fdd77a4f3455089713', 'Admin Bawaslu');
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'Admin Bawaslu');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_agenda`
+-- Table structure for table `tb_agenda`
 --
 
 CREATE TABLE `tb_agenda` (
@@ -3524,7 +3715,7 @@ CREATE TABLE `tb_agenda` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tb_agenda`
+-- Dumping data for table `tb_agenda`
 --
 
 INSERT INTO `tb_agenda` (`idagenda`, `judul`, `tgl`, `waktu`, `tempat`) VALUES
@@ -3558,12 +3749,13 @@ INSERT INTO `tb_agenda` (`idagenda`, `judul`, `tgl`, `waktu`, `tempat`) VALUES
 (29, 'Rakenis Evaluasi Pengawasan Tahapan Pemilu Tahun 2019 dengan Panwascam Se-Kota Payakumbuh', '2019-06-17', '08:00:00', 'Hotel Grand Narasaki Payakumbuh'),
 (30, 'Rakernis Fasilitasi Gakkumdu dalam Rangka Evaluasi Penanganan pidana Pemilu Tahun 2019', '2019-06-20', '08:30:00', 'Hotel Rocky Bukittinggi'),
 (31, 'Rakernis Penyelesaian Sengketa dalam Rangka Evaluasi Penyelesaian Sengketa Pemilu Tahun 2019', '2019-06-24', '09:00:00', 'Hotel Kolivera III Payakumbuh'),
-(32, 'Rakor dalam Rangka Monitoring, Evaluasi dan Pelaksanaan Program Bawaslu Kota Payakumbuh dan Panwascam Tahun Anggaran 2019', '2019-06-25', '08:30:00', 'Hotel Kolivera III Payakumbuh');
+(32, 'Rakor dalam Rangka Monitoring, Evaluasi dan Pelaksanaan Program Bawaslu Kota Payakumbuh dan Panwascam Tahun Anggaran 2019', '2019-06-25', '08:30:00', 'Hotel Kolivera III Payakumbuh'),
+(34, 'Muswill 3 Permikomnas Koordinator Wilayah 3', '2020-02-29', '09:00:00', 'ITP');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_album`
+-- Table structure for table `tb_album`
 --
 
 CREATE TABLE `tb_album` (
@@ -3573,20 +3765,18 @@ CREATE TABLE `tb_album` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tb_album`
+-- Dumping data for table `tb_album`
 --
 
 INSERT INTO `tb_album` (`idalbum`, `judulalbum`, `coverlbum`) VALUES
-(1, 'Album 1', 'berita2.jpg'),
-(2, 'Acara 2', 'berita3.jpg'),
-(3, 'Apel Rutin Bawaslu Kota Payakumbuh', 'apelgg.jpg'),
 (6, 'Anggota DPRD Kota Payakumbuh Periode 2019-2024', '43.jpg'),
-(7, 'Rekrutmen Panwas Kecamatan ', 'slide 4.jpg');
+(7, 'Rekrutmen Panwas Kecamatan ', 'slide 4.jpg'),
+(15, 'Monkey D Luffy', '1345299.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_berita`
+-- Table structure for table `tb_berita`
 --
 
 CREATE TABLE `tb_berita` (
@@ -3600,7 +3790,7 @@ CREATE TABLE `tb_berita` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tb_berita`
+-- Dumping data for table `tb_berita`
 --
 
 INSERT INTO `tb_berita` (`idberita`, `judul`, `isiberita`, `posting_by`, `tgl_posting`, `judul_seo`, `gambar`) VALUES
@@ -3612,17 +3802,17 @@ INSERT INTO `tb_berita` (`idberita`, `judul`, `isiberita`, `posting_by`, `tgl_po
 (8, 'Bawaslu Kota Payakumbuh Melaksanakan Upacara Memperingati Hari Lahir Pancasila', '<p><span style=\"color:#000000\">payakumbuh.bawaslu.go.id</span></p>\r\n\r\n<p><span style=\"color:#000000\">||Selamat Hari Lahirnya Pancasila 1 Juni 2019||</span></p>\r\n\r\n<p><span style=\"color:#000000\">Bawaslu Kota Payakumbuh Melaksanakan Upacara Memperingati Hari Lahir Pancasila di Kantor Sekretariat Bawaslu Kota Payakumbuh, Upacara di ikuti Oleh Seluruh Jajaran Bawaslu Kota Payakumbuh, Panwascam Se Kota Payakumbuh, dan Panitia Pengawas Kelurahan. Pembina Upacara Muhamad Khadafi Menyampaikan Upacara ini adalah hal yang teramat penting untuk kita laksanakan, Semoga dengan moment ini Kita secara utuh masyarakat Republik Indonesia menjadi satu Kesatuan dalam melihat dan menatap bagaimana Bangsa ini lebih baik dari waktu ke waktu yang berangkat dengan nilai-nilai Pancasila yang menjadi idiologi.</span></p>\r\n\r\n<div class=\"text_exposed_show\">\r\n<p><span style=\"color:#000000\">Payakumbuh, Sabtu 01/Juni/2019 M Bertepatan 27/Ramadhan/1440.</span></p>\r\n</div>\r\n', 'admin', '2019-06-03 06:18:35', 'bawaslu-kota-payakumbuh-melaksanakan-upacara-memperingati-hari-lahir-pancasila', '20190603061835IMG_8041.JPG'),
 (10, 'Bawaslu Kota Payakumbuh menghadiri dan mengucapkan HUT Bhayangkara ke 73', '<p style=\"margin-left:0cm; margin-right:0cm\"><span style=\"color:#000000\"><span style=\"font-size:14px\">payakumbuh.bawaslu.go.id- Ketua Bawaslu Kota Payakumbuh Muhamad Khadafi menghadiri dan mengucapkan selamat HUT Bhayangkara ke-73 yang jatuh pada tanggal 1 Juli 2019. Ucapan itu disampaikan pada Rabu (10/7/2019) pagi saat Perayaan HUT Bhayangkara yang di selenggarakan oleh Polres Kota Payakumbuh beserta jajarannya yang bertempat di Polsek Akabiluru Koto Tangah Batu Hampa Akabiluru, Kabupaten Lima Puluh Kota, Sumatera Barat. Acara ini di hadiri oleh para pimpinan daerah yang tergabung dalam Forum Koordinasi Pimpinan Daerah (Forkopimda) Kota Payakumbuh dan Lima Puluh Kota. </span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm\"><span style=\"color:#000000\"><span style=\"font-size:14px\">Riza Falepi Wlikota Payakumbuh didampingi Sekretaris Daerah Rida Ananda yang baru saja dilantik beberapa bulan lalu juga menyempatkan diri untuk hadir pada acara perayaan HUT Bhayangkara ke 73 yang di gelar Rabu, 10 Juli 2019 di Lapangan Serba Guna Polsek Akabiluru, tampak Hadir Bupati Lima Puluh Kota 2 periode Irfendi Arbi, Dandim 0306/50 Kota Payakumbuh beserta jajaran, DPRD Kota Payakumbuh, pimpinan BUMN se Kota Payakumbuh, Unsur Pimpinan Instansi Vertikal diantaranya Ketua Bawaslu Kota Payakumbuh Muhamad Khadafi, Ketua KPU Haidi Mursal, Hingga Unsur pemerintahan di tingkat terendah seperti Kelurahan, Nagari dan Jorong pun ikut memeriahkan Perayaan HUT Bhayangkara bahkan diantaranya mendapatkan Piagam Penghargaan dari Polres Kota Payakumbuh sebagai bentuk Apresiasi atas Prestasi yang diperoleh dalam berbagai perlombaan yang diselenggarakan oleh panitia beberapa hari yang lalu.</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm\"><span style=\"color:#000000\"><span style=\"font-size:14px\">Kapolres Kota Payakumbuh AKBP Endrastiawan Setyowibowo selaku inspektur upacara membacakan kembali beberpa point penting Amanat Presiden Joko Widodo pada Perayaan HUT Bhayangkara, awalnya AKBP Endrastiawan mengucapkan Terimakasih kepada seluruh Tamu Undangan yang hadir. Endrastiawan juga mengajak kepada seluruh tamu undangan untuk mendoakan Anggota Polri yang gugur dalam bertugas demi menjaga keamanan dan keutuhan Negara Kesatuan Republik Indonesia. Polri dan TNI memiliki peran penting di berbagai event, termasuk dalam pengamanan penyelenggaraan pemilu tahun 2019 yang baru saja diselenggarakan.</span></span></p>\r\n\r\n<h1 style=\"margin-left:0cm; margin-right:0cm\"><br />\r\n&nbsp;</h1>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm\">&nbsp;</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm\">&nbsp;</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm\">&nbsp;</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm\">&nbsp;</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm\">&nbsp;</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm\">&nbsp;</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm\">&nbsp;</p>\r\n', 'admin', '2019-07-10 13:01:27', 'bawaslu-kota-payakumbuh-menghadiri-dan-mengucapkan-hut-bhayangkara-ke-73', '20190710130127DSC00671.JPG'),
 (11, 'KPU Kota Paykumbuh Ketuk Palu penetapan Perolehan Kursi  dan Penetapan Calon Terpilih Hasil Pemilu Tahun 2019 Tingkat Kota Payakumbuh', '<p style=\"margin-left:0cm; margin-right:0cm\"><span style=\"color:#000000\"><span style=\"font-family:Times New Roman,Times,serif\"><span style=\"font-size:18px\">Kota Payakumbuh (payakumbuh.bawaslu.go.id) - Komisi Pemilihan Umum Kota Payakumbuh menetapkan perolehan suara partai politik dan 25 calon anggota legislatif terpilih pada Pemilu 2019 tingkat kota payakumbuh untuk dilantik menjadi anggota DPRD Periode 2019-2024.</span></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm\"><br />\r\n<span style=\"color:#000000\"><span style=\"font-family:Times New Roman,Times,serif\"><span style=\"font-size:18px\">Ketua KPU Kota Payakumbuh Haidi Mursal , saat membuka Rapat Pleno yang berlangsung di Balai Inseminasi Buatan (BIB) Tuah Sakato Payakumbuh , Senin 22 Juli 2019 mengatakan penetapan ini menindaklanjuti Keputusan KPU Nomor: 1027/2019 bahwa paling lambat lima hari setelah diterima surat harus melalukan penetapan perolehan suara partai politik dan calon anggota legislatif (caleg) terpilih DPRD Kota Payakumbuh.</span></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm\"><span style=\"color:#000000\"><span style=\"font-family:Times New Roman,Times,serif\"><span style=\"font-size:18px\">Hadir dalam Rapat tersebut Komisioner KPU Kota Payakumbuh Ketua Haidi Mursal Divisi Keuangan, Umum, Logistik dan Rumah Tangga, Anggota KPU Divisi Hukum dan Pengawasan Ade Jumiarti Marlia, Anggota Divisi Perencanaan, Data dan Informasi Neti Payoka, Anggota Divisi Teknis Penyelenggaraan Nofal Ardi, , dan Anggota Divisi Sosialisasi, Pendidikan Psemilih, partisipasi Masyarakat dan SDM Nina Trisna, Sekretariat KPU, Ketua Bawaslu Kota Payakumbuh Muhamad Khadafi , Anggota Bawaslu Maidona Divisi Hukum penindakan pelanggaran dan penyelesaian sengketa , Anggota Bawaslu Suci Wildanis divisi pengawasan Humas dan Hubal, Walikota Payakumbuh, Forkopimda, Dandim, kapolres, camat dan Saksi dari&nbsp;Partai Politik peserta Pemilu Tahun 2019 di Kota Payakumbuh.</span></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm\"><span style=\"color:#000000\"><span style=\"font-family:Times New Roman,Times,serif\"><span style=\"font-size:18px\">Rapat pleno yang berlangsung pada pulul 09.30 wib Hingga Pukul 15.30 ini berjalan dengan aman dan Kondusip, saat pembacaan Keputusan tidak ada keberatan dari saksi maupun dari Bawaslu, Dalam berita acara disebutkan nihil keberatan dari saksi dan parpol. Rapat Pleno ini merupakan Puncak dari proses penyelenggaraan Pemilihan Umum Tahun 2019 yang digelar 17 April 2019 lalu, semua tahapan penyelenggaraan pemilu tahun 2019 ini merupakan sebuah proses yang panjang yakni memakan waktu lebih kurang 22 bulan lamanya.</span></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm\"><span style=\"color:#000000\"><span style=\"font-family:Times New Roman,Times,serif\"><span style=\"font-size:18px\">Berdasarkan Keputusan Komisi Pemilihan Umum Kota Payakumbuh No : 146/ HK.03.1-Kpt/1376/KPU-Kot/VII/2019 Adapun nama-nama Calon Trepilih Anggota DPRD Kota Payakumbuh Pada pemilu Tahun 2019 adalah sebagai berikut Dapil I Zainir(PKB), Wulan Denura, S.ST (GERINDRA),Yernita (GERINDRA), H. Maharnis Zul, S.Pd (GOLKAR),Ismet Harius, S.Sos (NASDEM),Hamdi Agus, S.T (PKS),H. Suparman, S. Pd (PKS), Ir. H. Ahmad Zifal (PPP), Mesrawati (PAN), Drs. Sri Joko Purwanto (DEMOKRAT), Selanjutnya Dapil II Mawi Etek Erianto (GERINDRA),Wirman Putra, A.Md (GOLKAR), Ahmad Ridha, SH (NASDEM), Heri Iswandi, S.E. DT. Rajo Muntiko Alam (PKS), Mustafa (PKS), H. Alhudri (PPP), Armen Faindal, SH (DEMOKRAT), Syafrizal (PBB), Dapil III Aprizal. M (GERINDRA), Yanuar Gazali. SE (PDIP), H. Yendri Bodra DT. Parmato Alam, SH (GOLKAR), Nasrul (PKS), Edward Df, S.Sos (PPP), Opet Nawati (PAN), Fahlevi Mazni (DEMOKRAT).</span></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm\"><span style=\"color:#000000\"><span style=\"font-family:Times New Roman,Times,serif\"><span style=\"font-size:18px\">Sesuai dengan PKPU Nomor 5 Tahun 2019 tentang Penetapan Pasangan Calon terpilih dan Penentuan Perolehan jumlah Kursi Calon Anggota DPR, DPRD Provinsi dan DPRD Kabupaten/Kota untuk setiap Partai Politik didasarkan atas Hasil Perhitungan Seluruh Suara Sah dari Setiap Partai Politik di Daerah Pemilihan yang bersangkutan. Menurut Ketua KPU Kota Payakumbuh Haidi Mursal bahwa Data ditampilkan itu sudah dimasukkan kedalam Sistem Aplikasi, dan Sistem inilah yang mengatur pengolahan Data. Maksud nya telah ada&nbsp; Aplikasi yang disiapkan oleh KPU RI (SITUNG) sehingga KPU Kota/Kabupaten bisa lebih mudah untuk menginput data.</span></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm\">&nbsp;</p>\r\n', 'TM', '2019-07-23 13:49:34', 'kpu-kota-paykumbuh-ketuk-palu-penetapan-perolehan-kursi--dan-penetapan-calon-terpilih-hasil-pemilu-tahun-2019-tingkat-kota-payakumbuh', '20190723134934web.JPG'),
-(18, 'Bawaslu Kota Payakumbuh serahkan santunan kepada PTPS yang alami kecelakaan kerja saat bertugas', '<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"color:#000000\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;\"><span style=\"font-size:12.0pt\"><span style=\"font-family:&quot;Times New Roman&quot;,&quot;serif&quot;\">Kota Payakumbuh (payakumbuh.bawaslu.go.id) &ndash; Pemilihan Umum Tahun 2019 telah selesai diselenggarakan diseluruh penjuru tanah air maupun pemilu diluar Negeri, seperti yang kita ketahui bersama bahwa KPU RI telah menetapkan Presiden dan Wakil Presiden terpilih pada pemilhan umum 2019, Minggu(30/06/2019) lalu, Keputusan KPU RI </span></span><span style=\"font-size:12.0pt\"><span style=\"font-family:&quot;Times New Roman&quot;,&quot;serif&quot;\">Nomor 1185/PL.01.9_KPT/06/KPU/VI/2019 Menetapakan Jokowi-Ma&#39;ruf Sebagai Presiden dan Wakil Presiden terpilih pada pemilu 2019, disusul Keputusan KPU Nomor: 1027/2019 bahwa paling lambat lima hari setelah diterima surat harus melalukan penetapan perolehan suara partai politik dan calon anggota legislatif (caleg) terpilih DPRD Kab/Kota, untuk Pemilu tingkat Kota Payakumbuh sendiri telah ditetapkan calon anggota legislatif (caleg) terpilih DPRD Kota Payakumbuh pada Senin(22/07/2019), berdasarkan Keputusan KPU Kota Payakumbuh Nomor : 146/ HK.03.1-Kpt/1376/KPU-Kot/VII/2019 .</span></span></span></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"color:#000000\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;\"><span style=\"font-size:12.0pt\"><span style=\"font-family:&quot;Times New Roman&quot;,&quot;serif&quot;\">Dibeberapa daerah Kabupaten/Kota di Sumatera Barat telah dilantik DPRD terpilih untuk masa Jabatan 2019-2024, itu artinya hari ini Penyelenggaraan Pemilahan Umum tahun 2019 sukses dilaksanakan dan berjalan dengan aman, kondusif serta berintegritas, namun dibalik suksesnya penyelenggaraan pemilu tahun 2019 ini juga mengisahkan duka yang mendalam untuk para pahlawan demokrasi yang gugur saat menjalankan tugas,dan ada juga petugas yang mengalami kecelakaan kerja dengan kreteria luka ringan, luka sedang dan luka berat baik itu petugas KPU maupun petugas bawaslu pada semua tingkatan, untuk Petugas bawaslu sendiri berdasarkan data yang dihimpun oleh bawaslu RI jumlah pengawas pemilu yang mengalami musibah adalah sebanyak 442 orang yang tersebar di beberapa propinsi dengan rincian 117 kecelakaan, 19 kekerasan, 33 meninggal dunia, dan 273 orang dirawat inap.</span></span></span></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"color:#000000\"><span style=\"font-size:11pt\"><span style=\"font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;\"><span style=\"font-size:12.0pt\"><span style=\"font-family:&quot;Times New Roman&quot;,&quot;serif&quot;\">Bawaslu sangat mengapresiasi perjuangan dan pengorbanan kepada seluruh Petugas Pengawas Pemilihan Umum disemua tingkatan yang tersebar siseluruh penjuru tahan air tercinta, penghargaan yang setinggi-tingginya itu tertuang dalam bentuk piagam penghargaan dan santunan bagi petugas yang mengalami kecelakaan kerja serta meninggal dunia, ketentuan jumlah dan besaran dana santunan yang diterima oleh petugas atau pihak keluarga bagi yang meninggal dunia telah diatur berdasarkan kreteria masing-masing, data yang terhimpun oleh bawaslu propinsi sumatera barat adapun jumlah petugas yang mengalami musibah diwilayah kerja sumatera barat yakni sebanyak 28 orang dengan rincian luka sedang 22 orang, luka berat 5 orang dan meninggal 1 orang, salah satu diantaranya adalah Pengawas Tempat Pemungutan Suara (PTPS) di kota payakumbuh tepatnya di kecamatan Lamposi Tigo Nagori (Latina) Kota Payakumbuh atas nama Merdayana(36) dengan kreteria luka sedang, melalui PUMK sekretariat bawaslu kota payakumbuh Syafniarti santunan telah diserahkan kepada yang bersangkutan pada Rabu(08/08/2019) kemarin.</span></span></span></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\">&nbsp;</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\">&nbsp;</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\">&nbsp;</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\">&nbsp;</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\">&nbsp;</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\">&nbsp;</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\">&nbsp;</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\">&nbsp;</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\">&nbsp;</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\">&nbsp;</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\">&nbsp;</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\">&nbsp;</p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\">&nbsp;</p>\r\n', 'TM', '2019-08-09 16:32:35', 'bawaslu-kota-payakumbuh-serahkan-santunan-kepada-ptps-yang-alami-kecelakaan-kerja-saat-bertugas', '20190809163235pumk.jpeg'),
 (20, 'Berkat didikan Bawaslu Propinsi Sumatera Barat Bawaslu Kota Payakumbuh Mampu mengemban Tugas ditahun Pertama', '<p><span style=\"color:#000000\">payakumbuh.bawaslu.go.id- Tanggal 15 Agustus 2019 adalah hari jadi yang pertama Bawaslu Kab/Kota di seluruh Penjuru tanah air Indonesia, Bawaslu merupakan Badan Pengawas Pemilihan Umum yang menjalankan amanah pengawasan dengan bersandar pada ketentuan Undang-Undang Nomor 7 Tahun 2017, dalam sejarah demokrasi kita di tanah air selama ini pengawas pemilu Kab/Kota masih bersifat Ad Hoc, namun ditengah tahapan penyelenggaraan pemilu tahun 2019 kemarin tepat pada tanggal 15 agustus 2018 Badan Pengawas Pemilihan Umum Kab/Kota beralih status dari Ad Hoc menjadi Badan Negara, Bawaslu RI telah melantik Komisioner Bawaslu Kab/Kota sebanyak 1.914 orang yang tersebar di seluruh tanah air.<br />\r\nSetahun tentu bukanlah sebuah perjalanan yang panjang, namun juga tidak waktu yang singkat, sebagai sebuah Badan Lembaga Negara yang berusia muda Bawaslu Kota Payakumbuh dalam penyelenggaraan pemilu tahun 2019 Alhamdulillah mampu melaksanakan semua amanah yang dibebankan kepada Bawaslu baik itu tugas, kewajiban dan kewenangan disemua tingkatan mampu dilaksanakan dengan baik. Ini semua berkat dukungan,bimbingan dan araharan Bawaslu Propinsi Sumatera Barat serta didukung mitra strategis Bawaslu Kota Payakumbuh. Untuk itu dalam usia satu tahun ini bawaslu kota payakumbuh berharap akan mampu mengemban, menjawab, serta melaksanakan semua amanah Undang-Undang yang bagian dari Tupoksi Bawaslu, dan ini menjadi modal kita dalam menhadapi pemilihan Gubernur dan Wakil Gubernur yang akan diselenggarakan pada 2020 mendatang, demikian diungkapkan oleh Muahamad Khadafi Ketua Bawaslu Kota Payakumbuh.</span></p>\r\n\r\n<p><span style=\"color:#000000\">Editor&nbsp; : Toibi Muharromin, S.Pd</span><br />\r\n&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n', 'TM', '2019-08-16 11:38:48', 'berkat-didikan-bawaslu-propinsi-sumatera-barat-bawaslu-kota-payakumbuh-mampu-mengemban-tugas-ditahun-pertama', '20190816113848web th ke 1 ory - Copy.jpg'),
 (21, 'Menyambut Pesta, Bawaslu Kota Payakumbuh gelar RDK,Pemilu adalah pesta mestinya kita bergembira', '<p style=\"margin-left:0cm; margin-right:0cm\"><span style=\"color:#000000\"><span style=\"font-size:11pt\"><span style=\"font-size:12.0pt\">payakumbuh.bawaslu.go.id- Bawaslu kota Payakumbuh mengadakan Rapat Dalam Kantor (RDK) diluar jam kerja tentang Pengelolaan Ketatausahaan dan Kearsipan yang digelar di Kantor Bawaslu Kota Payakumbuh, Rabu,(27/11). Rapat Dalam Kantor ini di hadiri oleh Sekretaris Daerah Kota Payakumbuh Diwakili Asisten I Setdako Yoherman,Rapat ini juga dihadiri oleh Wakil Ketua Komisi Informasi Sumatera Barat Noval Wiska, Ketua Bawaslu Kota Payakumbuh Muhamad Khadafi beserta Jajaran Kesekretariatan.</span></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm\"><span style=\"color:#000000\"><span style=\"font-size:11pt\"><span style=\"font-size:12.0pt\">Bawaslu Kota Payakumbuh akan setia menjadi pengawal demokrasi di Kota Payakumbuh jelas &quot; Muhamad Khadafi &quot;, Pemilhan Gubernur dan Wakil Gubernur di Kota Payakumbuh akan kita kelola dengan baik dan bergembira ungkap&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot; Yoherman Asisten Bidang Pemerintahan Kota Payakumbuh &quot;,, lebih kuat Noval Wiska Wakil Ketua Komisi Informasi Sumatera Barat menyampaikan Bawaslu adalah lembaga sudah mampu menjadi lembaga pemberi informasi yang progresive.</span></span></span></p>\r\n', 'Toibi Muharromin', '2019-11-28 10:55:59', 'menyambut-pesta-bawaslu-kota-payakumbuh-gelar-rdkpemilu-adalah-pesta-mestinya-kita-bergembira', '20191128105815foto RDK KI 1.jpeg'),
 (25, 'Berkonsep outdoor sosialisasi Pengawasan Partisipatif menjadi menarik dan diminati masyarakat', '<p><span style=\"color:#000000\">Kota Payakumbuh (payakumbuh.bawaslu.go.id) &ndash;Pemilihan kepala daerah (Pilkada) serentak pada Tahun 2020 sudah didepan mata, tahapan dan proses menuju Pilkada serentak yakni pemilihan Gubernur dan Wakil Gubernur akan segera dimulai,mengingat partisipasi masyarakat sangat penting dalam mengawal proses jalannya demokrasi, Bawaslu Kota Payakumbuh melakukan kegiatan Sosialisasi Program Pengembangan Pengawasan Partisipatif (P4) melalui Sarana Kebudayaan, dengan konsep outdoor membuat acara sosialisasi ini semakin menarik dan diminati oleh peserta dan tamu undangan yang hadir, ini pertama kalinya di sumbar khususnya dilingkungan Bawaslu mengadakan acara sosialisasi dengan konsep outdoor, mudah-mudahan bisa menjadi contoh bagi bawaslu Kab/Kota lain ungkap Vifner,SH,MH anggota bawaslu sumatera barat saat menghadiri acara sekaligus menjadi narasumber pada acara tersebut.<br />\r\n&nbsp;&nbsp; &nbsp;Kegiatan sosialisasi turut dihadiri oleh Walikota yang diwakili staff Ahli Ir. Syahril, kepala Kesbang-Pol, ketua KPU, Kapolres Kota Payakumbuh, ketua LKAAM, kepala kejaksaan, ketua DPRD Kota Payakumbuh, dan Kepala Dinas Pariwisata Pemuda Dan Olahraga Kota Payakumbuh, serta sebagai peserta yakni pegiat seni Dan budaya Kota Payakumbuh. Acara sosialisasi yang berlangsung di halaman rumah gadang Komunitas Seni Intro yang beralamat di Padangtongah Balainanduo berjalan dengan khidmat dan diskusi hangat bersama insan seni kota payakumbuh semakin menarik ketika pemateri Muhamad Khadafi(Ketua) serta Suci Wildanis (Anggota) memberikan kesempatan kepada kelompok seni dan budaya untuk menyampaikan pandangan mereka terhadap proses demokrasi di Negara Indonesia khususnya di payakumbuh.&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;</span></p>\r\n\r\n<p><span style=\"color:#000000\">Acara dibuka secara resmi oleh Ketua Bawaslu Kota Payakumbuh Muhamad Khadafi, dalam arahannya Khadafi berharap dengan kegiatan sosialisasi ini dapat membuat pengawasan partisipatif lebih lekat di benak masyarakat karna hal ini disampaikan melalui seni dan budaya dengan penyampaian yang berbeda lewat kekayaan seni dan budaya yang ada. Bawaslu Kota Payakumbuh menghadirkan 4 orang pemateri yakni anggota bawaslu provinsi sumatera batat Vifner, SH, MH Kordiv Pengawas Hubungan Masyarakat dan Hubungan Antar Lembaga, Kabati Dosen IAIN Padang serta juga bekerja pada media Khazanah (Direktur ruang kerja budaya), Muhamad Khadafi, S.Kom Ketua bawaslu kota payakumbuh dan Suci Wildanis,S.Sos anggota bawaslu kota payakumbuh Kordiv Pengawasan Humas dan Hubal. Senin (2/12/2019)</span></p>\r\n', 'Admin', '2019-12-04 15:23:54', 'berkonsep-outdoor-sosialisasi-pengawasan-partisipatif-menjadi-menarik-dan-diminati-masyarakat', '20191204152354IMG_9758.JPG'),
 (28, 'Bawaslu Kota Payakumbuh bagi-bagi Buku Gratis saat Lauching Buku Kinerja Pengawasan Pemilu Tahun 2019', '<p style=\"margin-left:0cm; margin-right:0cm\"><span style=\"color:#000000\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-size:12.0pt\">Kota Payakumbuh (payakumbuh.bawaslu.go.id) &ndash;</span><span style=\"font-size:12.0pt\"> Bawaslu Kota Payakumbuh menggelar Launching Buku Kinerja Pengawasan Pemilu Tahun 2019 yang berjudul &ldquo;Pengawasan Pemilu di Kota Biru&rdquo; secara resmi acara dibuka oleh Ketua Bawaslu Kota Payakumbuh Muhamad Khadafi didampingi Anggota Suci Wildanis Kordiv Pengawasan Humas dan Hubal. Acara Launching ini dihadiri langsung oleh Ketua Bawaslu Provinsi Sumatera Barat Surya Efitrimen, Pemko Payakumbuh, Forkopimda, OKP yang ada dikota payakumbuh, insan seni Kota Payakumbuh, ketua panwascam Se-Kota Payakumbuh pemilu pileg dan pilpres tahun 2019, partai politik peserta pemilu, media massa Se-Kota Payakumbuh, Ketua BEM, LKAAM dan Bundo Kanduang. Acara lauching&nbsp; yang digelar di aula BIB Peternakan Sumatera Barat pada Kamis (18/12) semakin menarik dengan adanya penampilan beberapa seni Puisi dan beberapa seni lainya yang ada dalam kelompok Seni Intro Kota Payakumbuh.</span></span></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm\"><span style=\"color:#000000\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-size:12.0pt\">Dalam sambutannya Muhamad Khadafi menuturkan Buku yang akan di launching &nbsp;ini berisikan seluruh rangkaian kegiatan pengawasan tahapan Pemilu tahun 2019 secara ringkas. Diharapkan menjadi data dan informasi bagi masyarakat pasca Pemilu 2019 lalu, kita berharap dengan adanya Buku ini public &nbsp;bisa memperoleh informasi yang utuh dan valid berkenaan dengan proses dan tahapan pengawasan pemilu di Kota Payakumbuh, dan ini menjadi catatan sejarah bagi seluruh kita yang terlibat dalam penyelenggaraan Pemilu, lebih lanjut ayah empat anak ini menuturkan Bawaslu sengaja menerbitkan buku dalam upaya menyediakan bahan literasi bagi masyarakat tentang pelaksanaan demokrasi dan Pemilu, khususnya pasca perhelatan Pemilu 2019 lalu.</span></span></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm\"><span style=\"color:#000000\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-size:12.0pt\">Ketua Bwaslu Provinsi Sumatera Barat Surya Efitrimen, S.Pt., MH., sangat mengapresiasi Bawaslu Kota Payakumbuh yang telah melakukan launching buku kinerja pengawasan pemilu Tahun 2019, semoga nantinya buku ini dapat menjadi literasi dan bermanfaat bagi public terutama masyarakat di kota payakumbuh, menjadikan laporan akhir hasil pengawasan pemilu 2019 ini sangat penting bagi kita dilingkungan Badan Pengawas Pemilihan Umum agar hak-hak public untuk memperoleh informasi dapat terpenuhi dengan baik dan terjadinya transpransi bagi lembaga penyelenggara pemilu sekaligus menjadi bahan Evaluasi untuk meningkatkan pengawasan pada pemilu berikutnya terlebih Pilkada serentak Tahun 2020 sudah didepan mata, ulasnya.</span></span></span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm\">&nbsp;</p>\r\n', 'Toibi Muharromin', '2019-12-20 16:08:08', 'bawaslu-kota-payakumbuh-bagibagi-buku-gratis-saat-lauching-buku-kinerja-pengawasan-pemilu-tahun-2019', '20191220160808DSC00867.JPG'),
-(29, '15 Anggota Panwas Kecamatan Se-Kota Payakumbuh Resmi dilantik Jelang Pilkada Serentak Tahun 2020 Mendatang', '<p><span style=\"color:#000000\">Kota Payakumbuh (payakumbuh.bawaslu.go.id) &ndash; Ketua Badan Pengawas Pemilihan Umum Kota Payakumbuh Muhamad Khadafi Melantik 15 Anggota Panwas Kecamatan Se-Kota Payakumbuh, Pengambilan Sumpah dan Pelantikan sekaligus Pembekalan bagi Panwas Kecamatan yang terpilih diselenggarakan di Grand Narasaki Hotel Kota Payakumbuh pada hari ini Senin 23 Desember 2019. 15 Orang Anggota Panwas Kecamatan yang telah dilantik hari ini tersebar di Lima Kecamatan di wilayah Kota Payakumbuh yang bertugas mengawasi perhelatan Demokrasi pada &nbsp;Pemilihan Gubernur dan Wakil Gubernur Sumatera Barat Tahun 2020 mendatang.<br />\r\nDalam sambutannya Khadafi, sapaan akrab ayah empat anak ini menyampaikan Ucapan Selamat dan sukses kepada Anggota Panwas Kecamatan yang telah dilantik, Bawaslu Kota Payakumbuh menaruh harapan yang besar kepada Panwascam Terpilih untuk dapat menjalankan amanah dengan sebaik-baiknya dan selalu menjaga sikap serta Integritas di Tengah-tengah masyarakat, Bapak dan Ibu yang hari ini Resmi dilantik merupakan Putra-putri terbaik Kota Payakumbuh ujar Khadafi. Ucapan Selamat juga datang dari tamu undangan yang hadir yakni Pemko Payakumbuh, DPRD, Dandim, Kapolres, Kesbangpol, Kemenag, KPU, dan Camat Se-Kota Payakumbuh.<br />\r\nAcara Pelantikan dan Pembekalan yang dijadwalkan berlangsung selama dua hari ini yakni 23 hingga 24 Desember 2019 di hadiri oleh Anggota Bawaslu Provinsi Sumatera Barat Ibu Nurhaida Yetti Divisi Hukum, Data dan Informasi. Dalam sambutannya saat memaparkan materi Nurhaida Yetti menyampaikan bahwa seleksi Panwas Kecamatan dilakukan dengan transparansi dan tanpa ada Intervensi dari Pihak manapun sahabat bawaslu yang terpilih merupakan orang-orang terbaik, oleh sebab itu sangat besar harapan kami kepada Bapak dan Ibu untuk bekerja dengan baik kedepannya, pahami Tugas dan Wewenanang sebelum bertindak dan yang terpenting adalah selalu menjaga nama baik Bawaslu Sebagai Lembaga Negara, Ujarnya.</span></p>\r\n', 'Toibi Muharromin', '2019-12-23 21:22:12', '15-anggota-panwas-kecamatan-sekota-payakumbuh-resmi-dilantik-jelang-pilkada-serentak-tahun-2020-mendatang', '20191223212212IMG_0022.JPG');
+(29, '15 Anggota Panwas Kecamatan Se-Kota Payakumbuh Resmi dilantik Jelang Pilkada Serentak Tahun 2020 Mendatang', '<p><span style=\"color:#000000\">Kota Payakumbuh (payakumbuh.bawaslu.go.id) &ndash; Ketua Badan Pengawas Pemilihan Umum Kota Payakumbuh Muhamad Khadafi Melantik 15 Anggota Panwas Kecamatan Se-Kota Payakumbuh, Pengambilan Sumpah dan Pelantikan sekaligus Pembekalan bagi Panwas Kecamatan yang terpilih diselenggarakan di Grand Narasaki Hotel Kota Payakumbuh pada hari ini Senin 23 Desember 2019. 15 Orang Anggota Panwas Kecamatan yang telah dilantik hari ini tersebar di Lima Kecamatan di wilayah Kota Payakumbuh yang bertugas mengawasi perhelatan Demokrasi pada &nbsp;Pemilihan Gubernur dan Wakil Gubernur Sumatera Barat Tahun 2020 mendatang.<br />\r\nDalam sambutannya Khadafi, sapaan akrab ayah empat anak ini menyampaikan Ucapan Selamat dan sukses kepada Anggota Panwas Kecamatan yang telah dilantik, Bawaslu Kota Payakumbuh menaruh harapan yang besar kepada Panwascam Terpilih untuk dapat menjalankan amanah dengan sebaik-baiknya dan selalu menjaga sikap serta Integritas di Tengah-tengah masyarakat, Bapak dan Ibu yang hari ini Resmi dilantik merupakan Putra-putri terbaik Kota Payakumbuh ujar Khadafi. Ucapan Selamat juga datang dari tamu undangan yang hadir yakni Pemko Payakumbuh, DPRD, Dandim, Kapolres, Kesbangpol, Kemenag, KPU, dan Camat Se-Kota Payakumbuh.<br />\r\nAcara Pelantikan dan Pembekalan yang dijadwalkan berlangsung selama dua hari ini yakni 23 hingga 24 Desember 2019 di hadiri oleh Anggota Bawaslu Provinsi Sumatera Barat Ibu Nurhaida Yetti Divisi Hukum, Data dan Informasi. Dalam sambutannya saat memaparkan materi Nurhaida Yetti menyampaikan bahwa seleksi Panwas Kecamatan dilakukan dengan transparansi dan tanpa ada Intervensi dari Pihak manapun sahabat bawaslu yang terpilih merupakan orang-orang terbaik, oleh sebab itu sangat besar harapan kami kepada Bapak dan Ibu untuk bekerja dengan baik kedepannya, pahami Tugas dan Wewenanang sebelum bertindak dan yang terpenting adalah selalu menjaga nama baik Bawaslu Sebagai Lembaga Negara, Ujarnya.</span></p>\r\n', 'Toibi Muharromin', '2019-12-23 21:22:12', '15 Anggota Panwas Kecamatan Se-Kota Payakumbuh Resmi dilantik Jelang Pilkada Serentak Tahun 2020 Mendatang', '20200208145211images.jpeg'),
+(30, 'Vitae adipisicing no', '<p>Quasi doloremque iur.</p>\r\n', 'Sit et fugit non c', '2020-02-08 14:47:52', 'Vitae adipisicing no', '20200208144752nHBfsgAA2QAAAAkALpKJlAAAafE.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_buku_saku_bawaslu`
+-- Table structure for table `tb_buku_saku_bawaslu`
 --
 
 CREATE TABLE `tb_buku_saku_bawaslu` (
@@ -3632,7 +3822,7 @@ CREATE TABLE `tb_buku_saku_bawaslu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tb_buku_saku_bawaslu`
+-- Dumping data for table `tb_buku_saku_bawaslu`
 --
 
 INSERT INTO `tb_buku_saku_bawaslu` (`idbukusaku`, `judul`, `berkas`) VALUES
@@ -3642,7 +3832,7 @@ INSERT INTO `tb_buku_saku_bawaslu` (`idbukusaku`, `judul`, `berkas`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_detail_pengumuman`
+-- Table structure for table `tb_detail_pengumuman`
 --
 
 CREATE TABLE `tb_detail_pengumuman` (
@@ -3652,7 +3842,7 @@ CREATE TABLE `tb_detail_pengumuman` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tb_detail_pengumuman`
+-- Dumping data for table `tb_detail_pengumuman`
 --
 
 INSERT INTO `tb_detail_pengumuman` (`iddetailpengumuman`, `idpengumuman`, `berkas`) VALUES
@@ -3696,7 +3886,7 @@ INSERT INTO `tb_detail_pengumuman` (`iddetailpengumuman`, `idpengumuman`, `berka
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_galeri`
+-- Table structure for table `tb_galeri`
 --
 
 CREATE TABLE `tb_galeri` (
@@ -3706,17 +3896,13 @@ CREATE TABLE `tb_galeri` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tb_galeri`
+-- Dumping data for table `tb_galeri`
 --
 
 INSERT INTO `tb_galeri` (`idgaleri`, `idalbum`, `foto`) VALUES
-(1, 1, 'Lambang_Kota_Banjarbaru.png'),
-(2, 2, 'back1.png'),
+(1, 1, '1361989.jpg'),
 (3, 3, 'data panwascam cc.jpg'),
 (4, 3, 'DSC01188.JPG'),
-(6, 6, '43.jpg'),
-(7, 6, 'Drs. SRI JOKO PURWANTO (DEMOKRAT) DAPIL 1.jpg'),
-(8, 6, 'H. SUPARMAN, S. Pd (PKS) DAPIL 1.jpg'),
 (9, 6, 'Ir. H. AHMAD ZIFAL (PPP) DAPIL 1.jpg'),
 (10, 6, 'ISMET HARIUS, S.Sos (NASDEM) DAPIL 1.jpg'),
 (11, 6, 'MESRAWATI (PAN) DAPIL 1.jpg'),
@@ -3739,12 +3925,13 @@ INSERT INTO `tb_galeri` (`idgaleri`, `idalbum`, `foto`) VALUES
 (28, 6, 'NASRUL (PKS) DAPIL 3.jpg'),
 (29, 6, 'OPETNAWATI (PAN) DAPIL 3.jpg'),
 (30, 6, 'YANUAR GAZALI, SE (PDIP) DAPIL 3.jpg'),
-(31, 7, 'slide 4.jpg');
+(31, 7, 'slide 4.jpg'),
+(32, 1, 'nHBfsgAA2QAAAAkALpKJlAAAafE.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_komisioner`
+-- Table structure for table `tb_komisioner`
 --
 
 CREATE TABLE `tb_komisioner` (
@@ -3754,7 +3941,7 @@ CREATE TABLE `tb_komisioner` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tb_komisioner`
+-- Dumping data for table `tb_komisioner`
 --
 
 INSERT INTO `tb_komisioner` (`idkomisioner`, `foto`, `dll`) VALUES
@@ -3768,7 +3955,19 @@ INSERT INTO `tb_komisioner` (`idkomisioner`, `foto`, `dll`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_pengumuman`
+-- Table structure for table `tb_lpm`
+--
+
+CREATE TABLE `tb_lpm` (
+  `id_lpm` int(11) NOT NULL,
+  `judul_lpm` varchar(50) NOT NULL,
+  `isi_lpm` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_pengumuman`
 --
 
 CREATE TABLE `tb_pengumuman` (
@@ -3782,7 +3981,7 @@ CREATE TABLE `tb_pengumuman` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tb_pengumuman`
+-- Dumping data for table `tb_pengumuman`
 --
 
 INSERT INTO `tb_pengumuman` (`idpengumuman`, `judul`, `isipengumuman`, `posting_by`, `tgl_posting`, `judul_seo`, `kategori`) VALUES
@@ -3815,7 +4014,7 @@ INSERT INTO `tb_pengumuman` (`idpengumuman`, `judul`, `isipengumuman`, `posting_
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_perbawaslu_terbaru`
+-- Table structure for table `tb_perbawaslu_terbaru`
 --
 
 CREATE TABLE `tb_perbawaslu_terbaru` (
@@ -3825,7 +4024,7 @@ CREATE TABLE `tb_perbawaslu_terbaru` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tb_perbawaslu_terbaru`
+-- Dumping data for table `tb_perbawaslu_terbaru`
 --
 
 INSERT INTO `tb_perbawaslu_terbaru` (`idperbawaslu`, `judul`, `berkas`) VALUES
@@ -3835,7 +4034,7 @@ INSERT INTO `tb_perbawaslu_terbaru` (`idperbawaslu`, `judul`, `berkas`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_ppid`
+-- Table structure for table `tb_ppid`
 --
 
 CREATE TABLE `tb_ppid` (
@@ -3845,7 +4044,7 @@ CREATE TABLE `tb_ppid` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tb_ppid`
+-- Dumping data for table `tb_ppid`
 --
 
 INSERT INTO `tb_ppid` (`id_ppid`, `kategori`, `dokumen`) VALUES
@@ -3864,7 +4063,7 @@ INSERT INTO `tb_ppid` (`id_ppid`, `kategori`, `dokumen`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_profil`
+-- Table structure for table `tb_profil`
 --
 
 CREATE TABLE `tb_profil` (
@@ -3874,18 +4073,18 @@ CREATE TABLE `tb_profil` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tb_profil`
+-- Dumping data for table `tb_profil`
 --
 
 INSERT INTO `tb_profil` (`id_profil`, `kategori`, `deskripsi`) VALUES
-(4, 'visimisi', '<p><span style=\"color:#000000\"><strong>Visi</strong></span></p>\r\n\r\n<p><span style=\"color:#000000\">Terwujudnya Bawaslu sebagai Lembaga Pengawal Terpercaya dalam Penyelenggaraan Pemilu Demokratis, Bermartabat, dan Berkualitas.</span></p>\r\n\r\n<p><span style=\"color:#000000\"><strong>Misi</strong></span></p>\r\n\r\n<ol>\r\n	<li><span style=\"color:#000000\">Membangun aparatur dan kelembagaan pengawas pemilu yang kuat, mandiri dan solid;</span></li>\r\n	<li><span style=\"color:#000000\">Mengembangkan pola dan metode pengawasan yang efektif dan efisien;</span></li>\r\n	<li><span style=\"color:#000000\">Memperkuat sistem kontrol nasional dalam satu manajemen pengawasan yang terstruktur, sistematis, dan integratif berbasis teknologi;</span></li>\r\n	<li><span style=\"color:#000000\">Meningkatkan keterlibatan masyarakat dan peserta pemilu, serta meningkatkan sinergi kelembagaan dalam pengawasan pemilu partisipatif;</span></li>\r\n	<li><span style=\"color:#000000\">Meningkatkan kepercayaan publik atas kualitas kinerja pengawasan berupa pencegahan dan penindakan, serta penyelesaian sengketa secara cepat, akurat dan transparan;</span></li>\r\n	<li><span style=\"color:#000000\">Membangun Bawaslu sebagai pusat pembelajaran pengawasan pemilu baik bagi pihak dari dalam negeri maupun pihak dari luar negeri.</span></li>\r\n</ol>\r\n'),
-(5, 'sejarah', '<p><span style=\"color:#000000\">Badan Pengawas Pemilu atau Bawaslu dibentuk berdasarkan perintah Undang - Undang no 22 Tahun 2007 tentang Penyelenggara Pemilu.</span></p>\r\n\r\n<p><span style=\"color:#000000\">Sebelumnya, Pengawas Pemilu merupakan lembaga adhoc yaitu Panitia Pengawas Pemilu atau Panwaslu.</span></p>\r\n\r\n<p><span style=\"color:#000000\">Tepatnya tahun 1982 uu memerintahkan pembentukan Panitia Pengawas Pelaksanaan Pemilu atau Panwaslak Pemilu, yang melekat pada Lembaga Pemilihan Umum atau LPU.</span></p>\r\n\r\n<p><span style=\"color:#000000\">Baru pada tahun 2003, Panwaslu dilepaskan dari struktur Komisi Pemilian Umum atau KPU.</span></p>\r\n\r\n<p><span style=\"color:#000000\">Kewenangan utama Pengawas Pemilu adalah mengawasi pelaksanaan tahapan Pemilu, menerima pengaduan, serta menangani kasus-kasus pelanggaran administrasi, pidana Pemilu dan kode etik.</span></p>\r\n\r\n<p><span style=\"color:#000000\">Rabu, 12 April Tahun 2017 Presiden Joko Widodo melantik Anggota Bawaslu Periode 2017-2022 dan Rapat Pleno Bawaslu menetapkan Ketua Bawaslu adalah Abhan.</span></p>\r\n'),
-(6, 'tugas dan wewenang', '<div class=\"region region-content\">\r\n<div class=\"block block-system\" id=\"block-system-main\">\r\n<div class=\"content\">\r\n<div class=\"clearfix node node-profil-\" id=\"node-1\">\r\n<div class=\"content\">\r\n<div class=\"field field-label-hidden field-name-body field-type-text-with-summary\">\r\n<div class=\"field-items\">\r\n<div class=\"even field-item\">\r\n<div class=\"node-content\">\r\n<div class=\"field field-label-hidden field-name-body field-type-text-with-summary view-mode-full\">\r\n<div class=\"field-items\">\r\n<div class=\"even field-item\">\r\n<p><span style=\"color:#000000\">Tugas, Wewenang, dan Kewajiban Pengawas Pemilu berdasarkan amanat Undang-Undang Nomor 7 Tahun 2017 tentang Pemilihan Umum adalah sebagai berikut :</span></p>\r\n\r\n<p><span style=\"color:#000000\"><strong>Bawaslu bertugas:</strong></span></p>\r\n\r\n<p><span style=\"color:#000000\">a. Menyusun standar tata laksana pengawasan Penyelenggaraan Pemilu untuk pengawas Pemilu di setiap tingkatan;</span></p>\r\n\r\n<p><span style=\"color:#000000\">b. Melakukan pencegahan dan penindakan terhadap:</span></p>\r\n\r\n<ol>\r\n	<li><span style=\"color:#000000\">Pelanggaran Pemilu; dan</span></li>\r\n	<li><span style=\"color:#000000\">Sengketa proses Pemilu;</span></li>\r\n</ol>\r\n\r\n<p><span style=\"color:#000000\">c. Mengawasi persiapan Penyelenggaraan Pemilu, yang terdiri atas:</span></p>\r\n\r\n<ol>\r\n	<li><span style=\"color:#000000\">Perencanaan dan penetapan jadwal tahapan Pemilu;</span></li>\r\n	<li><span style=\"color:#000000\">Perencanaan pengadaan logistik oleh KPU;</span></li>\r\n	<li><span style=\"color:#000000\">Sosialisasi Penyelenggaraan Pemilu; dan</span></li>\r\n	<li><span style=\"color:#000000\">Pelaksanaan persiapan lainnya dalam Penyelenggaraan Pemilu sesuai dengan ketentuan peraturan perundangundangan.</span></li>\r\n</ol>\r\n\r\n<p><span style=\"color:#000000\">d. Mengawasi pelaksanaan tahapan Penyelenggaraan Pemilu, yang terdiri atas:</span></p>\r\n\r\n<ol>\r\n	<li><span style=\"color:#000000\">Pemutakhiran data pemilih dan penetapan daftar pemilih sementara serta daftar pemilih tetap;</span></li>\r\n	<li><span style=\"color:#000000\">Penataan dan penetapan daerah pemilihan DPRD kabupaten/kota;</span></li>\r\n	<li><span style=\"color:#000000\">Penetapan Peserta Pemilu;</span></li>\r\n	<li><span style=\"color:#000000\">Pencalonan sampai dengan penetapan Pasangan Calon, calon anggota DPR, calon anggota DPD, dan calon anggota DPRD sesuai dengan ketentuan peraturan perundang-undangan;</span></li>\r\n	<li><span style=\"color:#000000\">Pelaksanaan dan dana kampanye;</span></li>\r\n	<li><span style=\"color:#000000\">Pengadaan logistik Pemilu dan pendistribusiannya;</span></li>\r\n	<li><span style=\"color:#000000\">Pelaksanaan pemungutan suara dan penghitungan suara hasil Pemilu di TPS;</span></li>\r\n	<li><span style=\"color:#000000\">Pergerakan surat suara, berita acara penghitungan suara, dan sertifikat hasil penghitungan suara dari tingkat TPS sampai ke PPK;</span></li>\r\n	<li><span style=\"color:#000000\">Rekapitulasi hasil penghitungan perolehan suara di PPK, KPU Kabupaten/Kota, KPU Provinsi, dan KPU;</span></li>\r\n	<li><span style=\"color:#000000\">Pelaksanaan penghitungan dan pemungutan suara ulang, Pemilu lanjutan, dan Pemilu susulan; dan</span></li>\r\n	<li><span style=\"color:#000000\">Penetapan hasil Pemilu;</span></li>\r\n</ol>\r\n\r\n<p><span style=\"color:#000000\">e. Mencegah terjadinya praktik politik uang;</span></p>\r\n\r\n<p><span style=\"color:#000000\">f. Mengawasi netralitas aparatur sipil negara, netralitas anggota Tentara Nasional Indonesia, dan netralitas anggota Kepolisian Republik Indonesia;</span></p>\r\n\r\n<p><span style=\"color:#000000\">g. Mengawasi pelaksanaan putusan/keputusan, yang terdiri atas:</span></p>\r\n\r\n<ol>\r\n	<li><span style=\"color:#000000\">Putusan DKPP;</span></li>\r\n	<li><span style=\"color:#000000\">Putusan pengadilan mengenai pelanggaran dan sengketa Pemilu;</span></li>\r\n	<li><span style=\"color:#000000\">Putusan/keputusan Bawaslu, Bawaslu Provinsi, dan Bawaslu Ihbupaten/ Kota;</span></li>\r\n	<li><span style=\"color:#000000\">Keputusan KPU, KPU Provinsi, dan KPU Kabupaten/Kota; dan</span></li>\r\n	<li><span style=\"color:#000000\">Keputusan pejabat yang berwenang atas pelanggaran netralitas aparatur sipil negara, netralitas anggota Tentara Nasional Indonesia, dan netralitas anggota Kepolisian Republik Indonesia;</span></li>\r\n</ol>\r\n\r\n<p><span style=\"color:#000000\">h. Menyampaikan dugaan pelanggaran kode etik Penyelenggara Pemilu kepada DKPP;</span></p>\r\n\r\n<p><span style=\"color:#000000\">i. Menyampaikan dugaan tindak pidana Pemilu kepada Gakkumdu;</span></p>\r\n\r\n<p><span style=\"color:#000000\">j. Mengelola, memelihara, dan merawat arsip serta melaksanakan penyusutannya berdasarkan jadwal retensi arsip sesuai dengan ketentuan peraturan perundangundangan;</span></p>\r\n\r\n<p><span style=\"color:#000000\">k. Mengevaluasi pengawasan Pemilu;</span></p>\r\n\r\n<p><span style=\"color:#000000\">l. Mengawasi pelaksanaan Peraturan KPU; dan</span></p>\r\n\r\n<p><span style=\"color:#000000\">m. Melaksanakan tugas lain sesuai dengan ketentuan peraturan perundang-undangan.</span></p>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n\r\n<p><span style=\"color:#000000\"><strong>Bawaslu berwenang:</strong></span></p>\r\n\r\n<p><span style=\"color:#000000\">a. Menerima dan menindaklanjuti laporan yang berkaitan dengan dugaan adanya pelanggaran terhadap pelaksanaan peraturan perundang-undangan yang mengahrr mengenai Pemilu;</span></p>\r\n\r\n<p><span style=\"color:#000000\">b. Memeriksa, mengkaji, dan memutus pelanggaran, administrasi Pemilu;</span></p>\r\n\r\n<p><span style=\"color:#000000\">c. Memeriksa, mengkaji, dan memuttrs pelanggaran politik uarg;</span></p>\r\n\r\n<p><span style=\"color:#000000\">d. Menerima, memeriksa, memediasi atau mengadjudikasi, dan memutus penyelesaian sengketa proses Pemilu;</span></p>\r\n\r\n<p><span style=\"color:#000000\">e. Merekomendasikan kepada instansi yang bersangkutan mengenai hasil pengawasan terhadap netralitas aparatur sipil-negara, netralitas anggota Tentara Nasional Indonesia, dan netralitas anggota Kepolisian Republik Indonesia; &#39;</span></p>\r\n\r\n<p><span style=\"color:#000000\">f. Mengambil alih sementara tugas, wewenang, dan kewajiban Bawaslu Provinsi dan Bawaslu Kabupaten/Kota secara berjenjang jika Bawaslu Provinsi dan Bawaslu Kabupaten Kota berhalangan sementara akibat dikenai sanksi atau akibat lainnya sesuai dengan ketentuan peraturan perundang-undangan ;</span></p>\r\n\r\n<p><span style=\"color:#000000\">g. Meminta bahan keterangan yang dibuhrhkan kepada pihak terkait dalam rangka pencegahan dan penindakan pelanggaran administrasi, pelanggaran kode etik, dugaan tindak pidana Pemilu, dan sengketa proses Pemilu;</span></p>\r\n\r\n<p><span style=\"color:#000000\">h. Mengoreksi putusan dan rekomendasi Bawaslu Provinsi dan Bawaslu Kabupaten/Kota apabila terdapat hal yang bertentangan dengan ketentuan peraturan perundangundangan;</span></p>\r\n\r\n<p><span style=\"color:#000000\">i. Membentuk Bawaslu Provinsi, Bawaslu Kabupaten/ Kota, dan Panwaslu LN;</span></p>\r\n\r\n<p><span style=\"color:#000000\">j. Mengangkat, membina, dan memberhentikan anggota Bawaslu Provinsi, anggota Bawaslu Kabupaten/Kota, dan anggota Panwaslu LN; dan</span></p>\r\n\r\n<p><span style=\"color:#000000\">k. Melaksanakan wewenang lain sesuai dengan ketentuan peraturan perundang-undangan.</span></p>\r\n\r\n<p><span style=\"color:#000000\"><strong>Bawaslu berkewajiban:</strong></span></p>\r\n\r\n<p><span style=\"color:#000000\">a. Bersikap adil dalam menjalankan tugas dan wewenang;</span></p>\r\n\r\n<p><span style=\"color:#000000\">b. Melakukan pembinaan dan pengawasan terhadap pelaksanaan tugas Pengawas Pemilu pada semua tingkatan;</span></p>\r\n\r\n<p><span style=\"color:#000000\">c. Menyampaikan laporan hasil pengawasan kepada Presiden dan DPR sesuai dengan tahapan Pemilu secara periodik darr/atau berdasarkan kebutuhan</span></p>\r\n\r\n<p><span style=\"color:#000000\">d. Mengawasi pemutakhiran dan pemeliharaan data pemilih secara berkelanjutan yang ditakukan oleh KPU dengan memperhatikan data kependudukan sesuai dengan ketentuan peraturan perundang-undangan; dan</span></p>\r\n\r\n<p><span style=\"color:#000000\">e. Melaksanakan kewajiban lain sesuai dengan ketentuan perundangundangan.</span></p>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n');
+(4, 'Visi Misi', '<p><span style=\"color:#000000\"><strong>Visi</strong></span></p>\r\n\r\n<p><span style=\"color:#000000\">Terwujudnya Bawaslu sebagai Lembaga Pengawal Terpercaya dalam Penyelenggaraan Pemilu Demokratis, Bermartabat, dan Berkualitas.</span></p>\r\n\r\n<p><span style=\"color:#000000\"><strong>Misi</strong></span></p>\r\n\r\n<ol>\r\n	<li><span style=\"color:#000000\">Membangun aparatur dan kelembagaan pengawas pemilu yang kuat, mandiri dan solid;</span></li>\r\n	<li><span style=\"color:#000000\">Mengembangkan pola dan metode pengawasan yang efektif dan efisien;</span></li>\r\n	<li><span style=\"color:#000000\">Memperkuat sistem kontrol nasional dalam satu manajemen pengawasan yang terstruktur, sistematis, dan integratif berbasis teknologi;</span></li>\r\n	<li><span style=\"color:#000000\">Meningkatkan keterlibatan masyarakat dan peserta pemilu, serta meningkatkan sinergi kelembagaan dalam pengawasan pemilu partisipatif;</span></li>\r\n	<li><span style=\"color:#000000\">Meningkatkan kepercayaan publik atas kualitas kinerja pengawasan berupa pencegahan dan penindakan, serta penyelesaian sengketa secara cepat, akurat dan transparan;</span></li>\r\n	<li><span style=\"color:#000000\">Membangun Bawaslu sebagai pusat pembelajaran pengawasan pemilu baik bagi pihak dari dalam negeri maupun pihak dari luar negeri.</span></li>\r\n</ol>\r\n'),
+(5, 'Sejarah', '<p><span style=\"color:#000000\">Badan Pengawas Pemilu atau Bawaslu dibentuk berdasarkan perintah Undang - Undang no 22 Tahun 2007 tentang Penyelenggara Pemilu.</span></p>\r\n\r\n<p><span style=\"color:#000000\">Sebelumnya, Pengawas Pemilu merupakan lembaga adhoc yaitu Panitia Pengawas Pemilu atau Panwaslu.</span></p>\r\n\r\n<p><span style=\"color:#000000\">Tepatnya tahun 1982 uu memerintahkan pembentukan Panitia Pengawas Pelaksanaan Pemilu atau Panwaslak Pemilu, yang melekat pada Lembaga Pemilihan Umum atau LPU.</span></p>\r\n\r\n<p><span style=\"color:#000000\">Baru pada tahun 2003, Panwaslu dilepaskan dari struktur Komisi Pemilian Umum atau KPU.</span></p>\r\n\r\n<p><span style=\"color:#000000\">Kewenangan utama Pengawas Pemilu adalah mengawasi pelaksanaan tahapan Pemilu, menerima pengaduan, serta menangani kasus-kasus pelanggaran administrasi, pidana Pemilu dan kode etik.</span></p>\r\n\r\n<p><span style=\"color:#000000\">Rabu, 12 April Tahun 2017 Presiden Joko Widodo melantik Anggota Bawaslu Periode 2017-2022 dan Rapat Pleno Bawaslu menetapkan Ketua Bawaslu adalah Abhan.</span></p>\r\n'),
+(6, 'Tugas Dan Wewenang', '<div class=\"region region-content\">\r\n<div class=\"block block-system\" id=\"block-system-main\">\r\n<div class=\"content\">\r\n<div class=\"clearfix node node-profil-\" id=\"node-1\">\r\n<div class=\"content\">\r\n<div class=\"field field-label-hidden field-name-body field-type-text-with-summary\">\r\n<div class=\"field-items\">\r\n<div class=\"even field-item\">\r\n<div class=\"node-content\">\r\n<div class=\"field field-label-hidden field-name-body field-type-text-with-summary view-mode-full\">\r\n<div class=\"field-items\">\r\n<div class=\"even field-item\">\r\n<p><span style=\"color:#000000\">Tugas, Wewenang, dan Kewajiban Pengawas Pemilu berdasarkan amanat Undang-Undang Nomor 7 Tahun 2017 tentang Pemilihan Umum adalah sebagai berikut :</span></p>\r\n\r\n<p><span style=\"color:#000000\"><strong>Bawaslu bertugas:</strong></span></p>\r\n\r\n<p><span style=\"color:#000000\">a. Menyusun standar tata laksana pengawasan Penyelenggaraan Pemilu untuk pengawas Pemilu di setiap tingkatan;</span></p>\r\n\r\n<p><span style=\"color:#000000\">b. Melakukan pencegahan dan penindakan terhadap:</span></p>\r\n\r\n<ol>\r\n	<li><span style=\"color:#000000\">Pelanggaran Pemilu; dan</span></li>\r\n	<li><span style=\"color:#000000\">Sengketa proses Pemilu;</span></li>\r\n</ol>\r\n\r\n<p><span style=\"color:#000000\">c. Mengawasi persiapan Penyelenggaraan Pemilu, yang terdiri atas:</span></p>\r\n\r\n<ol>\r\n	<li><span style=\"color:#000000\">Perencanaan dan penetapan jadwal tahapan Pemilu;</span></li>\r\n	<li><span style=\"color:#000000\">Perencanaan pengadaan logistik oleh KPU;</span></li>\r\n	<li><span style=\"color:#000000\">Sosialisasi Penyelenggaraan Pemilu; dan</span></li>\r\n	<li><span style=\"color:#000000\">Pelaksanaan persiapan lainnya dalam Penyelenggaraan Pemilu sesuai dengan ketentuan peraturan perundangundangan.</span></li>\r\n</ol>\r\n\r\n<p><span style=\"color:#000000\">d. Mengawasi pelaksanaan tahapan Penyelenggaraan Pemilu, yang terdiri atas:</span></p>\r\n\r\n<ol>\r\n	<li><span style=\"color:#000000\">Pemutakhiran data pemilih dan penetapan daftar pemilih sementara serta daftar pemilih tetap;</span></li>\r\n	<li><span style=\"color:#000000\">Penataan dan penetapan daerah pemilihan DPRD kabupaten/kota;</span></li>\r\n	<li><span style=\"color:#000000\">Penetapan Peserta Pemilu;</span></li>\r\n	<li><span style=\"color:#000000\">Pencalonan sampai dengan penetapan Pasangan Calon, calon anggota DPR, calon anggota DPD, dan calon anggota DPRD sesuai dengan ketentuan peraturan perundang-undangan;</span></li>\r\n	<li><span style=\"color:#000000\">Pelaksanaan dan dana kampanye;</span></li>\r\n	<li><span style=\"color:#000000\">Pengadaan logistik Pemilu dan pendistribusiannya;</span></li>\r\n	<li><span style=\"color:#000000\">Pelaksanaan pemungutan suara dan penghitungan suara hasil Pemilu di TPS;</span></li>\r\n	<li><span style=\"color:#000000\">Pergerakan surat suara, berita acara penghitungan suara, dan sertifikat hasil penghitungan suara dari tingkat TPS sampai ke PPK;</span></li>\r\n	<li><span style=\"color:#000000\">Rekapitulasi hasil penghitungan perolehan suara di PPK, KPU Kabupaten/Kota, KPU Provinsi, dan KPU;</span></li>\r\n	<li><span style=\"color:#000000\">Pelaksanaan penghitungan dan pemungutan suara ulang, Pemilu lanjutan, dan Pemilu susulan; dan</span></li>\r\n	<li><span style=\"color:#000000\">Penetapan hasil Pemilu;</span></li>\r\n</ol>\r\n\r\n<p><span style=\"color:#000000\">e. Mencegah terjadinya praktik politik uang;</span></p>\r\n\r\n<p><span style=\"color:#000000\">f. Mengawasi netralitas aparatur sipil negara, netralitas anggota Tentara Nasional Indonesia, dan netralitas anggota Kepolisian Republik Indonesia;</span></p>\r\n\r\n<p><span style=\"color:#000000\">g. Mengawasi pelaksanaan putusan/keputusan, yang terdiri atas:</span></p>\r\n\r\n<ol>\r\n	<li><span style=\"color:#000000\">Putusan DKPP;</span></li>\r\n	<li><span style=\"color:#000000\">Putusan pengadilan mengenai pelanggaran dan sengketa Pemilu;</span></li>\r\n	<li><span style=\"color:#000000\">Putusan/keputusan Bawaslu, Bawaslu Provinsi, dan Bawaslu Ihbupaten/ Kota;</span></li>\r\n	<li><span style=\"color:#000000\">Keputusan KPU, KPU Provinsi, dan KPU Kabupaten/Kota; dan</span></li>\r\n	<li><span style=\"color:#000000\">Keputusan pejabat yang berwenang atas pelanggaran netralitas aparatur sipil negara, netralitas anggota Tentara Nasional Indonesia, dan netralitas anggota Kepolisian Republik Indonesia;</span></li>\r\n</ol>\r\n\r\n<p><span style=\"color:#000000\">h. Menyampaikan dugaan pelanggaran kode etik Penyelenggara Pemilu kepada DKPP;</span></p>\r\n\r\n<p><span style=\"color:#000000\">i. Menyampaikan dugaan tindak pidana Pemilu kepada Gakkumdu;</span></p>\r\n\r\n<p><span style=\"color:#000000\">j. Mengelola, memelihara, dan merawat arsip serta melaksanakan penyusutannya berdasarkan jadwal retensi arsip sesuai dengan ketentuan peraturan perundangundangan;</span></p>\r\n\r\n<p><span style=\"color:#000000\">k. Mengevaluasi pengawasan Pemilu;</span></p>\r\n\r\n<p><span style=\"color:#000000\">l. Mengawasi pelaksanaan Peraturan KPU; dan</span></p>\r\n\r\n<p><span style=\"color:#000000\">m. Melaksanakan tugas lain sesuai dengan ketentuan peraturan perundang-undangan.</span></p>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n\r\n<p><span style=\"color:#000000\"><strong>Bawaslu berwenang:</strong></span></p>\r\n\r\n<p><span style=\"color:#000000\">a. Menerima dan menindaklanjuti laporan yang berkaitan dengan dugaan adanya pelanggaran terhadap pelaksanaan peraturan perundang-undangan yang mengahrr mengenai Pemilu;</span></p>\r\n\r\n<p><span style=\"color:#000000\">b. Memeriksa, mengkaji, dan memutus pelanggaran, administrasi Pemilu;</span></p>\r\n\r\n<p><span style=\"color:#000000\">c. Memeriksa, mengkaji, dan memuttrs pelanggaran politik uarg;</span></p>\r\n\r\n<p><span style=\"color:#000000\">d. Menerima, memeriksa, memediasi atau mengadjudikasi, dan memutus penyelesaian sengketa proses Pemilu;</span></p>\r\n\r\n<p><span style=\"color:#000000\">e. Merekomendasikan kepada instansi yang bersangkutan mengenai hasil pengawasan terhadap netralitas aparatur sipil-negara, netralitas anggota Tentara Nasional Indonesia, dan netralitas anggota Kepolisian Republik Indonesia; &#39;</span></p>\r\n\r\n<p><span style=\"color:#000000\">f. Mengambil alih sementara tugas, wewenang, dan kewajiban Bawaslu Provinsi dan Bawaslu Kabupaten/Kota secara berjenjang jika Bawaslu Provinsi dan Bawaslu Kabupaten Kota berhalangan sementara akibat dikenai sanksi atau akibat lainnya sesuai dengan ketentuan peraturan perundang-undangan ;</span></p>\r\n\r\n<p><span style=\"color:#000000\">g. Meminta bahan keterangan yang dibuhrhkan kepada pihak terkait dalam rangka pencegahan dan penindakan pelanggaran administrasi, pelanggaran kode etik, dugaan tindak pidana Pemilu, dan sengketa proses Pemilu;</span></p>\r\n\r\n<p><span style=\"color:#000000\">h. Mengoreksi putusan dan rekomendasi Bawaslu Provinsi dan Bawaslu Kabupaten/Kota apabila terdapat hal yang bertentangan dengan ketentuan peraturan perundangundangan;</span></p>\r\n\r\n<p><span style=\"color:#000000\">i. Membentuk Bawaslu Provinsi, Bawaslu Kabupaten/ Kota, dan Panwaslu LN;</span></p>\r\n\r\n<p><span style=\"color:#000000\">j. Mengangkat, membina, dan memberhentikan anggota Bawaslu Provinsi, anggota Bawaslu Kabupaten/Kota, dan anggota Panwaslu LN; dan</span></p>\r\n\r\n<p><span style=\"color:#000000\">k. Melaksanakan wewenang lain sesuai dengan ketentuan peraturan perundang-undangan.</span></p>\r\n\r\n<p><span style=\"color:#000000\"><strong>Bawaslu berkewajiban:</strong></span></p>\r\n\r\n<p><span style=\"color:#000000\">a. Bersikap adil dalam menjalankan tugas dan wewenang;</span></p>\r\n\r\n<p><span style=\"color:#000000\">b. Melakukan pembinaan dan pengawasan terhadap pelaksanaan tugas Pengawas Pemilu pada semua tingkatan;</span></p>\r\n\r\n<p><span style=\"color:#000000\">c. Menyampaikan laporan hasil pengawasan kepada Presiden dan DPR sesuai dengan tahapan Pemilu secara periodik darr/atau berdasarkan kebutuhan</span></p>\r\n\r\n<p><span style=\"color:#000000\">d. Mengawasi pemutakhiran dan pemeliharaan data pemilih secara berkelanjutan yang ditakukan oleh KPU dengan memperhatikan data kependudukan sesuai dengan ketentuan peraturan perundang-undangan; dan</span></p>\r\n\r\n<p><span style=\"color:#000000\">e. Melaksanakan kewajiban lain sesuai dengan ketentuan perundangundangan.</span></p>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_slider`
+-- Table structure for table `tb_slider`
 --
 
 CREATE TABLE `tb_slider` (
@@ -3894,7 +4093,7 @@ CREATE TABLE `tb_slider` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tb_slider`
+-- Dumping data for table `tb_slider`
 --
 
 INSERT INTO `tb_slider` (`idslider`, `gambar`) VALUES
@@ -3905,7 +4104,7 @@ INSERT INTO `tb_slider` (`idslider`, `gambar`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_tautan`
+-- Table structure for table `tb_tautan`
 --
 
 CREATE TABLE `tb_tautan` (
@@ -3916,11 +4115,11 @@ CREATE TABLE `tb_tautan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tb_tautan`
+-- Dumping data for table `tb_tautan`
 --
 
 INSERT INTO `tb_tautan` (`idtautan`, `judul`, `link`, `gambar`) VALUES
-(14, 'Republik Indonesia', 'https://indonesia.go.id/', 'garuda.jpg'),
+(14, 'Minang Jaya Empire Reborn', 'https://indonesia.go.id/', 'garuda.jpg'),
 (15, 'Dewan Perwakilan Rakyat', 'http://dpr.go.id/', 'dpr.jpg'),
 (16, 'Komisi Pemilihan Umum', 'https://kpu.go.id/', 'kpu.jpg'),
 (17, 'Dewan Kehormatan Penyelenggara Pemilu', 'http://dkpp.go.id/', 'dkpp.jpg'),
@@ -3932,7 +4131,7 @@ INSERT INTO `tb_tautan` (`idtautan`, `judul`, `link`, `gambar`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `twitter`
+-- Table structure for table `twitter`
 --
 
 CREATE TABLE `twitter` (
@@ -3942,16 +4141,16 @@ CREATE TABLE `twitter` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `twitter`
+-- Dumping data for table `twitter`
 --
 
 INSERT INTO `twitter` (`idtwitter`, `twitter`, `link`) VALUES
-(1, '@Bawaslupayakum1', 'https://twitter.com/BPayakumbuh');
+(1, 'BawasluPayakum1', 'https://twitter.com/BawasluPayakum1');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `video`
+-- Table structure for table `video`
 --
 
 CREATE TABLE `video` (
@@ -3960,7 +4159,7 @@ CREATE TABLE `video` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `video`
+-- Dumping data for table `video`
 --
 
 INSERT INTO `video` (`idvideo`, `link`) VALUES
@@ -3969,7 +4168,7 @@ INSERT INTO `video` (`idvideo`, `link`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `youtube`
+-- Table structure for table `youtube`
 --
 
 CREATE TABLE `youtube` (
@@ -3979,7 +4178,7 @@ CREATE TABLE `youtube` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `youtube`
+-- Dumping data for table `youtube`
 --
 
 INSERT INTO `youtube` (`idyoutube`, `youtube`, `link`) VALUES
@@ -3990,329 +4189,437 @@ INSERT INTO `youtube` (`idyoutube`, `youtube`, `link`) VALUES
 --
 
 --
--- Indeks untuk tabel `alamat`
+-- Indexes for table `alamat`
 --
 ALTER TABLE `alamat`
   ADD PRIMARY KEY (`idalamat`);
 
 --
--- Indeks untuk tabel `email`
+-- Indexes for table `dataadmin`
+--
+ALTER TABLE `dataadmin`
+  ADD PRIMARY KEY (`admin_id`);
+
+--
+-- Indexes for table `dataditempuh`
+--
+ALTER TABLE `dataditempuh`
+  ADD PRIMARY KEY (`tmp_id`);
+
+--
+-- Indexes for table `datagd`
+--
+ALTER TABLE `datagd`
+  ADD PRIMARY KEY (`data_id`);
+
+--
+-- Indexes for table `datajk`
+--
+ALTER TABLE `datajk`
+  ADD PRIMARY KEY (`data_id`);
+
+--
+-- Indexes for table `datakawin`
+--
+ALTER TABLE `datakawin`
+  ADD PRIMARY KEY (`data_id`);
+
+--
+-- Indexes for table `dataku`
+--
+ALTER TABLE `dataku`
+  ADD PRIMARY KEY (`data_id`);
+
+--
+-- Indexes for table `datapekerjaan`
+--
+ALTER TABLE `datapekerjaan`
+  ADD PRIMARY KEY (`data_id`);
+
+--
+-- Indexes for table `datapendidik`
+--
+ALTER TABLE `datapendidik`
+  ADD PRIMARY KEY (`pendkk_id`);
+
+--
+-- Indexes for table `email`
 --
 ALTER TABLE `email`
   ADD PRIMARY KEY (`idemail`);
 
 --
--- Indeks untuk tabel `event`
+-- Indexes for table `event`
 --
 ALTER TABLE `event`
   ADD PRIMARY KEY (`idwaktu`);
 
 --
--- Indeks untuk tabel `fb`
+-- Indexes for table `fb`
 --
 ALTER TABLE `fb`
   ADD PRIMARY KEY (`idfb`);
 
 --
--- Indeks untuk tabel `ig`
+-- Indexes for table `ig`
 --
 ALTER TABLE `ig`
   ADD PRIMARY KEY (`idig`);
 
 --
--- Indeks untuk tabel `informasipublic`
+-- Indexes for table `informasipublic`
 --
 ALTER TABLE `informasipublic`
   ADD PRIMARY KEY (`idinformasi`);
 
 --
--- Indeks untuk tabel `kota`
+-- Indexes for table `kota`
 --
 ALTER TABLE `kota`
   ADD PRIMARY KEY (`idkota`);
 
 --
--- Indeks untuk tabel `logo`
+-- Indexes for table `logo`
 --
 ALTER TABLE `logo`
   ADD PRIMARY KEY (`id_logo`);
 
 --
--- Indeks untuk tabel `notelp`
+-- Indexes for table `notelp`
 --
 ALTER TABLE `notelp`
   ADD PRIMARY KEY (`idtelp`);
 
 --
--- Indeks untuk tabel `struktur_organisasi`
+-- Indexes for table `struktur_organisasi`
 --
 ALTER TABLE `struktur_organisasi`
   ADD PRIMARY KEY (`id_organisasi`);
 
 --
--- Indeks untuk tabel `tb_admin`
+-- Indexes for table `tb_admin`
 --
 ALTER TABLE `tb_admin`
   ADD PRIMARY KEY (`idadmin`);
 
 --
--- Indeks untuk tabel `tb_agenda`
+-- Indexes for table `tb_agenda`
 --
 ALTER TABLE `tb_agenda`
   ADD PRIMARY KEY (`idagenda`);
 
 --
--- Indeks untuk tabel `tb_album`
+-- Indexes for table `tb_album`
 --
 ALTER TABLE `tb_album`
   ADD PRIMARY KEY (`idalbum`);
 
 --
--- Indeks untuk tabel `tb_berita`
+-- Indexes for table `tb_berita`
 --
 ALTER TABLE `tb_berita`
   ADD PRIMARY KEY (`idberita`);
 
 --
--- Indeks untuk tabel `tb_buku_saku_bawaslu`
+-- Indexes for table `tb_buku_saku_bawaslu`
 --
 ALTER TABLE `tb_buku_saku_bawaslu`
   ADD PRIMARY KEY (`idbukusaku`);
 
 --
--- Indeks untuk tabel `tb_detail_pengumuman`
+-- Indexes for table `tb_detail_pengumuman`
 --
 ALTER TABLE `tb_detail_pengumuman`
   ADD PRIMARY KEY (`iddetailpengumuman`);
 
 --
--- Indeks untuk tabel `tb_galeri`
+-- Indexes for table `tb_galeri`
 --
 ALTER TABLE `tb_galeri`
   ADD PRIMARY KEY (`idgaleri`);
 
 --
--- Indeks untuk tabel `tb_komisioner`
+-- Indexes for table `tb_komisioner`
 --
 ALTER TABLE `tb_komisioner`
   ADD PRIMARY KEY (`idkomisioner`);
 
 --
--- Indeks untuk tabel `tb_pengumuman`
+-- Indexes for table `tb_lpm`
+--
+ALTER TABLE `tb_lpm`
+  ADD PRIMARY KEY (`id_lpm`);
+
+--
+-- Indexes for table `tb_pengumuman`
 --
 ALTER TABLE `tb_pengumuman`
   ADD PRIMARY KEY (`idpengumuman`);
 
 --
--- Indeks untuk tabel `tb_perbawaslu_terbaru`
+-- Indexes for table `tb_perbawaslu_terbaru`
 --
 ALTER TABLE `tb_perbawaslu_terbaru`
   ADD PRIMARY KEY (`idperbawaslu`);
 
 --
--- Indeks untuk tabel `tb_ppid`
+-- Indexes for table `tb_ppid`
 --
 ALTER TABLE `tb_ppid`
   ADD PRIMARY KEY (`id_ppid`);
 
 --
--- Indeks untuk tabel `tb_profil`
+-- Indexes for table `tb_profil`
 --
 ALTER TABLE `tb_profil`
   ADD PRIMARY KEY (`id_profil`);
 
 --
--- Indeks untuk tabel `tb_slider`
+-- Indexes for table `tb_slider`
 --
 ALTER TABLE `tb_slider`
   ADD PRIMARY KEY (`idslider`);
 
 --
--- Indeks untuk tabel `tb_tautan`
+-- Indexes for table `tb_tautan`
 --
 ALTER TABLE `tb_tautan`
   ADD PRIMARY KEY (`idtautan`);
 
 --
--- Indeks untuk tabel `twitter`
+-- Indexes for table `twitter`
 --
 ALTER TABLE `twitter`
   ADD PRIMARY KEY (`idtwitter`);
 
 --
--- Indeks untuk tabel `video`
+-- Indexes for table `video`
 --
 ALTER TABLE `video`
   ADD PRIMARY KEY (`idvideo`);
 
 --
--- Indeks untuk tabel `youtube`
+-- Indexes for table `youtube`
 --
 ALTER TABLE `youtube`
   ADD PRIMARY KEY (`idyoutube`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `alamat`
+-- AUTO_INCREMENT for table `alamat`
 --
 ALTER TABLE `alamat`
   MODIFY `idalamat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT untuk tabel `email`
+-- AUTO_INCREMENT for table `dataadmin`
+--
+ALTER TABLE `dataadmin`
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `dataditempuh`
+--
+ALTER TABLE `dataditempuh`
+  MODIFY `tmp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `datagd`
+--
+ALTER TABLE `datagd`
+  MODIFY `data_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `datajk`
+--
+ALTER TABLE `datajk`
+  MODIFY `data_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `datakawin`
+--
+ALTER TABLE `datakawin`
+  MODIFY `data_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `dataku`
+--
+ALTER TABLE `dataku`
+  MODIFY `data_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `datapekerjaan`
+--
+ALTER TABLE `datapekerjaan`
+  MODIFY `data_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `datapendidik`
+--
+ALTER TABLE `datapendidik`
+  MODIFY `pendkk_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `email`
 --
 ALTER TABLE `email`
   MODIFY `idemail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `event`
+-- AUTO_INCREMENT for table `event`
 --
 ALTER TABLE `event`
   MODIFY `idwaktu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `fb`
+-- AUTO_INCREMENT for table `fb`
 --
 ALTER TABLE `fb`
   MODIFY `idfb` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `ig`
+-- AUTO_INCREMENT for table `ig`
 --
 ALTER TABLE `ig`
   MODIFY `idig` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `informasipublic`
+-- AUTO_INCREMENT for table `informasipublic`
 --
 ALTER TABLE `informasipublic`
   MODIFY `idinformasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT untuk tabel `kota`
+-- AUTO_INCREMENT for table `kota`
 --
 ALTER TABLE `kota`
   MODIFY `idkota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `logo`
+-- AUTO_INCREMENT for table `logo`
 --
 ALTER TABLE `logo`
   MODIFY `id_logo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `notelp`
+-- AUTO_INCREMENT for table `notelp`
 --
 ALTER TABLE `notelp`
-  MODIFY `idtelp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idtelp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT untuk tabel `struktur_organisasi`
+-- AUTO_INCREMENT for table `struktur_organisasi`
 --
 ALTER TABLE `struktur_organisasi`
-  MODIFY `id_organisasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_organisasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_admin`
+-- AUTO_INCREMENT for table `tb_admin`
 --
 ALTER TABLE `tb_admin`
   MODIFY `idadmin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_agenda`
+-- AUTO_INCREMENT for table `tb_agenda`
 --
 ALTER TABLE `tb_agenda`
-  MODIFY `idagenda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `idagenda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_album`
+-- AUTO_INCREMENT for table `tb_album`
 --
 ALTER TABLE `tb_album`
-  MODIFY `idalbum` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idalbum` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_berita`
+-- AUTO_INCREMENT for table `tb_berita`
 --
 ALTER TABLE `tb_berita`
-  MODIFY `idberita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `idberita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_buku_saku_bawaslu`
+-- AUTO_INCREMENT for table `tb_buku_saku_bawaslu`
 --
 ALTER TABLE `tb_buku_saku_bawaslu`
   MODIFY `idbukusaku` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_detail_pengumuman`
+-- AUTO_INCREMENT for table `tb_detail_pengumuman`
 --
 ALTER TABLE `tb_detail_pengumuman`
   MODIFY `iddetailpengumuman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_galeri`
+-- AUTO_INCREMENT for table `tb_galeri`
 --
 ALTER TABLE `tb_galeri`
-  MODIFY `idgaleri` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `idgaleri` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_komisioner`
+-- AUTO_INCREMENT for table `tb_komisioner`
 --
 ALTER TABLE `tb_komisioner`
-  MODIFY `idkomisioner` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `idkomisioner` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_pengumuman`
+-- AUTO_INCREMENT for table `tb_lpm`
+--
+ALTER TABLE `tb_lpm`
+  MODIFY `id_lpm` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tb_pengumuman`
 --
 ALTER TABLE `tb_pengumuman`
   MODIFY `idpengumuman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_perbawaslu_terbaru`
+-- AUTO_INCREMENT for table `tb_perbawaslu_terbaru`
 --
 ALTER TABLE `tb_perbawaslu_terbaru`
   MODIFY `idperbawaslu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_ppid`
+-- AUTO_INCREMENT for table `tb_ppid`
 --
 ALTER TABLE `tb_ppid`
-  MODIFY `id_ppid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id_ppid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_profil`
+-- AUTO_INCREMENT for table `tb_profil`
 --
 ALTER TABLE `tb_profil`
   MODIFY `id_profil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_slider`
+-- AUTO_INCREMENT for table `tb_slider`
 --
 ALTER TABLE `tb_slider`
-  MODIFY `idslider` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `idslider` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_tautan`
+-- AUTO_INCREMENT for table `tb_tautan`
 --
 ALTER TABLE `tb_tautan`
-  MODIFY `idtautan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `idtautan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
--- AUTO_INCREMENT untuk tabel `twitter`
+-- AUTO_INCREMENT for table `twitter`
 --
 ALTER TABLE `twitter`
   MODIFY `idtwitter` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `video`
+-- AUTO_INCREMENT for table `video`
 --
 ALTER TABLE `video`
-  MODIFY `idvideo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idvideo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT untuk tabel `youtube`
+-- AUTO_INCREMENT for table `youtube`
 --
 ALTER TABLE `youtube`
   MODIFY `idyoutube` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
