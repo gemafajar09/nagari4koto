@@ -25,6 +25,7 @@
                     <th>Aksi</th>
                   </tr>
                 </thead>
+                
                 <tbody>
                   <?php
                   $be = mysqli_query($kon, "SELECT * FROM alamat");

@@ -270,7 +270,7 @@ if (!$_SESSION['id']) {
               <ul class="treeview-menu">
 
                 <li>
-                  <a href="?module=lemmas/lpmbawaslu">
+                  <a href="?module=lemmas/lpm/lpmbawaslu">
                     <i class="fa fa-user"></i> <span>LPM</span>
                   </a>
                 </li>
@@ -299,43 +299,49 @@ if (!$_SESSION['id']) {
               <ul class="treeview-menu">
 
                 <li>
-                  <a href="?module=alamatbawaslu">
+                  <a href="?module=datadesa/dataadmin">
                     <i class="fa fa-file"></i> <span>Data Wilayah Administratif</span>
                   </a>
                 </li>
 
                 <li>
-                  <a href="?module=notelp">
-                    <i class="fa fa-file"></i> <span>Data Pendidikan</span>
+                  <a href="?module=datadesa/datapendkk">
+                    <i class="fa fa-file"></i> <span>Data Pendidikan Dalam KK</span>
                   </a>
                 </li>
 
                 <li>
-                  <a href="?module=emailbawaslu">
+                  <a href="?module=datadesa/dataditempuh">
+                    <i class="fa fa-file"></i> <span>Data Pendidikan Ditempuh</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="?module=datadesa/datapekerjaan">
                     <i class="fa fa-file"></i> <span>Data Pekerjaan</span>
                   </a>
                 </li>
 
                 <li>
-                  <a href="?module=emailbawaslu">
+                  <a href="?module=datadesa/datajk">
                     <i class="fa fa-file"></i> <span>Data Jenis Kelamin</span>
                   </a>
                 </li>
 
                 <li>
-                  <a href="?module=emailbawaslu">
+                  <a href="?module=datadesa/datagd">
                     <i class="fa fa-file"></i> <span>Data Golongan Darah</span>
                   </a>
                 </li>
 
                 <li>
-                  <a href="?module=emailbawaslu">
+                  <a href="?module=datadesa/dataku">
                     <i class="fa fa-file"></i> <span>Data Kelompok Umur</span>
                   </a>
                 </li>
 
                 <li>
-                  <a href="?module=emailbawaslu">
+                  <a href="?module=datadesa/datakawin">
                     <i class="fa fa-file"></i> <span>Data Perkawinan</span>
                   </a>
                 </li>
