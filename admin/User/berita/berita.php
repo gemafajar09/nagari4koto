@@ -116,12 +116,13 @@ error_reporting(E_ALL);
         }
         if (isset($_POST['save'])) {
           $judulseo = $_POST['judul'];
-          $judul = $_POST['judul'];
-          $postby = $_POST['postby'];
-          $nmberkas  = $_FILES['foto']["name"];
+          $judul    = $_POST['judul'];
+          $postby   = $_POST['postby'];
+          $nmberkas = $_FILES['foto']["name"];
           $lokberkas = $_FILES["foto"]["tmp_name"];
-          $nmfoto = date("YmdHis") . $nmberkas;
+          $nmfoto   = date("YmdHis") . $nmberkas;
           $valid    = array('jpg', 'png', 'gif', 'jpeg');
+
           if (empty($lokberkas)) {
             $save = mysqli_query($kon, "UPDATE tb_berita set judul='$judul', isiberita='$_POST[deskripsi]', posting_by='$postby', judul_seo='$judulseo' where idberita='$_GET[id]'");
             if ($save) {
@@ -137,7 +138,7 @@ error_reporting(E_ALL);
             list($txt, $ext) = explode(".", $nmfoto);
             if (in_array($ext, $valid)) {
 
-              move_uploaded_file($lokberkas, "../../asset/images/ .$nmfoto");
+              move_uploaded_file($lokberkas, "../../asset/images/" . $nmfoto);
               $lihat = mysqli_fetch_assoc(mysqli_query($kon, "SELECT * FROM tbl_berita where idberita='$_GET[id]'"));
 
               unlink("../../asset/images/" . $lihat['gambar']);
