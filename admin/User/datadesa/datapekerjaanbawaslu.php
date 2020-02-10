@@ -15,13 +15,13 @@
           $pr    = $_POST['pr'];
           $pr2    = $_POST['pr2'];
 
-          $save = mysqli_query($kon, "INSERT INTO dataditempuh (tmp_kel,
-                                                                tmp_jml,
-                                                                tmp_jml2,
-                                                                tmp_lk,
-                                                                tmp_lk2,
-                                                                tmp_pr,
-                                                                tmp_pr2)
+          $save = mysqli_query($kon, "INSERT INTO datapekerjaan (data_kel,
+                                                                data_jml,
+                                                                data_jml2,
+                                                                data_lk,
+                                                                data_lk2,
+                                                                data_pr,
+                                                                data_pr2)
                                                               VALUES
                                                               ('$kel',
                                                               '$jml',
@@ -34,7 +34,7 @@
           if ($save) {
             echo "<script>
             alert('Tambah Data Berhasil');
-            window.location='?module=datadesa/dataditempuh';
+            window.location='?module=datadesa/datapekerjaan';
             </script>";
             // exit;
           } else {
@@ -45,7 +45,7 @@
   ?>
         <section class="content-header">
           <h1>
-            Data Pendidikan Ditempuh
+            Data Pekerjaan
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -114,7 +114,7 @@
                       <div class="form-group">
                         <div class="col-sm-4 col-md-offset-2">
                           <button type="submit" name="save1" class="btn btn-primary btn-flat">Simpan</button>
-                          <a href="?module=datadesa/dataditempuh" class="btn btn-primary btn-flat">Kembali</a>
+                          <a href="?module=datadesa/datapekerjaan" class="btn btn-primary btn-flat">Kembali</a>
                         </div>
                       </div>
                     </div>
@@ -128,8 +128,8 @@
       <?php
         break;
       case "editdata":
-        if (isset($_GET['tmp_id'])) {
-          $sql = mysqli_query($kon, "SELECT * FROM dataditempuh where tmp_id='$_GET[tmp_id]'");
+        if (isset($_GET['data_id'])) {
+          $sql = mysqli_query($kon, "SELECT * FROM datapekerjaan where data_id='$_GET[data_id]'");
           $data = mysqli_fetch_assoc($sql);
         }
         if (isset($_POST['save'])) {
@@ -141,11 +141,11 @@
           $pr    = $_POST['pr'];
           $pr2   = $_POST['pr2'];
 
-          $save = mysqli_query($kon, "UPDATE dataditempuh set tmp_kel='$kel', tmp_jml='$jml',tmp_jml2='$jml2', tmp_lk='$lk',tmp_lk2='$lk2', tmp_pr='$pr',tmp_pr2='$pr2' where tmp_id='$_GET[tmp_id]'");
+          $save = mysqli_query($kon, "UPDATE datapekerjaan set data_kel='$kel', data_jml='$jml',data_jml2='$jml2', data_lk='$lk',data_lk2='$lk2', data_pr='$pr',data_pr2='$pr2' where data_id='$_GET[data_id]'");
           if ($save) {
             echo "<script>
             alert('Edit Data Berhasil');
-            window.location='?module=datadesa/dataditempuh';
+            window.location='?module=datadesa/datapekerjaan';
               </script>";
           } else {
             echo "<script>alert('Gagal');
@@ -178,54 +178,54 @@
                       <div class="form-group">
                         <label for="des" class="col-sm-2 control-label">Kelompok</label>
                         <div class="col-sm-8">
-                          <input name="tmp_id" type="hidden" id="des" class="form-control" value="<?= $data['tmp_id'] ?>">
-                          <input name="kel" type="text" id="des" class="form-control" value="<?= $data['tmp_kel'] ?>">
+                          <input name="data_id" type="hidden" id="des" class="form-control" value="<?= $data['data_id'] ?>">
+                          <input name="kel" type="text" id="des" class="form-control" value="<?= $data['data_kel'] ?>">
                         </div>
                       </div>
 
                       <div class="form-group">
                         <label for="des" class="col-sm-2 control-label">Jumlah Dalam Angka</label>
                         <div class="col-sm-8">
-                          <input name="jml" type="number" id="des" class="form-control" value="<?= $data['tmp_jml'] ?>">
+                          <input name="jml" type="number" id="des" class="form-control" value="<?= $data['data_jml'] ?>">
                         </div>
                       </div>
                       <div class="form-group">
                         <label for="des" class="col-sm-2 control-label">Jumlah Dalam Persen</label>
                         <div class="col-sm-8">
-                          <input name="jml2" type="number" id="des" class="form-control" value="<?= $data['tmp_jml2'] ?>">
+                          <input name="jml2" type="number" id="des" class="form-control" value="<?= $data['data_jml2'] ?>">
                         </div>
                       </div>
 
                       <div class="form-group">
                         <label for="des" class="col-sm-2 control-label">Jumlah Laki Laki Dalam Angka</label>
                         <div class="col-sm-8">
-                          <input name="lk" type="number" id="des" class="form-control" value="<?= $data['tmp_lk'] ?>">
+                          <input name="lk" type="number" id="des" class="form-control" value="<?= $data['data_lk'] ?>">
                         </div>
                       </div>
                       <div class="form-group">
                         <label for="des" class="col-sm-2 control-label">Jumlah Laki Laki Dalam Persen</label>
                         <div class="col-sm-8">
-                          <input name="lk2" type="number" id="des" class="form-control" value="<?= $data['tmp_lk2'] ?>">
+                          <input name="lk2" type="number" id="des" class="form-control" value="<?= $data['data_lk2'] ?>">
                         </div>
                       </div>
 
                       <div class="form-group">
                         <label for="des" class="col-sm-2 control-label">Jumlah Perempuan Dalam Angka</label>
                         <div class="col-sm-8">
-                          <input name="pr" type="number" id="des" class="form-control" value="<?= $data['tmp_pr'] ?>">
+                          <input name="pr" type="number" id="des" class="form-control" value="<?= $data['data_pr'] ?>">
                         </div>
                       </div>
                       <div class="form-group">
                         <label for="des" class="col-sm-2 control-label">Jumlah Perempuan Dalam Persen</label>
                         <div class="col-sm-8">
-                          <input name="pr2" type="number" id="des" class="form-control" value="<?= $data['tmp_pr2'] ?>">
+                          <input name="pr2" type="number" id="des" class="form-control" value="<?= $data['data_pr2'] ?>">
                         </div>
                       </div>
 
                       <div class="form-group">
                         <div class="col-sm-4 col-md-offset-2">
                           <button type="submit" name="save" class="btn btn-primary btn-flat">Simpan</button>
-                          <a href="?module=datadesa/dataditempuh" class="btn btn-primary btn-flat">Kembali</a>
+                          <a href="?module=datadesa/datapekerjaan" class="btn btn-primary btn-flat">Kembali</a>
                         </div>
                       </div>
                     </div>
@@ -238,19 +238,19 @@
         break;
       case "hapusdata":
 
-        if (isset($_GET['tmp_id'])) {
-          $lihat = mysqli_fetch_assoc(mysqli_query($kon, "SELECT * FROM dataditempuh where tmp_id='$_GET[tmp_id]'"));
+        if (isset($_GET['data_id'])) {
+          $lihat = mysqli_fetch_assoc(mysqli_query($kon, "SELECT * FROM datapekerjaan where data_id='$_GET[data_id]'"));
 
-          $del = mysqli_query($kon, "DELETE FROM dataditempuh where tmp_id='$_GET[tmp_id]'");
+          $del = mysqli_query($kon, "DELETE FROM datapekerjaan where data_id='$_GET[data_id]'");
           if ($del) {
             echo "<script>
                 alert('Data Berhasil Dihapus');
-    					  window.location='index.php?module=datadesa/dataditempuh';
+    					  window.location='index.php?module=datadesa/datapekerjaan';
     				  </script>";
           } else {
             echo "<script>
                 alert('Data Gagal Dihapus');
-                window.location='index.php?module=datadesa/dataditempuh';
+                window.location='index.php?module=datadesa/datapekerjaan';
               </script>";
           }
         }
