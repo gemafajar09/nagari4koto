@@ -60,25 +60,22 @@ input[type="number"] {
                 </tr>
             </thead>
             <tbody>
+              <?php
+                $data = $kon->query("SELECT * FROM datapendidik");
+                foreach ($data as $i => $a) {
+              ?>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><?= $i+1 ?></td>
+                    <td><?= $a["pendkk_kel"]; ?></td>
+                    <td><?= $a["pendkk_jml"]; ?></td>
+                    <td><?= $a["pendkk_jml2"]; ?></td>
+                    <td><?= $a["pendkk_lk"]; ?></td>
+                    <td><?= $a["pendkk_lk2"]; ?></td>
+                    <td><?= $a["pendkk_pr"]; ?></td>
+                    <td><?= $a["pendkk_pr2"]; ?></td>
                 </tr>
+              <?php } ?>
             </tbody>
-            <tr>
-                <td colspan="3" align="right"><b>Total</b></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
         </table>
     </div>
 </div>
@@ -89,22 +86,18 @@ input[type="number"] {
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 <script src="https://code.highcharts.com/modules/variable-pie.js"></script>
 <script>
-    function chart()
-{
-Highcharts.chart('donat', {
-  chart: {
-    plotBackgroundColor: null,
-    plotBorderWidth: null,
-    plotShadow: false,
-    type: 'pie'
-  },
-  title: {
-    text: 'Data Pendidikan'
-  },
-  tooltip: {
-    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-  },
-  accessibility: {
+      Highcharts.chart('donat', {
+    chart: {
+        type: 'variablepie'
+    },
+    title: {
+        text: 'Data Pendidikan Yang Ditempuh'
+    },
+    tooltip: {
+        headerFormat: '',
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+    accessibility: {
     point: {
       valueSuffix: '%'
     }
@@ -120,40 +113,25 @@ Highcharts.chart('donat', {
         showInLegend: true
     }
   },
-  series: [{
-    name: 'Brands',
-    colorByPoint: true,
-    data: [{
-      name: 'Chrome',
-      y: 61.41,
-      sliced: true,
-      selected: true
-    }, {
-      name: 'Internet Explorer',
-      y: 11.84
-    }, {
-      name: 'Firefox',
-      y: 10.85
-    }, {
-      name: 'Edge',
-      y: 4.67
-    }, {
-      name: 'Safari',
-      y: 4.18
-    }, {
-      name: 'Sogou Explorer',
-      y: 1.64
-    }, {
-      name: 'Opera',
-      y: 1.6
-    }, {
-      name: 'QQ',
-      y: 1.2
-    }, {
-      name: 'Other',
-      y: 2.61
+    series: [{
+        minPointSize: 10,
+        innerSize: '20%',
+        zMin: 0,
+        colorByPoint: true,
+        name: 'countries',
+        <?php 
+          $data = $kon->query("SELECT * FROM datapendidik");
+          $data_grafik = array();
+          while($row = mysqli_fetch_array($data))
+          {
+            $data_grafik[] = array(
+              "name" => $row['pendkk_kel'] ,
+              "y" => (int)$row['pendkk_jml'],
+              "z" => (int)$row['pendkk_jml2']
+            );
+          }
+        ?>
+        data: <?=json_encode($data_grafik)?> 
     }]
-  }]
 });
-}
 </script>

@@ -1,7 +1,7 @@
 <?php
 include "admin/koneksi.php";
 include "menu/tgl_indo.php";
-
+error_reporting(0);
     $ip = $_SERVER['REMOTE_ADDR'];
     $tanggal = date("Ymd");
     $waktu   = time();
@@ -47,7 +47,7 @@ include "menu/tgl_indo.php";
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">
-    <img src="asset/images/hilie.png" width="60">
+    <img src="asset/images/logo.png" width="60">
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -104,7 +104,7 @@ include "menu/tgl_indo.php";
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="?page=menu/data_umur">Data Kelompok Umur</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Data Perkawinan</a>
+          <a class="dropdown-item" href="?page=menu/data_perkawinan">Data Perkawinan</a>
         </div>
       </li>
 
@@ -133,6 +133,9 @@ include "menu/tgl_indo.php";
   </div>
 </nav>
 <!-- Slider -->
+<?php 
+  if($_GET['page']== ''){
+?>
 <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <!-- <li data-target="#carouselExampleCaptions" data-slide-to="0"></li> -->
@@ -153,8 +156,8 @@ include "menu/tgl_indo.php";
     <div class="carousel-item">
       <img src="asset/images/<?= $a['gambar'] ?>" height="400px" class="d-block w-100">
       <div class="carousel-caption d-none d-md-block">
-        <h5>Second slide label</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <!-- <h5>Second slide label</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
       </div>
     </div>
     <?php } ?>
@@ -168,6 +171,7 @@ include "menu/tgl_indo.php";
     <span class="sr-only">Next</span>
   </a>
 </div>
+<?php }else{} ?>
 <!-- content -->
 <div class="container-fluid py-2">
     <div class="row">

@@ -60,26 +60,22 @@ input[type="number"] {
                 </tr>
             </thead>
             <tbody>
-                  <?php
-                  $be = mysqli_query($kon, "SELECT * FROM datajk");
-
-                  $no = 1;
-                  while ($r = mysqli_fetch_assoc($be)) {
-                  ?>
-                    <tr>
-                      <td><?= $no; ?></td>
-                      <td><?= $r["data_kel"]; ?></td>
-
-                      <td><?= $r["data_jml"]; ?></td>
-                      <td><?= $r["data_jml2"]; ?></td>
-                      <td><?= $r["data_lk"]; ?></td>
-                      <td><?= $r["data_lk2"]; ?></td>
-                      <td><?= $r["data_pr"]; ?></td>
-                      <td><?= $r["data_pr2"]; ?></td>
-                    </tr>
-                  <?php
-                  } ?>
-                </tbody>
+                <?php
+                $data = $kon->query("SELECT * FROM datajk");
+                foreach ($data as $i => $a) {
+              ?>
+                <tr>
+                    <td><?= $i+1 ?></td>
+                    <td><?= $a["data_kel"]; ?></td>
+                    <td><?= $a["data_jml"]; ?></td>
+                    <td><?= $a["data_jml2"]; ?></td>
+                    <td><?= $a["data_lk"]; ?></td>
+                    <td><?= $a["data_lk2"]; ?></td>
+                    <td><?= $a["data_pr"]; ?></td>
+                    <td><?= $a["data_pr2"]; ?></td>
+                </tr>
+            <?php } ?>
+            </tbody>
         </table>
     </div>
 </div>
@@ -124,19 +120,20 @@ Highcharts.chart('jekel', {
         zMin: 0,
         colorByPoint: true,
         name: 'countries',
-        <?php
-            $data = $kon->query("SELECT * FROM datajk");
-            $data_statistik = array();
-            while($a = $data->fetch_array())
-            {
-                $data_statistik = array(
-                    'name' => $a['data_kel'],
-                    'y' => (int)$a['data_jml'],
-                    'z' => (int)$a['data_jml2']
-                );
-            }
+        <?php 
+          $data = $kon->query("SELECT * FROM datajk");
+          $data_grafik = array();
+          while($row = mysqli_fetch_array($data))
+          {
+            $data_grafik[] = array(
+              "name" => $row['data_kel'] ,
+              "y" => (int)$row['data_jml'],
+              "z" => (int)$row['data_jml2']
+            );
+          }
         ?>
-        data: [<?php echo json_encode($data_statistik); ?>]
+        data: <?=json_encode($data_grafik)?> 
+        
     }]
 });
 </script>
