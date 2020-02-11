@@ -40,7 +40,7 @@ input[type="number"] {
 </style>
 <div class="card">
     <div class="card-body">
-    <div id="ppp"></div>
+        <div id="donats"></div>
         <table class="table table-bordered table-hover" style="font-size:13px">
             <thead>
                 <tr>
@@ -60,21 +60,21 @@ input[type="number"] {
                 </tr>
             </thead>
             <tbody>
-                <?php
-                  $be = mysqli_query($kon, "SELECT * FROM datapekerjaan");
-                    foreach($be as $i => $r) {
-                  ?>
+              <?php
+                $data = $kon->query("SELECT * FROM datakawin");
+                foreach ($data as $i => $a) {
+              ?>
                 <tr>
                     <td><?= $i+1 ?></td>
-                    <td><?= $r["data_kel"]; ?></td>
-                      <td><?= $r["data_jml"]; ?></td>
-                      <td><?= $r["data_jml2"]; ?></td>
-                      <td><?= $r["data_lk"]; ?></td>
-                      <td><?= $r["data_lk2"]; ?></td>
-                      <td><?= $r["data_pr"]; ?></td>
-                      <td><?= $r["data_pr2"]; ?></td>
+                    <td><?= $a["data_kel"]; ?></td>
+                    <td><?= $a["data_jml"]; ?></td>
+                    <td><?= $a["data_jml2"]; ?></td>
+                    <td><?= $a["data_lk"]; ?></td>
+                    <td><?= $a["data_lk2"]; ?></td>
+                    <td><?= $a["data_pr"]; ?></td>
+                    <td><?= $a["data_pr2"]; ?></td>
                 </tr>
-            <?php } ?>
+              <?php } ?>
             </tbody>
         </table>
     </div>
@@ -86,13 +86,12 @@ input[type="number"] {
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 <script src="https://code.highcharts.com/modules/variable-pie.js"></script>
 <script>
-    // pekerjaan
-Highcharts.chart('ppp', {
+      Highcharts.chart('donats', {
     chart: {
         type: 'variablepie'
     },
     title: {
-        text: 'Data Pekerjaan'
+        text: 'Data Perkawinan'
     },
     tooltip: {
         headerFormat: '',
@@ -120,8 +119,8 @@ Highcharts.chart('ppp', {
         zMin: 0,
         colorByPoint: true,
         name: 'countries',
-         <?php 
-          $data = $kon->query("SELECT * FROM `datapekerjaan`");
+        <?php 
+          $data = $kon->query("SELECT * FROM datakawin");
           $data_grafik = array();
           while($row = mysqli_fetch_array($data))
           {
@@ -132,7 +131,7 @@ Highcharts.chart('ppp', {
             );
           }
         ?>
-        data: <?=json_encode($data_grafik)?>  
+        data: <?=json_encode($data_grafik)?> 
     }]
 });
 </script>

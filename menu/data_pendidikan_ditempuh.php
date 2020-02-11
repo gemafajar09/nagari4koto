@@ -60,25 +60,23 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+                <?php
+                  $be = mysqli_query($kon, "SELECT * FROM dataditempuh");
+                  foreach($be as $i => $r) {
+                  ?>
+                    <tr>
+                      <td><?= $i+1; ?></td>
+                      <td><?= $r["tmp_kel"]; ?></td>
+
+                      <td><?= $r["tmp_jml"]; ?></td>
+                      <td><?= $r["tmp_jml2"]; ?></td>
+                      <td><?= $r["tmp_lk"]; ?></td>
+                      <td><?= $r["tmp_lk2"]; ?></td>
+                      <td><?= $r["tmp_pr"]; ?></td>
+                      <td><?= $r["tmp_pr2"]; ?></td>
+                    <tr>
+                    <?php } ?>
             </tbody>
-            <tr>
-                <td colspan="3" align="right"><b>Total</b></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
         </table>
     </div>
 </div>
@@ -122,35 +120,19 @@
         zMin: 0,
         colorByPoint: true,
         name: 'countries',
-        data: [{
-            name: 'Spain',
-            y: 505370,
-            z: 92.9
-        }, {
-            name: 'France',
-            y: 551500,
-            z: 118.7
-        }, {
-            name: 'Poland',
-            y: 312685,
-            z: 124.6
-        }, {
-            name: 'Czech Republic',
-            y: 78867,
-            z: 137.5
-        }, {
-            name: 'Italy',
-            y: 301340,
-            z: 201.8
-        }, {
-            name: 'Switzerland',
-            y: 41277,
-            z: 214.5
-        }, {
-            name: 'Germany',
-            y: 357022,
-            z: 235.6
-        }]
+        <?php 
+          $data = $kon->query("SELECT * FROM `dataditempuh`");
+          $data_grafik = array();
+          while($row = mysqli_fetch_array($data))
+          {
+            $data_grafik[] = array(
+              "name" => $row['tmp_kel'] ,
+              "y" => (int)$row['tmp_jml'],
+              "z" => (int)$row['tmp_jml2']
+            );
+          }
+        ?>
+        data: <?=json_encode($data_grafik)?> 
     }]
 });
 </script>

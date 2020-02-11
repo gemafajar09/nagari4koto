@@ -60,25 +60,22 @@ input[type="number"] {
                 </tr>
             </thead>
             <tbody>
+                <?php
+                $data = $kon->query("SELECT * FROM dataku");
+                foreach ($data as $i => $a) {
+              ?>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><?= $i+1 ?></td>
+                    <td><?= $a["data_kel"]; ?></td>
+                    <td><?= $a["data_jml"]; ?></td>
+                    <td><?= $a["data_jml2"]; ?></td>
+                    <td><?= $a["data_lk"]; ?></td>
+                    <td><?= $a["data_lk2"]; ?></td>
+                    <td><?= $a["data_pr"]; ?></td>
+                    <td><?= $a["data_pr2"]; ?></td>
                 </tr>
+            <?php } ?>
             </tbody>
-            <tr>
-                <td colspan="3" align="right"><b>Total</b></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
         </table>
     </div>
 </div>
@@ -95,7 +92,7 @@ Highcharts.chart('jekel', {
         type: 'variablepie'
     },
     title: {
-        text: 'Data Golongan Umur'
+        text: 'Data Kelompok Umur'
     },
     tooltip: {
         headerFormat: '',
@@ -123,15 +120,19 @@ Highcharts.chart('jekel', {
         zMin: 0,
         colorByPoint: true,
         name: 'countries',
-        data: [{
-            name: 'Laki-laki',
-            y: 250,
-            z: 92.9
-        }, {
-            name: 'Perempuan',
-            y: 100,
-            z: 118.7
-        }]
+        <?php 
+          $data = $kon->query("SELECT * FROM dataku");
+          $data_grafik = array();
+          while($row = mysqli_fetch_array($data))
+          {
+            $data_grafik[] = array(
+              "name" => $row['data_kel'] ,
+              "y" => (int)$row['data_jml'],
+              "z" => (int)$row['data_jml2']
+            );
+          }
+        ?>
+        data: <?=json_encode($data_grafik)?> 
     }]
 });
 </script>
