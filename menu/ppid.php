@@ -25,7 +25,7 @@
                       <td><?= $r['kategori']; ?></td>
                       <td><?= $r['dokumen']; ?></td>
                       <td>
-                        <a href="?module=ppid/ppid&aksi=editppid&idppid=<?= $r['id_ppid']; ?>" class="btn btn-flat btn-primary" style="border-radius:2px;">View</a>
+                        <a href="asset/files/<?= $r['dokumen']; ?>" class="btn btn-flat btn-primary" style="border-radius:2px;">View</a>
                       </td>
                     </tr>
                   <?php $no++;

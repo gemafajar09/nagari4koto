@@ -60,17 +60,26 @@ input[type="number"] {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </tbody>
+                  <?php
+                  $be = mysqli_query($kon, "SELECT * FROM datagd");
+
+                  $no = 1;
+                  while ($r = mysqli_fetch_assoc($be)) {
+                  ?>
+                    <tr>
+                      <td><?= $no; ?></td>
+                      <td><?= $r["data_kel"]; ?></td>
+
+                      <td><?= $r["data_jml"]; ?></td>
+                      <td><?= $r["data_jml2"]; ?></td>
+                      <td><?= $r["data_lk"]; ?></td>
+                      <td><?= $r["data_lk2"]; ?></td>
+                      <td><?= $r["data_pr"]; ?></td>
+                      <td><?= $r["data_pr2"]; ?></td>
+                    </tr>
+                  <?php $no++;
+                  } ?>
+                </tbody>
             <tr>
                 <td colspan="3" align="right"><b>Total</b></td>
                 <td></td>
@@ -123,23 +132,19 @@ Highcharts.chart('jekel', {
         zMin: 0,
         colorByPoint: true,
         name: 'countries',
-        data: [{
-            name: 'A',
-            y: 250,
-            z: 92.9
-        }, {
-            name: 'B',
-            y: 100,
-            z: 118.7
-        }, {
-            name: 'O',
-            y: 100,
-            z: 118.7
-        }, {
-            name: 'AB',
-            y: 100,
-            z: 118.7
-        }]
+        <?php
+            $data = $kon->query("SELECT * FROM datagd");
+            $data_statistik = array();
+            while($a = $data->fetch_array())
+            {
+                $data_statistik = array(
+                    'name' => $a['data_kel'],
+                    'y' => (int)$a['data_jml'],
+                    'z' => (int)$a['data_jml2']
+                );
+            }
+        ?>
+        data: [<?php echo json_encode($data_statistik); ?>]
     }]
 });
 </script>
