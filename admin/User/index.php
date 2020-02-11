@@ -340,16 +340,17 @@ if (!$_SESSION['id']) {
               </a>
             </li>
 
-
-
-
             <li>
               <a href="?module=video">
                 <i class="fa fa-toggle-right"></i> <span>Video</span>
               </a>
             </li>
 
-
+            <li>
+              <a href="?module=keauangan">
+                <i class="fa fa-money"></i> <span>Keuangan</span>
+              </a>
+            </li>
 
             <li>
               <a href="?module=tautan/tautan">
