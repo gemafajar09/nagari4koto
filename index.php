@@ -153,10 +153,6 @@ error_reporting(0);
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img src="asset/images/slide1.jpg" height="400px" class="d-block w-100">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>First slide label</h5>
-        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-      </div>
     </div>
     <?php 
     $data = $kon->query("SELECT * FROM tb_slider");

@@ -204,7 +204,7 @@ if (!$_SESSION['id']) {
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-list"></i>
-                <span>Profil Bawaslu</span>
+                <span>Profil</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
@@ -214,17 +214,17 @@ if (!$_SESSION['id']) {
                   </a>
                 </li>
 
-                <li>
+                <!-- <li>
                   <a href="?module=profil/org">
                     <i class="fa fa-info"></i> <span>Struktur Organisasi</span>
                   </a>
-                </li>
+                </li> -->
 
-                <li>
+                <!-- <li>
                   <a href="?module=profil/komisioner">
                     <i class="fa fa-user"></i> <span>Komisioner</span>
                   </a>
-                </li>
+                </li> -->
               </ul>
             </li>
 
@@ -245,11 +245,11 @@ if (!$_SESSION['id']) {
                   <a href="?module=informasi/event">
                     <i class="fa fa-info"></i> <span>Jadwal Event</span>
                   </a>
-                </li> -->
+                </li>
 
-            <!-- <li>
+            <li>
                   <a href="?module=informasi/pengumuman">
-                    <i class="fa fa-thumb-tack"></i> <span>Informasi Bawaslu</span>
+                    <i class="fa fa-thumb-tack"></i> <span>Informasi</span>
                   </a>
                 </li>
 
@@ -335,7 +335,7 @@ if (!$_SESSION['id']) {
 
             <li>
               <a href="?module=surat/surat">
-                <i class="fa fa-mail"></i> <span>Surat Online</span>
+                <i class="fa fa-file"></i> <span>Surat Online</span>
               </a>
             </li>
 
@@ -382,11 +382,11 @@ if (!$_SESSION['id']) {
               </a>
             </li>
 
-            <li>
+            <!-- <li>
               <a href="?module=logo">
                 <i class="fa fa-image"></i> <span>Logo </span>
               </a>
-            </li>
+            </li> -->
 
             <li>
               <a href="?module=komentar/komen">

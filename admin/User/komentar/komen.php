@@ -29,7 +29,7 @@
                                 </thead>
                                 <tbody>
                                     <?php
-                                    $be = mysqli_query($kon, "SELECT * FROM tb_komentar");
+                                    $be = mysqli_query($kon, "SELECT * FROM komentar");
 
                                     $no = 1;
                                     while ($r = mysqli_fetch_assoc($be)) {
