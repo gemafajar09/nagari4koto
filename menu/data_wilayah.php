@@ -3,7 +3,7 @@
         <h3 class="card-title"><center>Data Wilayah Administratif</center></h3>
     </div>
     <div class="card-body">
-        <table id="example1" class="table table-bordered table-hover" style="font-size:13px">
+        <table id="example1" class="table table-bordered table-hover table-responsive" style="font-size:13px">
             <thead>
                 <tr>
                     <td>NO</td>

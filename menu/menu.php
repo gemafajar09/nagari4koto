@@ -19,7 +19,14 @@
             </div>
             <div class="card-body">
             <center>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255264.37751727895!2d100.34403322022385!3d-1.4696356090874505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd3484cd12f42d3%3A0x6c02aaf6fcb8e1c6!2sIv%20Koto%20Hilie%2C%20Batang%20Kapas%2C%20Kabupaten%20Pesisir%20Selatan%2C%20Sumatera%20Barat!5e0!3m2!1sid!2sid!4v1580784318649!5m2!1sid!2sid" width="350px" height="300px" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+            <table class="table-responsive">
+                <tr>
+                    <td>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255264.37751727895!2d100.34403322022385!3d-1.4696356090874505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd3484cd12f42d3%3A0x6c02aaf6fcb8e1c6!2sIv%20Koto%20Hilie%2C%20Batang%20Kapas%2C%20Kabupaten%20Pesisir%20Selatan%2C%20Sumatera%20Barat!5e0!3m2!1sid!2sid!4v1580784318649!5m2!1sid!2sid" width="380px" height="300px" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                    </td>
+                </tr>
+            </table>
+            
             </center>
             
             </div>

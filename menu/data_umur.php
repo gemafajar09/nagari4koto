@@ -41,7 +41,7 @@ input[type="number"] {
 <div class="card">
     <div class="card-body">
     <div id="jekel"></div>
-        <table class="table table-bordered table-hover" style="font-size:13px">
+        <table class="table table-bordered table-hover table-responsive" style="font-size:13px">
             <thead>
                 <tr>
                     <td rowspan="2">NO</td>

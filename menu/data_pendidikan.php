@@ -41,6 +41,7 @@ input[type="number"] {
 <div class="card">
     <div class="card-body">
         <div id="donat"></div>
+        <div class="table-responsive">
         <table class="table table-bordered table-hover" style="font-size:13px">
             <thead>
                 <tr>
@@ -77,6 +78,7 @@ input[type="number"] {
               <?php } ?>
             </tbody>
         </table>
+        </div>
     </div>
 </div>
 <!-- chart -->

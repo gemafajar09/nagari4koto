@@ -4,7 +4,7 @@ $seo = $_GET['seo'];
  $a = $data->fetch_array();
 ?>
 <div class="jumbotron">
-<a href=""><h4><b><?= $a['judul'] ?></b></h4></a>
+<a href=""><h6><b><?= $a['judul'] ?></b></h6></a>
     <p class="btn btn-success"><i class="fas fa-user"><?= $a['posting_by'] ?></i></p>
     <p>
     <center>

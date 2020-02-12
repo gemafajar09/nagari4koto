@@ -47,7 +47,16 @@ error_reporting(0);
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">
-    <img src="asset/files/logo.png" width="60">
+    <div class="row">
+      <div class="col-md-2">
+        <img src="asset/files/logo.png" width="30">
+      </div>
+      <div class="col-md-2">
+        <h6 style="color:green">
+          &nbsp;&nbsp;&nbsp;Nagari IV <p>&nbsp;&nbsp;&nbsp;Koto Hilie</p>
+        </h6>
+      </div>
+    </div>
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>

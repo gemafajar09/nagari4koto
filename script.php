@@ -28,9 +28,17 @@ document.getElementById("loader").style.display = "none";
 }
 })
 
-$(function () {
-    $("#example1").DataTable();
-  });
+$(document).ready(function() {
+    var table = $('#example1').DataTable( {
+        responsive: true
+    } );
+ 
+    new $.fn.dataTable.FixedHeader( table );
+} );
+// $(function () {
+//     $("#example1").DataTable();
+    
+//   });
 
 // chart
 
