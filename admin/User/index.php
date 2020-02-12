@@ -333,6 +333,12 @@ if (!$_SESSION['id']) {
               </a>
             </li>
 
+            <li>
+              <a href="?module=surat/surat">
+                <i class="fa fa-files-o"></i> <span>Surat Online</span>
+              </a>
+            </li>
+
 
             <li>
               <a href="?module=ppid/ppidbawaslu">
@@ -378,6 +384,12 @@ if (!$_SESSION['id']) {
             <li>
               <a href="?module=logo">
                 <i class="fa fa-image"></i> <span>Logo </span>
+              </a>
+            </li>
+
+            <li>
+              <a href="?module=komentar/komen">
+                <i class="fa fa-user"></i> <span>Komentar</span>
               </a>
             </li>
 
