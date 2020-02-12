@@ -66,17 +66,20 @@
             </div>
             <div class="card-body">
 <div class="row">
+<?php $data = $kon->query("SELECT fb.link as fb,ig.link as ig,twitter.link as tw,youtube.link as yt FROM fb,ig,twitter,youtube");
+$a = $data->fetch_array();
+?>
     <div class="col-md-3">
-        <a href="" style="padding: 20px;font-size: 30px;width: 50px;text-align: center;text-decoration: none;margin: 5px 2px;" class="fa fa-twitter"></a>
+        <a href="<?= $a['tw'] ?>" style="padding: 20px;font-size: 30px;width: 50px;text-align: center;text-decoration: none;margin: 5px 2px;" class="fa fa-twitter"></a>
     </div>
     <div class="col-md-3">
-        <a href="" style="padding: 20px;font-size: 30px;width: 50px;text-align: center;text-decoration: none;margin: 5px 2px;" class="fa fa-facebook"></a>
+        <a href="<?= $a['fb'] ?>" style="padding: 20px;font-size: 30px;width: 50px;text-align: center;text-decoration: none;margin: 5px 2px;" class="fa fa-facebook"></a>
     </div>
     <div class="col-md-3">
-        <a href="" style="padding: 20px;font-size: 30px;width: 50px;text-align: center;text-decoration: none;margin: 5px 2px;" class="fa fa-instagram"></a>                
+        <a href="<?= $a['ig'] ?>" style="padding: 20px;font-size: 30px;width: 50px;text-align: center;text-decoration: none;margin: 5px 2px;" class="fa fa-instagram"></a>                
     </div>
     <div class="col-md-3">
-        <a href="" style="padding: 20px;font-size: 30px;width: 50px;text-align: center;text-decoration: none;margin: 5px 2px;" class="fa fa-google"></a>                
+        <a href="<?= $a['yt'] ?>" style="padding: 20px;font-size: 30px;width: 50px;text-align: center;text-decoration: none;margin: 5px 2px;" class="fa fa-google"></a>                
     </div>
 </div>
             </div>
