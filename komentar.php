@@ -15,7 +15,7 @@
                     <td>
                         <div class="form-group">
                             <label>Nama</label>
-                            <input type="email" name="email" class="form-control">
+                            <input type="text" name="nama" class="form-control">
                         </div>
                     </td>
                 </tr>
@@ -29,3 +29,20 @@
         </form>
     </div>
 </div> 
+
+<?php
+if(isset($_POST['save']))
+{
+    $nama = $_POST['nama'];
+    $email = $_POST['email'];
+    $komentar = $_POST['komentar'];
+    $save = $kon->query("INSERT INTO komentar (nama,email,komentar) VALUES ('$nama','$email','$komentar')");
+    if($save == TRUE)
+    {
+        echo "<script>alert('Terimaasih Atas Komentar Anda')</script>";
+    }else{
+        echo "<script>alert('Komentar Anda Ditolak')</script>";
+    }
+
+}
+?>

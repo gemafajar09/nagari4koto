@@ -7,7 +7,10 @@ $seo = $_GET['seo'];
 <a href=""><h4><b><?= $a['judul'] ?></b></h4></a>
     <p class="btn btn-success"><i class="fas fa-user"><?= $a['posting_by'] ?></i></p>
     <p>
-        <img src="asset/images/<?= $a['gambar'] ?>" width="130px" height="80px" alt="NO Images Source">
+    <center>
+    <img src="asset/images/<?= $a['gambar'] ?>" width="480px" alt="NO Images Source">
+    </center>
+        
         <i><?= $a['isiberita'] ?></i>
     </p>
 </div>

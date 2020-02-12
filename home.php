@@ -6,10 +6,14 @@
 <div class="jumbotron">
     <a href="?page=selanjutnya&seo=<?= $a['judul_seo'] ?>"><h4><b><?= $a['judul'] ?></b></h4></a>
     <p class="btn btn-success"><i class="fas fa-user"><?= $a['posting_by'] ?></i></p>
-    <p>
-        <img src="asset/images/<?= $a['gambar'] ?>" width="130px" height="80px" alt="NO Images Source">
-        <i><?= $berita ?>..... <a href="?page=selanjutnya&seo=<?= $a['judul_seo'] ?>">Selengkapnya</a></i>
-    </p>
+    <div class="row">
+            <div class="col-md-2">
+                <img src="asset/images/<?= $a['gambar'] ?>" width="130px" height="80px" alt="NO Images Source">
+            </div>
+            <div class="col-md-8">
+                <i><?= $berita ?>..... <a href="?page=selanjutnya&seo=<?= $a['judul_seo'] ?>">Selengkapnya</a></i>
+            </div>
+        </div>
 </div>
 <hr><h3>Berita Terkini</h3><hr>
 <?php
@@ -36,10 +40,14 @@
     <div class="card-body">
         <a href="?page=selanjutnya&seo=<?= $a['judul_seo'] ?>"><h5><b><?= $a['judul'] ?></b></h5></a>
         <p class="btn btn-success"><i class="fas fa-user"><?= $a['posting_by'] ?></i></p>
-        <p>
-            <img src="asset/images/<?= $a['gambar'] ?>" width="130px" height="80px" alt="NO Images Source">
-            <i><?= $berita ?>..... <a href="?page=selanjutnya&seo=<?= $a['judul_seo'] ?>">Selengkapnya</a></i>
-        </p>
+        <div class="row">
+            <div class="col-md-2">
+                <img src="asset/images/<?= $a['gambar'] ?>" width="130px" height="80px" alt="NO Images Source">
+            </div>
+            <div class="col-md-8">
+                <i><?= $berita ?>..... <a href="?page=selanjutnya&seo=<?= $a['judul_seo'] ?>">Selengkapnya</a></i>
+            </div>
+        </div>
     </div>
 </div>
     <?php } ?>
