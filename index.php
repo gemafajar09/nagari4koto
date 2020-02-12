@@ -109,7 +109,7 @@ error_reporting(0);
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="?page=menu/agenda">Surat Online</a>
+        <a class="nav-link" href="?page=menu/suratOnline">Surat Online</a>
       </li>
 
       <li class="nav-item">
