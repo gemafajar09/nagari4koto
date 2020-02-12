@@ -5,10 +5,6 @@ $a = $data->fetch_array();
 <div class="jumbotron">
     <center>
         <h3>Sejarah</h3>
-        <?= $a['deskripsi'] ?>
     </center>
+        <?= $a['deskripsi'] ?>
 </div>
-
-<?php
-include_once "komentar.php";
-?>

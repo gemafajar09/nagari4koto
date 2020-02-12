@@ -4,7 +4,7 @@
     $berita = substr(strip_tags($a['isiberita']),0 ,350 );
 ?>
 <div class="jumbotron">
-    <a href="?page=selanjutnya&seo=<?= $a['judul_seo'] ?>"><h4><b><?= $a['judul'] ?></b></h4></a>
+    <a href="?page=selanjutnya&seo=<?= $a['judul_seo'] ?>"><h6><b><?= $a['judul'] ?></b></h6></a>
     <p class="btn btn-success"><i class="fas fa-user"><?= $a['posting_by'] ?></i></p>
     <div class="row">
             <div class="col-md-2">
@@ -38,7 +38,7 @@
 <?php foreach($data1 as $a){ ?>
 <div class="card">
     <div class="card-body">
-        <a href="?page=selanjutnya&seo=<?= $a['judul_seo'] ?>"><h5><b><?= $a['judul'] ?></b></h5></a>
+        <a href="?page=selanjutnya&seo=<?= $a['judul_seo'] ?>"><h6><b><?= $a['judul'] ?></b></h6></a>
         <p class="btn btn-success"><i class="fas fa-user"><?= $a['posting_by'] ?></i></p>
         <div class="row">
             <div class="col-md-2">
