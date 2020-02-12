@@ -7,5 +7,4 @@ $a = $data->fetch_array();
     	<h3>LPM</h3>
     </center>
         <?= $a['deskripsi'] ?>
-
 </div>

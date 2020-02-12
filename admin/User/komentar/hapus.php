@@ -130,9 +130,9 @@ include '../../koneksi.php';
             case "hapuskomentar":
 
                 if (isset($_GET['id'])) {
-                    $lihat = mysqli_fetch_assoc(mysqli_query($kon, "SELECT * FROM tb_komentar where id='$_GET[id]'"));
+                    $lihat = mysqli_fetch_assoc(mysqli_query($kon, "SELECT * FROM komentar where id='$_GET[id]'"));
 
-                    $del = mysqli_query($kon, "DELETE FROM tb_komentar where id='$_GET[id]'");
+                    $del = mysqli_query($kon, "DELETE FROM komentar where id='$_GET[id]'");
                     if ($del) {
                         echo "<script>
                     alert('Data Berhasil Dihapus');

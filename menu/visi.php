@@ -1,5 +1,5 @@
 <?php
-$data = $kon->query("SELECT * FROM tb_profil WHERE kategori='visimisi' LIMIT 1");
+$data = $kon->query("SELECT * FROM tb_profil WHERE kategori='Visi Misi' LIMIT 1");
 $a = $data->fetch_array();
 ?>
 <div class="jumbotron">

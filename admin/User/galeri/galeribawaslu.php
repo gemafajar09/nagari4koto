@@ -1,11 +1,11 @@
 <div class="content-wrapper">
   <section class="content-header">
     <h1>
-      Galeri Bawaslu
+      Galeri
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li class="active">Galeri Bawaslu</li>
+      <li class="active">Galeri</li>
     </ol>
   </section>
   <section class="content">
@@ -13,7 +13,7 @@
       <div class="col-md-12">
         <div class="box box-info">
           <div class="box-header with-border">
-            <a href="?module=galeri/galeri&aksi=tambahgaleri" class="btn btn-flat btn-primary">Tambah Galeri Bawaslu</a>
+            <a href="?module=galeri/galeri&aksi=tambahgaleri" class="btn btn-flat btn-primary">Tambah Galeri</a>
           </div>
           <div class="box-body">
             <div class="table table-responsive">
