@@ -228,7 +228,7 @@ if (!$_SESSION['id']) {
               </ul>
             </li>
 
-            <li class="treeview">
+            <!-- <li class="treeview">
               <a href="#">
                 <i class="fa fa-list"></i>
                 <span>Informasi</span>
@@ -239,15 +239,15 @@ if (!$_SESSION['id']) {
                   <a href="?module=informasi/agenda">
                     <i class="fa fa-files-o"></i> <span>Agenda</span>
                   </a>
-                </li>
+                </li> -->
 
-                <!-- <li>
+            <!-- <li>
                   <a href="?module=informasi/event">
                     <i class="fa fa-info"></i> <span>Jadwal Event</span>
                   </a>
                 </li> -->
 
-                <li>
+            <!-- <li>
                   <a href="?module=informasi/pengumuman">
                     <i class="fa fa-thumb-tack"></i> <span>Informasi Bawaslu</span>
                   </a>
@@ -259,7 +259,7 @@ if (!$_SESSION['id']) {
                   </a>
                 </li>
               </ul>
-            </li>
+            </li> -->
 
             <li class="treeview">
               <a href="#">
@@ -335,7 +335,7 @@ if (!$_SESSION['id']) {
 
             <li>
               <a href="?module=surat/surat">
-                <i class="fa fa-files-o"></i> <span>Surat Online</span>
+                <i class="fa fa-mail"></i> <span>Surat Online</span>
               </a>
             </li>
 
@@ -346,11 +346,11 @@ if (!$_SESSION['id']) {
               </a>
             </li>
 
-            <li>
+            <!-- <li>
               <a href="?module=video">
                 <i class="fa fa-toggle-right"></i> <span>Video</span>
               </a>
-            </li>
+            </li> -->
 
             <li>
               <a href="?module=keauangan">
